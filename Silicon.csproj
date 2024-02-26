@@ -7,8 +7,63 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="compilerconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="wwwroot\css\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="compilerconfig.json" />
+    <None Include="wwwroot\images\.DS_Store" />
+    <None Include="wwwroot\images\404.svg" />
+    <None Include="wwwroot\images\404_dark.svg" />
+    <None Include="wwwroot\images\app\appstore-darkmode.svg" />
+    <None Include="wwwroot\images\app\app_appstore.svg" />
+    <None Include="wwwroot\images\app\app_googleplay.svg" />
+    <None Include="wwwroot\images\app\app_screens.svg" />
+    <None Include="wwwroot\images\app\googleplay-darkmode.svg" />
+    <None Include="wwwroot\images\courses\.DS_Store" />
+    <None Include="wwwroot\images\courses\course-image1.svg" />
+    <None Include="wwwroot\images\courses\course-image2.svg" />
+    <None Include="wwwroot\images\courses\course-image3.svg" />
+    <None Include="wwwroot\images\courses\course-image4.svg" />
+    <None Include="wwwroot\images\courses\course-image5.svg" />
+    <None Include="wwwroot\images\courses\course-image6.svg" />
+    <None Include="wwwroot\images\courses\course-image7.svg" />
+    <None Include="wwwroot\images\courses\course-image8.svg" />
+    <None Include="wwwroot\images\courses\course-image9.svg" />
+    <None Include="wwwroot\images\courses\officedesk-illustration.svg" />
+    <None Include="wwwroot\images\courses\officedesk-illustration_dark.svg" />
+    <None Include="wwwroot\images\courses\user-profile-small.svg" />
+    <None Include="wwwroot\images\features\.DS_Store" />
+    <None Include="wwwroot\images\features\features_icon1.svg" />
+    <None Include="wwwroot\images\features\features_icon2.svg" />
+    <None Include="wwwroot\images\features\features_icon3.svg" />
+    <None Include="wwwroot\images\features\features_icon4.svg" />
+    <None Include="wwwroot\images\features\features_icon5.svg" />
+    <None Include="wwwroot\images\features\features_icon6.svg" />
+    <None Include="wwwroot\images\integrations\integrations_dropbox.svg" />
+    <None Include="wwwroot\images\integrations\integrations_evernote.svg" />
+    <None Include="wwwroot\images\integrations\integrations_gmail.svg" />
+    <None Include="wwwroot\images\integrations\integrations_google.svg" />
+    <None Include="wwwroot\images\integrations\integrations_mailchimp.svg" />
+    <None Include="wwwroot\images\integrations\integrations_slack.svg" />
+    <None Include="wwwroot\images\integrations\integrations_trello.svg" />
+    <None Include="wwwroot\images\integrations\integrations_zoom.svg" />
+    <None Include="wwwroot\images\lightdark\lightdark_dark-mac.svg" />
+    <None Include="wwwroot\images\lightdark\lightdark_light-mac.svg" />
+    <None Include="wwwroot\images\lightdark\lightdark_mockup.svg" />
+    <None Include="wwwroot\images\logo\Silicon-Logotype-DarkMode.svg" />
+    <None Include="wwwroot\images\logo\Silicon-Logotype-LightMode.svg" />
+    <None Include="wwwroot\images\manage-img.svg" />
+    <None Include="wwwroot\images\showcase\showcase_bg.svg" />
+    <None Include="wwwroot\images\showcase\showcase_logo1.svg" />
+    <None Include="wwwroot\images\showcase\showcase_logo2.svg" />
+    <None Include="wwwroot\images\showcase\showcase_logo3.svg" />
+    <None Include="wwwroot\images\showcase\showcase_logo4.svg" />
+    <None Include="wwwroot\images\signup_arrows.svg" />
   </ItemGroup>
 
 </Project>

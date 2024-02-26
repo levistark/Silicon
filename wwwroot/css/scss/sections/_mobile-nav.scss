@@ -1,0 +1,102 @@
+.mobile-nav-wrapper {
+
+    .mobile-nav-backdrop::after {
+        position: fixed;
+        top: 0;
+        height: 100vh;
+        width: 100vw;
+        z-index: 10;
+        background-color: rgba(0, 0, 0, 0.674);
+        content: "."; 
+        visibility: none;
+    }
+    
+    .mobile-nav {
+            position: fixed;
+            z-index: 999;
+            top: 0;
+            right: 0;
+            width: 18rem;
+            height: 100vh;
+            padding: 1rem 2rem;
+            padding-bottom: 2rem;
+    
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+    
+            background-color: var(--main-bg-clr-secondary);
+    
+            .mobile-nav-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 5rem;
+    
+                #logo-mobile-nav 
+                {
+                    display: block;
+                    background-image: var(--main-logo);
+                    background-repeat: no-repeat;
+                    background-position-y: center;
+        
+                    background-size: contain;
+        
+                    min-width: 115px;
+                    min-height: 60px;
+                }
+                
+                .fa-x {
+                    z-index: 1;
+                    animation: fade-in 1.5s, spin 1.5s;
+                    cursor: pointer;
+                    font-size: 15pt;
+                }
+            }
+    
+            .mobile-menu {
+                margin-top: 2rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+
+                &:nth-child(2) {
+                    border-top: solid 1px var(--main-clr-thin-gray);
+                    border-bottom: solid 1px var(--main-clr-thin-gray);
+                }
+
+                a {
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                    padding: .6rem 0;
+                    transition: 0.3s;
+                    border-radius: 5px;
+
+                    &:hover {
+                        background-color: var(--main-clr-hover);
+                    }
+                }
+            }
+            
+            .btn-switch { 
+                margin-top: auto;
+                label {
+                    margin: 0 3px;
+                }
+            }
+    
+            .mobile-account-buttons { 
+                margin-top: 4rem;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                width: 100%;
+
+                .btn-gray {
+                    background-color: $gray-300;
+                }
+            }
+        }
+}

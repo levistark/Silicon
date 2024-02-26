@@ -1,0 +1,10 @@
+.header-page-navigation {
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    a {
+        color: var(--main-text-clr);
+    }
+}

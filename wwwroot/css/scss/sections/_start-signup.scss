@@ -1,0 +1,105 @@
+#start-signup {
+    background-color: var(--main-bg-clr-secondary);
+    display: flex;
+    justify-content: center;
+
+    .container {
+        @include xl {
+            max-width: 900px;
+        }
+        .content {
+            .heading-box {
+                display: flex;
+
+                h2 {
+                    color: var(--main-title-clr);
+                }
+                img {
+                    margin-left: 3rem;
+                }
+            }
+
+            .grid-container {
+                margin: 3rem 0;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+                gap: 1rem;
+
+                h6 {
+                    color: var(--main-title-clr);
+                }
+
+                .grid-item {
+                    display: flex;
+                    flex-direction: column;
+
+                    .checkbox-container {
+                        display: block;
+
+                        label {
+                            margin-left: 1rem;
+                            color: var(--main-text-clr);
+                        }
+                    }
+                }
+            }
+            .input-container {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+
+                @include md {
+                    flex-direction: row;
+                }
+
+                .input-email-container {
+                    background-color: transparent;
+                    width: 100%;
+                    height: 3rem;
+                    border-radius: 8px;
+                    display: flex;
+                    align-items: center;
+                    border: solid var(--main-clr-input-border);
+
+                    @include md {
+                        width: 80%;
+                    }
+
+                    i {
+                        margin-left: 1rem;
+                        font-size: 18pt;
+                        color: $gray-600;
+                    }
+
+                    input {
+                        margin-left: 1rem;
+                        width: 80%;
+                        border: none;
+                        outline: none;
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                        appearance: none;
+                        background-color: transparent;
+                        color: var(--main-text-clr);
+                    }
+                }
+                .btn-theme {
+                    height: 3rem;
+                    margin-top: 1rem;
+
+                    @include md {
+                        margin-top: 0;
+                        margin-left: 5%;
+                        width: 15%;
+                    }
+                }
+            }
+            p {
+                display: block;
+                margin-top: 1rem;
+                color: var(--main-text-clr);
+                font-size: 10pt;
+            }
+        }
+    }
+}

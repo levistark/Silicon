@@ -1,0 +1,73 @@
+#sign-up-page {
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .content {
+            max-width: 600px;
+
+            p {
+                font-size: 11pt;
+            }
+
+            form {
+                margin-bottom: 1rem;
+                
+                label {
+                    font-weight: bold;
+                    font-size: 11pt;
+                    margin-top: 1rem;
+                    margin-bottom: 0.5rem;
+                }
+
+                input {
+                    width: 100%;
+                    outline: none;
+                    padding: 0.5rem 1rem;
+                    border: solid var(--main-clr-input-border) 1px;
+                    border-radius: 7px;
+                    background-color: transparent;
+
+                }
+
+                .input-group {
+                    display: flex;
+
+                    @include md {
+                        gap: 1rem;
+                    }
+
+                    div {
+                        width: 100%;
+
+                        @include md {
+                            width: auto;
+                        }
+                    }                    
+                }
+
+                .checkbox-container {
+                    display: flex;
+                    gap: 1rem;
+                    align-items: center;
+
+                    input {
+                        width: auto;
+                        margin-top: 0;
+                        margin-bottom: 0;
+                    }
+                    label {
+                        margin-top: 0;
+                        margin-bottom: 0;
+                    }
+                }
+                
+                button {
+                    margin-top: 1rem;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

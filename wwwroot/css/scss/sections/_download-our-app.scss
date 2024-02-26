@@ -1,0 +1,154 @@
+#download-our-app {
+    background-color: var(--main-bg-clr-secondary);
+
+    .container {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        
+
+        @include sm {
+        }
+        @include md {
+        }
+        @include lg {
+        }
+        @include xl {
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        @include xxl {     
+        }
+        
+        #app-screens {
+            position: absolute;
+            z-index: 0;
+            top: 110px;
+            right: -140px;
+            scale: 0.4;
+
+            @include sm {
+                scale: 0.6;
+                right: -50px;
+
+            }
+            @include md {
+                scale: 0.7;
+                right: 20px;
+            }
+            @include lg {
+                scale: 0.8;
+            }
+            @include xl {
+                scale: 0.9;
+                top: -60px;
+
+            }
+            @include xxl {
+                scale: 1;
+                right: 100px;
+            }
+        }
+
+        .content {
+            z-index: 2;
+
+            @include sm {
+                margin-left: 4rem;
+            }
+
+            @include sm {
+                margin-left: 4rem;
+            }
+            
+            @include xl {
+                margin-left: -30rem;
+            }
+
+            h2 {
+                margin-bottom: 3rem;
+                z-index: 2;
+                color: var(--main-title-clr);
+            }
+
+            .app-review-container {
+                margin-top: 2rem;
+                display: flex;
+                flex-direction: column;
+                width: 140px;
+                z-index: -1;
+                background-color: var(--main-bg-clr-secondary-transparent);
+                box-shadow: 0 0 100px 100px var(--main-bg-clr-secondary-transparent);
+
+                @include md {
+                    background-color: transparent;
+                    box-shadow: none;
+                    width: auto;
+                }
+
+                @include xl {
+                    flex-direction: row;
+                }
+
+                .review-box {
+                    p {
+                        color: var(--main-text-clr);
+                    }
+                    i {
+                        margin-top: 1rem;
+                        color: rgb(255, 230, 0);
+                    }
+                    h5 {
+                        color: var(--main-title-clr);
+                        margin-top: 1rem;
+                    }
+                }
+                .review-logo-box {
+                    margin-top: 1rem;
+                    z-index: 2;
+                    display: flex;
+
+                    
+
+                    @include xl {
+                        margin-top: 0;
+                        align-items: end;
+                        justify-content: end;
+                        margin-left: 2rem;
+                    }
+                }   
+                .appstore {
+                    
+                    a {
+                        display: block;
+                        background-image: var(--main-appstore-img);
+                        background-repeat: no-repeat;
+                        background-position-y: center;
+
+                        background-size: contain;
+
+                        min-width: 150px;
+                        min-height: 60px;
+                        
+                    }
+                }
+
+                .googleplay {
+                    a {
+                        display: block;
+                        background-image: var(--main-googleplay-img);
+                        background-repeat: no-repeat;
+                        background-position-y: center;
+
+                        background-size: contain;
+
+                        min-width: 150px;
+                        min-height: 60px;                    }
+                }
+            }
+        }
+
+    }
+}

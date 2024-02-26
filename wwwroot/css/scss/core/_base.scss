@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    @include standard-text;
+    font-size: 16px; 
+    background-color: var(--main-bg-clr);
+    min-height: 100vh;
+}
+
+body.dark img {
+    filter: brightness(.85) contrast(1.2) !important;
+  }
+
+:root {
+    --main-logo: url("/images/logo/Silicon-Logotype-LightMode.svg");
+    --main-bg-clr: white;
+    --main-title-clr: black;
+    --main-text-clr: #{$gray-700};
+    --main-bg-clr-transparent: rgba(255, 255, 255, 0.770);
+    --main-bg-clr-secondary: #{$gray-100};
+    --main-bg-clr-secondary-transparent: #f3f6ffc7;
+    --main-bg-clr-custom: transparent;
+    --main-bg-clr-shadow: #0b0f1942;
+    --main-clr-input-border: #{$gray-500};
+    --main-clr-thin-gray: #{$gray-300};
+    --main-clr-hover: #{$white};
+    --main-appstore-img: url("/images/app/app_appstore.svg");
+    --main-googleplay-img: url("/images/app/app_googleplay.svg");
+    --main-illustration-img: url("/images/courses/officedesk-illustration.svg");
+    --404-img: url("/images/404.svg");
+}
+
+.dark {
+    --main-bg-clr: #{$gray-900};
+    --main-title-clr: #{$white};
+    --main-text-clr: #{$gray-400};
+    --main-logo: url("/images/logo/Silicon-Logotype-DarkMode.svg");
+    --main-bg-clr-transparent: #0b0f19b5;
+    --main-bg-clr-secondary: #{$gray-850};
+    --main-bg-clr-secondary-transparent: #171722a4;
+    --main-bg-clr-custom: #{$gray-850};
+    --main-bg-clr-shadow: #f3f6ff51;
+    --main-clr-thin-gray: #{$gray-800};
+    --main-clr-input-border: #{$gray-700};
+    --main-clr-hover: #{$gray-800};
+    --main-appstore-img: url("/images/app/appstore-darkmode.svg");
+    --main-googleplay-img: url("/images/app/googleplay-darkmode.svg");
+    --main-illustration-img: url("/images/courses/officedesk-illustration_dark.svg");
+    --404-img: url("/images/404_dark.svg");
+}
+
+p, .p { @include standard-text; color: var(--main-text-clr); }
+
+label { @include standard-text; color: var(--main-title-clr); }
+
+span { @include standard-text; color: var(--main-text-clr); }
+
+small { @include standard-text; color: var(--main-text-clr); }
+
+
+input { 
+    color: var(--main-text-clr);
+
+    &:hover  {
+        border: solid 1px $theme !important;
+    }
+    &:focus {
+        border: solid 1px var(--main-text-clr) !important;
+    }
+}
+
+textarea { 
+    color: var(--main-text-clr);
+
+    &:hover  {
+        border: solid 1px var(--main-text-clr) !important;
+        border: solid 1px $theme !important;
+    }
+    &:focus {
+        border: solid 1px var(--main-text-clr) !important;
+    }
+}
+
+.text-xs { @include text-xs; }
+.text-s { @include text-s; }
+.text-m { @include text-m; }
+.text-lg { @include text-lg; }
+.text-xl { @include text-xl; }
+.text-lead { @include text-lead; }
+
+.d1 { @include d1; }
+.d2 { @include d2; }
+.d3 { @include d3; }
+.d4 { @include d4; }
+.d5 { @include d5; }
+.d6 { @include d6; }
+
+h1, .h1 { @include h1; color: var(--main-title-clr); }
+h2, .h2 { @include h2; color: var(--main-title-clr); }
+h3, .h3 { @include h3; color: var(--main-title-clr); }
+h4, .h4 { @include h4; color: var(--main-title-clr); }
+h5, .h5 { @include h5; color: var(--main-title-clr); }
+h6, .h6 { @include h6; color: var(--main-title-clr); }
+
+
+.page-section {
+    padding: 4rem 0;
+
+    @include sm {
+        padding: 6rem 0;
+    }
+}
+
+p {
+    margin-bottom: 0;
+}
+
+.img-scale {
+    scale: 0.5;
+    
+    @include sm {
+        scale: 0.7;
+    }
+
+    @include md {
+        scale: 0.8;
+    }
+
+    @include lg {
+        scale: 0.9;
+    }
+
+    @include xl {
+        scale: 1;
+    }
+}
