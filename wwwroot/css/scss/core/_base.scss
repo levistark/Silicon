@@ -64,10 +64,10 @@ input {
     color: var(--main-text-clr);
 
     &:hover  {
-        border: solid 1px $theme !important;
+        border: solid 1.5px $theme !important;
     }
     &:focus {
-        border: solid 1px var(--main-text-clr) !important;
+        border: solid 1.5px var(--main-text-clr) !important;
     }
 }
 

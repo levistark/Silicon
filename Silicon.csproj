@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="compilerconfig.json" />
     <None Include="wwwroot\images\.DS_Store" />
     <None Include="wwwroot\images\404.svg" />
@@ -64,6 +60,10 @@
     <None Include="wwwroot\images\showcase\showcase_logo3.svg" />
     <None Include="wwwroot\images\showcase\showcase_logo4.svg" />
     <None Include="wwwroot\images\signup_arrows.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
 
 </Project>

@@ -7,6 +7,7 @@
         @include xl {
             max-width: 900px;
         }
+
         .content {
             .heading-box {
                 display: flex;
@@ -14,6 +15,7 @@
                 h2 {
                     color: var(--main-title-clr);
                 }
+
                 img {
                     margin-left: 3rem;
                 }
@@ -43,6 +45,7 @@
                     }
                 }
             }
+
             .input-container {
                 display: flex;
                 flex-direction: column;
@@ -71,7 +74,7 @@
                         color: $gray-600;
                     }
 
-                    input {
+                    .input-email {
                         margin-left: 1rem;
                         width: 80%;
                         border: none;
@@ -81,8 +84,17 @@
                         appearance: none;
                         background-color: transparent;
                         color: var(--main-text-clr);
+
+                        &:hover {
+                            border: none !important;
+                        }
+
+                        &:focus {
+                            border: none !important;
+                        }
                     }
                 }
+
                 .btn-theme {
                     height: 3rem;
                     margin-top: 1rem;
@@ -94,6 +106,7 @@
                     }
                 }
             }
+
             p {
                 display: block;
                 margin-top: 1rem;

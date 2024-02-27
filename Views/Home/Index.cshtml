@@ -2,3 +2,19 @@
     ViewData["Title"] = "Home";
 }
 
+@await Html.PartialAsync("~/Views/Shared/Components/_MobileNavPartial.cshtml")
+@await Html.PartialAsync("~/Views/Shared/Components/_HeaderPartial.cshtml")
+
+<main>
+    @await Html.PartialAsync("~/Views/Shared/Sections/Home/_ShowcasePartial.cshtml")
+    @await Html.PartialAsync("~/Views/Shared/Sections/Home/_FeaturesPartial.cshtml")
+    @await Html.PartialAsync("~/Views/Shared/Sections/Home/_LightDarkPartial.cshtml")
+    @await Html.PartialAsync("~/Views/Shared/Sections/Home/_FeaturesListPartial.cshtml")
+    @await Html.PartialAsync("~/Views/Shared/Sections/Home/_AppPartial.cshtml")
+    @await Html.PartialAsync("~/Views/Shared/Sections/Home/_ToolIntegrationsPartial.cshtml")
+    @await Html.PartialAsync("~/Views/Shared/Sections/Home/_SignUpPartial.cshtml")
+</main>
+
+@await Html.PartialAsync("~/Views/Shared/Components/_FooterPartial.cshtml")
+
+

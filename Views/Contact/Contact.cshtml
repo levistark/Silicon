@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Contact Us";
+}
+
+@await Html.PartialAsync("~/Views/Shared/Components/_MobileNavPartial.cshtml")
+@await Html.PartialAsync("~/Views/Shared/Components/_HeaderPartial.cshtml")
+@await Html.PartialAsync("~/Views/Shared/Components/_PageNavPartial.cshtml")
+
+<main>
+    @await Html.PartialAsync("~/Views/Shared/Sections/Contact/_ContactPartial.cshtml")
+    @await Html.PartialAsync("~/Views/Shared/Sections/Contact/_ContactMapPartial.cshtml")
+</main>
+
+@await Html.PartialAsync("~/Views/Shared/Components/_FooterPartial.cshtml")

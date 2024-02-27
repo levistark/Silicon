@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Sign In";
+}
+
+@await Html.PartialAsync("~/Views/Shared/Components/_MobileNavPartial.cshtml")
+@await Html.PartialAsync("~/Views/Shared/Components/_HeaderPartial.cshtml")
+
+<main>
+    @await Html.PartialAsync("~/Views/Shared/Sections/Account/_SignInPartial.cshtml")
+</main>
+
+@await Html.PartialAsync("~/Views/Shared/Components/_FooterPartial.cshtml")
