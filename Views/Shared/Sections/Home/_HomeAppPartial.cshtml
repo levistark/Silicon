@@ -1,9 +1,11 @@
-﻿<section class="page-section" id="download-our-app">
+﻿@model AppModel
+
+<section class="page-section" id="download-our-app">
     <div class="container">
-        <img src="/images/app/app_screens.svg" id="app-screens">
+        <img src="@Model.Image.Source" id="app-screens" alt="@Model.Image.Alt">
 
         <div class="content">
-            <h2>Download Our App<br>For Any Device:</h2>
+            <h2>@Model.Heading</h2>
 
             <div class="app-review-container">
                 <div class="review-box">

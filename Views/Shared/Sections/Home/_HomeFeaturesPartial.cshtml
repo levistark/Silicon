@@ -1,52 +1,23 @@
-﻿<section id="features">
+﻿@model FeaturesModel
+
+<section id="features">
     <div class="container">
-        <h2>What Do You Get with Our Tool?</h2>
-        <p>
-            Make sure all your tasks are organized so you can set the priorities and focus on what's important
-        </p>
+        <h2>@Model.Heading</h2>
+        <p>@Model.SubHeading</p>
         <div class="tool-features">
-            <div class="box">
-                <div class="icon-box">
-                    <img src="~/images/features/features_icon1.svg">
-                </div>
-                <h5>Comment on tasks</h5>
-                <p>Id mollis conesctetur congue egestas egetas sispedisse blantit jusso</p>
-            </div>
-            <div class="box">
-                <div class="icon-box">
-                    <img src="~/images/features/features_icon2.svg">
-                </div>
-                <h5>Tasks & Analytics</h5>
-                <p>Id mollis conesctetur congue egestas egetas sispedisse blantit jusso</p>
-            </div>
-            <div class="box">
-                <div class="icon-box">
-                    <img src="~/images/features/features_icon3.svg">
-                </div>
-                <h5>Multiple Assignees</h5>
-                <p>Id mollis conesctetur congue egestas egetas sispedisse blantit jusso</p>
-            </div>
-            <div class="box">
-                <div class="icon-box">
-                    <img src="~/images/features/features_icon4.svg">
-                </div>
-                <h5>Notifications</h5>
-                <p>Id mollis conesctetur congue egestas egetas sispedisse blantit jusso</p>
-            </div>
-            <div class="box">
-                <div class="icon-box">
-                    <img src="~/images/features/features_icon5.svg">
-                </div>
-                <h5>Sections & Subtasks</h5>
-                <p>Id mollis conesctetur congue egestas egetas sispedisse blantit jusso</p>
-            </div>
-            <div class="box">
-                <div class="icon-box">
-                    <img src="~/images/features/features_icon6.svg">
-                </div>
-                <h5>Security</h5>
-                <p>Id mollis conesctetur congue egestas egetas sispedisse blantit jusso</p>
-            </div>
+            @if (Model.Features != null && Model.Features.Count() > 0)
+            {
+                foreach (var feature in Model.Features)
+                {
+                    <div class="box">
+                        <div class="icon-box">
+                            <img src="@feature.Image.Source">
+                        </div>
+                        <h5>@feature.Heading</h5>
+                        <p>@feature.Paragraph</p>
+                    </div>
+                }
+            }
         </div>
     </div>
 </section>
