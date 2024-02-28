@@ -1033,6 +1033,7 @@ footer .container p {
   height: 100%;
   width: 100vw;
   display: flex;
+  background-color: white;
 }
 #lightdark #lightdark-background #darkbox {
   height: 30rem;
@@ -1057,7 +1058,6 @@ footer .container p {
 #lightdark #lightdark-background #lightbox {
   height: 100%;
   width: 50%;
-  background-color: white;
 }
 #lightdark #lightdark-computer {
   position: absolute;
