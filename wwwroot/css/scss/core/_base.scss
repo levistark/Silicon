@@ -104,6 +104,27 @@ h4, .h4 { @include h4; color: var(--main-title-clr); }
 h5, .h5 { @include h5; color: var(--main-title-clr); }
 h6, .h6 { @include h6; color: var(--main-title-clr); }
 
+.hidenav {
+    animation: hideNav 0.5s forwards;
+}
+
+.flyOutAnimation {
+    animation: navFlyOutSmall 0.6s forwards;
+}
+
+.flyInAnimation {
+    right: -18rem;
+    animation: navFlyInSmall 0.6s forwards;
+
+    @include sm {
+        animation: navFlyInLarge 0.6s forwards;
+    }
+}
+
+.fadeIn {
+    animation: fade-in 0.5s forwards;
+}
+
 
 .page-section {
     padding: 4rem 0;

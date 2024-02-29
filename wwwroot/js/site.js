@@ -29,17 +29,26 @@ document.querySelector('#switch-mode').addEventListener('click', (e) => {
 })
 
 /*
-This function hides/shows the the flyout mobile navigation bar.
+This function hides/shows the the flyout mobile navigation bar on click.
 */
-function toggleNavBar() {
+async function toggleNavBar() {
 
-    let sidebar = document.querySelector('.mobile-nav-wrapper')
-    console.log(1)
+    let mobileNav = document.querySelector('.mobile-nav-wrapper')
+    let backDrop = document.querySelector('.mobile-nav-backdrop')
+    let sideBar = document.querySelector('.mobile-nav')
 
-    if (sidebar.classList.contains('d-none')) {
-        sidebar.classList.remove('d-none')
+    if (mobileNav.classList.contains('hidenav') || mobileNav.classList.contains('d-none')) {
+        await mobileNav.classList.add('fadeIn')
+        await sideBar.classList.remove('flyOutAnimation')
+        await mobileNav.classList.remove('d-none')
+        await mobileNav.classList.remove('hidenav')
+        await sideBar.classList.add('flyInAnimation')
+
     } else {
-        sidebar.classList.add('d-none')
+        await mobileNav.classList.remove('fadeIn')
+        await mobileNav.classList.add('hidenav')
+        await sideBar.classList.add('flyOutAnimation')
+        await sideBar.classList.remove('flyInAnimation')
     }
 }
 
