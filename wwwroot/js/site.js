@@ -7,10 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('lastBodyClass') === 'dark') {
         document.body.classList.add('dark')
         document.querySelector('#switch-mode').checked = true;
+        document.querySelector('#mobile-switch-mode').checked = true;
+
     }
     else {
         document.body.classList.remove('dark')
         document.querySelector('#switch-mode').checked = false;
+        document.querySelector('#mobile-switch-mode').checked = false;
     }
 })
 
@@ -20,11 +23,34 @@ It adds/removes a predefined class name 'dark' to the body-tags classlist.
 Then it saves the user's last setting to localStorage. 
 */
 document.querySelector('#switch-mode').addEventListener('click', (e) => {
-    if (document.body.classList.contains('dark')) 
+    if (document.body.classList.contains('dark')) {
         document.body.classList.remove('dark')
-    else 
+        document.querySelector('#switch-mode').checked = false;
+        document.querySelector('#mobile-switch-mode').checked = false;
+
+    }
+    else {
         document.body.classList.add('dark')
+        document.querySelector('#switch-mode').checked = true;
+        document.querySelector('#mobile-switch-mode').checked = true;
+    }
     
+    localStorage.setItem('lastBodyClass', document.body.classList[0])
+})
+
+document.querySelector('#mobile-switch-mode').addEventListener('click', (e) => {
+    if (document.body.classList.contains('dark')) {
+        document.body.classList.remove('dark')
+        document.querySelector('#switch-mode').checked = false;
+        document.querySelector('#mobile-switch-mode').checked = false;
+
+    }
+    else {
+        document.body.classList.add('dark')
+        document.querySelector('#switch-mode').checked = true;
+        document.querySelector('#mobile-switch-mode').checked = true;
+    }
+
     localStorage.setItem('lastBodyClass', document.body.classList[0])
 })
 

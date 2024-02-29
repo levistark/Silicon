@@ -29,6 +29,7 @@
         // animation: navFlyInSmall 0.5s forwards;
 
         @include sm {
+            padding: 1rem 4rem;
             width: 30rem;
             right: -30rem;
             animation: navFlyInLarge 0.5s forwards;
@@ -56,6 +57,7 @@
                 animation: fade-in 1.5s, spin 1.5s;
                 cursor: pointer;
                 font-size: 15pt;
+                color: var(--main-title-clr);
             }
         }
 
@@ -94,7 +96,7 @@
         }
 
         .mobile-account-buttons {
-            margin-top: 4rem;
+            margin-top: 3rem;
             display: flex;
             flex-direction: column;
             gap: 15px;

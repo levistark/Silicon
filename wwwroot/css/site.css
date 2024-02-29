@@ -784,7 +784,7 @@ header .container #logo {
   background-repeat: no-repeat;
   background-position-y: center;
   background-size: fill;
-  background-color: var(--main-bg-clr);
+  background-color: transparent;
   min-width: 125px;
   min-height: 60px;
 }
@@ -3416,6 +3416,7 @@ footer .container p {
 }
 @media (min-width: 576px) {
   .mobile-nav-wrapper .mobile-nav {
+    padding: 1rem 4rem;
     width: 30rem;
     right: -30rem;
     animation: navFlyInLarge 0.5s forwards;
@@ -3442,6 +3443,7 @@ footer .container p {
   animation: fade-in 1.5s, spin 1.5s;
   cursor: pointer;
   font-size: 15pt;
+  color: var(--main-title-clr);
 }
 .mobile-nav-wrapper .mobile-nav .mobile-menu {
   margin-top: 2rem;
@@ -3472,7 +3474,7 @@ footer .container p {
   margin: 0 3px;
 }
 .mobile-nav-wrapper .mobile-nav .mobile-account-buttons {
-  margin-top: 4rem;
+  margin-top: 3rem;
   display: flex;
   flex-direction: column;
   gap: 15px;

@@ -7,42 +7,39 @@ header {
         align-items: center;
         justify-content: space-between;
         grid-template-columns: 1fr auto;
-        grid-template-areas:  "logo mobile";
+        grid-template-areas: "logo mobile";
         gap: 40px;
 
         @include md {
             grid-template-columns: 1fr auto auto;
-            grid-template-areas:  "logo switch mobile";
-        }
-        
-        @include lg {
-            grid-template-columns: auto 1fr auto auto;
-            grid-template-areas:  "logo menu switch buttons";
+            grid-template-areas: "logo switch mobile";
         }
 
-        #logo 
-        {
+        @include lg {
+            grid-template-columns: auto 1fr auto auto;
+            grid-template-areas: "logo menu switch buttons";
+        }
+
+        #logo {
             display: block;
-            grid-area: logo; 
+            grid-area: logo;
             background-image: var(--main-logo);
             background-repeat: no-repeat;
             background-position-y: center;
-
             background-size: fill;
-            background-color: var(--main-bg-clr);
-
+            background-color: transparent;
             min-width: 125px;
             min-height: 60px;
         }
 
-        #menu { 
-            grid-area: menu; 
+        #menu {
+            grid-area: menu;
             display: none;
 
             @include lg {
                 display: block;
             }
-            
+
             nav {
                 display: flex;
                 gap: 15px;
@@ -52,23 +49,23 @@ header {
                 }
             }
         }
-        
-        .btn-switch { 
-            grid-area: switch; 
+
+        .btn-switch {
+            grid-area: switch;
             display: none;
 
             label {
                 margin: 0 3px;
                 color: var(--main-text-clr);
             }
-            
+
             @include md {
                 display: block;
             }
         }
 
-        .account-buttons { 
-            grid-area: buttons; 
+        .account-buttons {
+            grid-area: buttons;
             display: none;
             gap: 15px;
 
@@ -78,13 +75,13 @@ header {
         }
 
         .btn-mobile {
-            grid-area: mobile; 
+            grid-area: mobile;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
 
-            
+
 
             @include lg {
                 display: none;
