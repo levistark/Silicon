@@ -2,13 +2,13 @@
     <div class="mobile-nav-backdrop"></div>
     <div class="mobile-nav">
         <div class="mobile-nav-header">
-            <a id="logo-mobile-nav" href="home.html"></a>
+            <a id="logo-mobile-nav" asp-controller="Home" asp-action="Index"></a>
             <i class="fa-solid fa-x menuside-toggle" onclick="toggleNavBar()"></i>
         </div>
         <nav class="mobile-menu">
-            <a class="menu-link" href="/courses.html">Overview</a>
-            <a class="menu-link" href="">Features</a>
-            <a class="menu-link" href="">Contact</a>
+            <a class="menu-link" asp-controller="Home" asp-action="Index">Overview</a>
+            <a class="menu-link" asp-controller="Home" asp-action="Index">Features</a>
+            <a class="menu-link" asp-controller="Contact" asp-action="Contact">Contact</a>
         </nav>
 
         <div class="btn-switch">

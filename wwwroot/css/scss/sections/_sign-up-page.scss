@@ -13,7 +13,26 @@
 
             form {
                 margin-bottom: 1rem;
-                
+
+                .input-group {
+                    display: flex;
+                    flex-direction: column;
+
+                    @include md {
+                        gap: 2%;
+                        flex-direction: row;
+                    }
+
+                    div {
+                        width: 100%;
+
+                        @include md {
+                            width: auto;
+                            width: 49%;
+                        }
+                    }
+                }
+
                 label {
                     font-weight: bold;
                     font-size: 11pt;
@@ -25,26 +44,9 @@
                     width: 100%;
                     outline: none;
                     padding: 0.5rem 1rem;
-                    border: solid var(--main-clr-input-border) 1px;
+                    border: solid var(--main-clr-input-border) 2px;
                     border-radius: 7px;
                     background-color: transparent;
-
-                }
-
-                .input-group {
-                    display: flex;
-
-                    @include md {
-                        gap: 1rem;
-                    }
-
-                    div {
-                        width: 100%;
-
-                        @include md {
-                            width: auto;
-                        }
-                    }                    
                 }
 
                 .checkbox-container {
@@ -53,16 +55,20 @@
                     align-items: center;
 
                     input {
-                        width: auto;
-                        margin-top: 0;
-                        margin-bottom: 0;
+                        width: 17px;
+                        height: 17px;
                     }
+
+                    .checkmark {
+                        color: $theme;
+                    }
+
                     label {
                         margin-top: 0;
                         margin-bottom: 0;
                     }
                 }
-                
+
                 button {
                     margin-top: 1rem;
                     width: 100%;
