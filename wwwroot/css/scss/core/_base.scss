@@ -59,27 +59,34 @@ span { @include standard-text; color: var(--main-text-clr); }
 
 small { @include standard-text; color: var(--main-text-clr); }
 
+button {
+    transition: 0.3s;
+}
 
-input { 
+input {
     color: var(--main-text-clr);
+    border: solid var(--main-clr-input-border) 2px;
 
-    &:hover  {
-        border: solid 2px $theme !important;
+    &:hover {
+        border: solid 2px $theme;
     }
+
     &:focus {
-        border: solid 2px var(--main-text-clr) !important;
+        border: solid 2px var(--main-text-clr);
     }
 }
 
-textarea { 
+textarea {
     color: var(--main-text-clr);
+    border: solid 2px var(---main-clr-input-border);
 
-    &:hover  {
-        border: solid 2px var(--main-text-clr) !important;
-        border: solid 2px $theme !important;
+    &:hover {
+        border: solid 2px var(--main-text-clr);
+        border: solid 2px $theme;
     }
+
     &:focus {
-        border: solid 2px var(--main-text-clr) !important;
+        border: solid 2px var(--main-text-clr);
     }
 }
 
@@ -106,10 +113,16 @@ h6, .h6 { @include h6; color: var(--main-title-clr); }
 
 .hidenav {
     animation: hideNav 0.5s forwards;
+    animation-delay: 0.2s;
+}
+
+.hidebackdrop {
+    animation: hideNav 0.5s forwards;
+    animation-delay: 0.2s;
 }
 
 .flyOutAnimation {
-    animation: navFlyOutSmall 0.6s forwards;
+    animation: navFlyOut 0.6s forwards;
 }
 
 .flyInAnimation {
@@ -122,7 +135,7 @@ h6, .h6 { @include h6; color: var(--main-title-clr); }
 }
 
 .fadeIn {
-    animation: fade-in 0.5s forwards;
+    animation: fade-in 0.4s forwards;
 }
 
 
@@ -156,4 +169,122 @@ p {
     @include xl {
         scale: 1;
     }
+}
+form {
+    transition: 0.3s;
+    .input-group {
+        position: relative;
+
+        span {
+            margin-top:2px;
+
+            @include sm {
+                position: absolute;
+                top: 18px;
+                right: 0;
+            }
+        }
+    }
+
+    .field-validation-error {
+        top: 0;
+        right: 0;
+        @include text-s;
+        color: $danger;
+
+        &::after {
+            position: absolute;
+            font-size: 2em;
+            display: block;
+            content: '\2BBF';
+            right: 15px;
+            top: 58px;
+
+            @include sm {
+                top: 38px;
+            }
+        }
+    }
+
+    .input-validation-error {
+        //position: relative;
+        border-color: $danger !important;
+        color: $danger;
+
+        &::placeholder {
+            color: $danger;
+        }
+    }
+}
+
+/* Customize the label (the container) */
+.checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container input {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    border: none;
+    z-index: -1;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: -10px !important;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border: 2px solid var(--main-clr-input-border);
+    border-radius: 4px;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkmark {
+    background-color: $theme;
+    border: none;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .checkmark:after {
+    left: 7px;
+    top: 3.5px;
+    width: 6px;
+    height: 11px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }

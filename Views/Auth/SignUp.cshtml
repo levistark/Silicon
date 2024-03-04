@@ -1,12 +1,10 @@
-﻿@{
-    ViewData["Title"] = "Sign Up";
-}
+﻿@model SignUpModel
 
 @await Html.PartialAsync("~/Views/Shared/Components/_MobileNavPartial.cshtml")
 @await Html.PartialAsync("~/Views/Shared/Components/_HeaderPartial.cshtml")
 
 <main>
-    @await Html.PartialAsync("~/Views/Shared/Sections/Authentication/_SignUpPartial.cshtml")
+    @await Html.PartialAsync("~/Views/Shared/Sections/Authentication/_SignUpPartial.cshtml", Model)
 </main>
 
 @await Html.PartialAsync("~/Views/Shared/Components/_FooterPartial.cshtml")

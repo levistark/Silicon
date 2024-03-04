@@ -1,12 +1,12 @@
 ﻿<header class="header-user">
     <div class="container">
-        <a id="logo" href="home.html"><img src="/images/logo/Silicon Logotype - Light Mode.svg" alt=""></a>
+        <a id="logo" asp-controller="Home" asp-action="Index"><img src="/images/logo/Silicon Logotype - Light Mode.svg" alt=""></a>
 
         <div id="menu">
             <nav>
-                <a class="menu-link" href="/courses.html">Overview</a>
-                <a class="menu-link" href="">Features</a>
-                <a class="menu-link" href="">Contact</a>
+                <a class="menu-link" asp-controller="Courses" asp-action="Courses">Overview</a>
+                <a class="menu-link" asp-controller="Home" asp-action="Index">Features</a>
+                <a class="menu-link" asp-controller="Contact" asp-action="Contact">Contact</a>
             </nav>
         </div>
 

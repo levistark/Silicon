@@ -14,7 +14,7 @@
             form {
                 margin-bottom: 1rem;
 
-                .input-group {
+                .input-group-group {
                     display: flex;
                     flex-direction: column;
 
@@ -23,7 +23,7 @@
                         flex-direction: row;
                     }
 
-                    div {
+                    .input-group {
                         width: 100%;
 
                         @include md {
@@ -42,30 +42,30 @@
 
                 input {
                     width: 100%;
-                    outline: none;
                     padding: 0.5rem 1rem;
-                    border: solid var(--main-clr-input-border) 2px;
                     border-radius: 7px;
                     background-color: transparent;
                 }
 
-                .checkbox-container {
+                .checkbox-group {
+                    margin-top: 1rem;
+                    margin-bottom: 0.5rem;
                     display: flex;
-                    gap: 1rem;
+                    gap: 0.5rem;
                     align-items: center;
+                    position: relative;
 
-                    input {
-                        width: 17px;
-                        height: 17px;
-                    }
-
-                    .checkmark {
-                        color: $theme;
-                    }
 
                     label {
                         margin-top: 0;
                         margin-bottom: 0;
+                        cursor: pointer;
+                    }
+                }
+
+                .checkbox-validation-message {
+                    &::after {
+                        display: none;
                     }
                 }
 
