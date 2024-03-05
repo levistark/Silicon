@@ -8,10 +8,10 @@ builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configura
 builder.Services.AddDefaultIdentity<ApplicationUser>(x =>
 {
     x.User.RequireUniqueEmail = true;
-    x.SignIn.RequireConfirmedEmail = true;
+    x.SignIn.RequireConfirmedEmail = false;
     x.Password.RequiredLength = 8;
 }).AddEntityFrameworkStores<DataContext>();
-    
+
 
 var app = builder.Build();
 

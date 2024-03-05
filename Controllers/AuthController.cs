@@ -1,28 +1,77 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Infrastructure.Models.Identification;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Silicon.Models.Authentication;
 
 namespace Silicon.Controllers;
-public class AuthController : Controller
+public class AuthController(SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> userManager) : Controller
 {
+    private readonly UserManager<ApplicationUser> _userManager = userManager;
+    private readonly SignInManager<ApplicationUser> _signInManager = signInManager;
+
     [HttpGet]
+    [Route("/signin")]
     public IActionResult SignIn()
     {
-        return View();
+        return View(new SignInModel());
+    }
+
+    [HttpPost]
+    [Route("/signin")]
+    public IActionResult SignIn(SignInModel model)
+    {
+        if (ModelState.IsValid)
+        {
+
+        }
+        return View(model);
     }
 
     [HttpGet]
+    [Route("/signup")]
     public IActionResult SignUp()
     {
         return View(new SignUpModel());
     }
 
     [HttpPost]
-    public IActionResult SignUp(SignUpModel model)
+    [Route("/signup")]
+    public async Task<IActionResult> SignUp(SignUpModel model)
     {
-        if (!ModelState.IsValid)
+        if (ModelState.IsValid)
         {
-            return View(model);
+
+            if (await _userManager.Users.AnyAsync(x => x.Email == model.Form.Email))
+            {
+                ModelState.AddModelError("Already Exists", "User with the same email address already exists");
+                ViewData["ErrorMessage"] = "User with the same email address already exists";
+                return View(model);
+            }
+
+            var result = await _userManager.CreateAsync(new ApplicationUser()
+            {
+                FirstName = model.Form.FirstName,
+                LastName = model.Form.LastName,
+                Email = model.Form.Email,
+                UserName = model.Form.Email
+            }, model.Form.Password);
+
+            if (result.Succeeded)
+            {
+                return RedirectToAction("SignIn", "Auth");
+            }
+
+            return RedirectToAction("Details", "Account");
         }
+        return RedirectToAction("Index", "Home");
+    }
+
+    [HttpPost]
+    [Route("/account/signout")]
+    public new async Task<IActionResult> SignOut()
+    {
+        await _signInManager.SignOutAsync();
         return RedirectToAction("Index", "Home");
     }
 }

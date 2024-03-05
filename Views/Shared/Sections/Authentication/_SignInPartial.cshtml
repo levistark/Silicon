@@ -1,24 +1,31 @@
-﻿<section id="sign-in-page" class="page-section">
+﻿@model SignInModel
+@{
+    ViewData["Title"] = "Sign Up";
+}
+
+<section id="sign-in-page" class="page-section">
     <div class="container">
         <div class="content">
             <h1>Welcome Back</h1>
             <p>Don't have an account yet? <a asp-controller="Auth" asp-action="SignUp">Sign up here.</a></p>
 
-            <form>
-                <label>Email</label>
-                <input type="email" placeholder="Enter your email address"></input>
-                <label>Password</label>
-                <input type="password" placeholder="* * * * * * * * *"></input>
+
+
+            <form method="post" asp-controller="Auth" asp-action="SignIn" novalidate>
+                <label asp-for="Form.Email">Email</label>
+                <input asp-for="Form.Email"></input>
+                <label asp-for="Form.Password">Password</label>
+                <input asp-for="Form.Email"></input>
 
                 <div class="checkbox-group">
                     <label class="checkbox-container">
-                        <input type="checkbox">
+                        <input asp-for="Form.RememberMe" type="checkbox">
                         <span class="checkmark"></span>
                     </label>
-                    <label>Remember me</label>
+                    <label asp-for="Form.RememberMe">Remember me</label>
                 </div>
 
-                <button class="btn-theme-s">Sign in</button>
+                <button id="signInFormBtn" disabled type="submit" class="btn-disabled">Sign in</button>
             </form>
             <a href="#">Forgot your password?</a>
 

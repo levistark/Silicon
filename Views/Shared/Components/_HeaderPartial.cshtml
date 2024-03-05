@@ -1,4 +1,5 @@
-﻿<header>
+﻿@inject SignInManager<ApplicationUser> _signInManager
+<header>
     <div class="container">
         <a id="logo" asp-controller="Home" asp-action="Index"></a>
 
@@ -19,16 +20,27 @@
             <label class="text-s">Dark</label>
         </div>
 
-        <div class="account-buttons">
-            <a asp-controller="Auth" asp-action="SignIn" class="btn-gray">
-                <i class="fa-solid fa-right-to-bracket"></i>
-                <span>Sign In</span>
+        @if (_signInManager.IsSignedIn(User))
+        {
+            <a href="/user-profile.html" class="btn-user-profile">
+                <!-- Dynamic -->
+                <img src="/images/courses/user-profile-small.svg"></img>
             </a>
-            <a asp-controller="Auth" asp-action="SignUp" class="btn-theme">
-                <i class="fa-regular fa-user"></i>
-                <span>Sign Up</span>
-            </a>
-        </div>
+        }
+        else
+        {
+            <div class="account-buttons">
+                <a asp-controller="Auth" asp-action="SignIn" class="btn-gray">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    <span>Sign In</span>
+                </a>
+                <a asp-controller="Auth" asp-action="SignUp" class="btn-theme">
+                    <i class="fa-regular fa-user"></i>
+                    <span>Sign Up</span>
+                </a>
+            </div>
+        }
+        
         <div class="menu-bar-container btn-mobile" onclick="toggleNavBar()">
             <i class="fa-solid fa-bars"></i>
         </div>

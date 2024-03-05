@@ -2,6 +2,6 @@
 
 public class SignUpModel
 {
-    public string Title { get; set; } = null!;
+    public string? Title { get; set; }
     public SignUpFormModel Form { get; set; } = new SignUpFormModel();
 }

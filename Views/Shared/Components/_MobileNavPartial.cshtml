@@ -1,10 +1,19 @@
-﻿<div class="mobile-nav-wrapper d-none">
+﻿@inject UserManager<ApplicationUser> _userManager
+@inject SignInManager<ApplicationUser> _signInManager
+
+<div class="mobile-nav-wrapper d-none">
     <div class="mobile-nav-backdrop"></div>
     <div class="mobile-nav">
         <div class="mobile-nav-header">
             <a id="logo-mobile-nav" asp-controller="Home" asp-action="Index"></a>
             <i class="fa-solid fa-x menuside-toggle" onclick="toggleNavBar()"></i>
         </div>
+        @if (_signInManager.IsSignedIn(User))
+        {
+            <div class="nav-profile-img">
+                <img src="#" alt="Alternate Text" />
+            </div>
+        }
         <nav class="mobile-menu">
             <a class="menu-link" asp-controller="Home" asp-action="Index">Overview</a>
             <a class="menu-link" asp-controller="Home" asp-action="Index">Features</a>
@@ -21,14 +30,24 @@
         </div>
 
         <div class="mobile-account-buttons">
-            <a href="/sign-in.html" class="btn-gray">
-                <i class="fa-solid fa-right-to-bracket"></i>
-                <span>Sign In</span>
-            </a>
-            <a href="/sign-up.html" class="btn-theme">
-                <i class="fa-regular fa-user"></i>
-                <span>Sign Up</span>
-            </a>
+            @if (_signInManager.IsSignedIn(User))
+            {
+                <a asp-controller="Auth" asp-action="SignOut" class="btn-gray">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    <span>Sign Out</span>
+                </a>
+            }
+            else
+            {
+                <a asp-controller="Auth" asp-action="SignIn" class="btn-gray">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    <span>Sign In</span>
+                </a>
+                <a asp-controller="Auth" asp-action="SignUp" class="btn-theme">
+                    <i class="fa-regular fa-user"></i>
+                    <span>Sign Up</span>
+                </a>
+            }
         </div>
     </div>
 </div>

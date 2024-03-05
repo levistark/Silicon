@@ -2442,7 +2442,6 @@ footer .container p {
   width: 100%;
   outline: none;
   padding: 0.5rem 1rem;
-  border: solid var(--main-clr-input-border) 1px;
   border-radius: 8px;
   background-color: transparent;
 }
@@ -2455,7 +2454,6 @@ footer .container p {
   height: 100px; /* Adjust the height as per your requirement */
   outline: none;
   padding: 0.5rem 1rem;
-  border: solid var(--main-clr-input-border) 1px;
   border-radius: 8px;
   resize: vertical; /* Allows vertical resizing */
   background-color: transparent;
@@ -2500,7 +2498,6 @@ footer .container p {
   width: 100%;
   outline: none;
   padding: 0.5rem 1rem;
-  border: solid var(--main-clr-input-border) 1px;
   border-radius: 8px;
   background-color: transparent;
 }
@@ -2669,7 +2666,6 @@ footer .container p {
   width: 100%;
   outline: none;
   padding: 0.5rem 1rem;
-  border: solid 1px var(--main-clr-input-border);
   border-radius: 8px;
   background-color: transparent;
 }
@@ -2698,15 +2694,18 @@ footer .container p {
 #user-profile-security .container .user-profile-security .delete-account-heading {
   margin-top: 3rem;
 }
-#user-profile-security .container .user-profile-security .checkbox-container {
-  margin: 2rem 0;
+#user-profile-security .container .user-profile-security .checkbox-group {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   display: flex;
+  gap: 0.5rem;
   align-items: center;
-  gap: 1rem;
+  position: relative;
 }
-#user-profile-security .container .user-profile-security .checkbox-container input {
-  height: 15px;
-  width: 15px;
+#user-profile-security .container .user-profile-security .checkbox-group label {
+  margin-top: 0;
+  margin-bottom: 0;
+  cursor: pointer;
 }
 
 #user-profile-saved-courses .container {

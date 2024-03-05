@@ -3,11 +3,20 @@
 namespace Silicon.Controllers;
 public class AccountController : Controller
 {
-    public IActionResult SignIn()
+    [Route("/account/details")]
+    public IActionResult AccountDetails()
     {
         return View();
     }
-    public IActionResult SignUp()
+
+    [Route("/account/saved")]
+    public IActionResult AccountSavedItems()
+    {
+        return View();
+    }
+
+    [Route("/account/security")]
+    public IActionResult AccountSecurity()
     {
         return View();
     }
