@@ -96,7 +96,7 @@ body.dark img {
   --main-appstore-img: url("/images/app/app_appstore.svg");
   --main-googleplay-img: url("/images/app/app_googleplay.svg");
   --main-illustration-img: url("/images/courses/officedesk-illustration.svg");
-  --404-img: url("/images/404.svg");
+  --notfound-img: url("/images/404.svg");
 }
 
 .dark {
@@ -115,7 +115,7 @@ body.dark img {
   --main-appstore-img: url("/images/app/appstore-darkmode.svg");
   --main-googleplay-img: url("/images/app/googleplay-darkmode.svg");
   --main-illustration-img: url("/images/courses/officedesk-illustration_dark.svg");
-  --404-img: url("/images/404_dark.svg");
+  --notfound-img: url("/images/404_dark.svg");
 }
 
 p, .p {
@@ -2943,7 +2943,7 @@ footer .container p {
   text-align: center;
 }
 #error-not-found .container .content .img-container {
-  background-image: var(--404-img);
+  background-image: var(--notfound-img);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
