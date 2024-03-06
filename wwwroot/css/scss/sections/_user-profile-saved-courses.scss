@@ -14,6 +14,8 @@
             align-items: center;
             border-bottom: solid var(--main-clr-thin-gray);
             padding-bottom: 3rem;
+            margin-top: -2rem;
+
 
             @include sm {
                 flex-direction: row;
@@ -39,7 +41,7 @@
                     width: 7rem;
                     border-radius: 50%;
                     background-size: cover;
-    
+
                     img {
                         height: auto;
                         width: 100%;
@@ -51,15 +53,12 @@
                         position: absolute;
                         bottom: 0;
                         right: 0;
-
                         display: flex;
                         justify-content: center;
                         align-items: center;
-
                         padding: 7px;
                         border-radius: 50%;
-                        z-index: 1;
-
+                        z-index: 0;
                         color: var(--main-title-clr);
                         background-color: var(--main-bg-clr);
                         box-shadow: 2px 2px 5px 1px var(--main-bg-clr-shadow);
@@ -75,11 +74,13 @@
                         }
                     }
                 }
+
                 h6 {
                     margin-top: 1rem;
                     font-size: 15pt;
                 }
             }
+
             .btn-group {
                 display: flex;
                 flex-direction: column;
@@ -102,8 +103,8 @@
                     align-items: center;
                     justify-content: start;
                     width: 15rem;
-
                 }
+
                 .btn-gray {
                     background-color: transparent;
                     color: var(--main-title-clr);
@@ -111,7 +112,7 @@
                     i {
                         color: var(--main-text-clr);
                     }
-                    
+
                     &:hover {
                         background-color: var(--main-bg-clr-secondary);
                     }
@@ -121,9 +122,11 @@
 
         .user-profile-saved-courses {
             width: 100%;
+
             @include xl {
                 padding-left: 6rem;
             }
+
             .heading-container {
                 display: flex;
                 justify-content: space-between;
@@ -148,25 +151,25 @@
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
                 gap: 1rem;
-    
+
                 @include xl {
                     grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
                 }
-    
+
                 .grid-item {
                     position: relative;
                     overflow: hidden;
                     border-radius: 10px;
                     box-shadow: 0 1px 15px 0px var(--main-bg-clr-shadow);
-    
+
                     &:hover {
                         text-decoration: none;
                     }
-                    
-                    &:hover .item-image-container img{
+
+                    &:hover .item-image-container img {
                         transform: scale(1.05);
                     }
-    
+
                     &:hover .item-content {
                         background-color: var(--main-clr-hover);
                     }
@@ -183,20 +186,19 @@
                             padding: 0.4rem 0.8rem;
                             border-radius: 8px;
                         }
-    
+
                         img {
                             transition: 0.2s;
                             height: auto;
                             width: 100%;
                         }
-    
+
                         .course-save-button {
                             position: absolute;
                             top: 17px;
                             right: 17px;
                             padding: 9px 16px;
                             border-radius: 50%;
-    
                             background: $gray-300;
                             color: inherit;
                             border: none;
@@ -204,45 +206,44 @@
                             cursor: pointer;
                             outline: inherit;
                             transition: 0.2s;
-    
+
                             &:hover {
                                 background-color: black;
                             }
-    
+
                             &:hover i {
                                 color: white;
                             }
-    
+
                             i {
                                 transition: 0.2s;
                                 font-size: 11pt;
                             }
-                            
                         }
                     }
-    
+
                     .item-content {
                         padding: 1rem;
                         display: flex;
                         flex-direction: column;
                         background-color: var(--main-bg-clr-custom);
                         transition: 0.2s;
-    
+
                         span {
                             margin-top: 1rem;
                             font-weight: bold;
                         }
-    
+
                         .content-meta {
                             margin-top: 1rem;
                             border-top: solid 1px var(--main-clr-thin-gray);
                             padding-top: 1rem;
                             display: flex;
-                            
+
                             .meta-length {
                                 margin-right: 1rem;
                             }
-    
+
                             div {
                                 i {
                                     margin-right: 0.5rem;
@@ -250,11 +251,9 @@
                                 }
                             }
                         }
-                        
                     }
                 }
             }
-
         }
     }
 }

@@ -84,6 +84,30 @@
     } 
 }
 
+.btn-dark-gray {
+    @include button;
+    background: $gray-300;
+    color: $gray-800;
+    border: none;
+
+    span {
+        transition: 0.3s;
+        color: $gray-800;
+    }
+
+    &:hover {
+        text-decoration: none;
+        background: $gray-700;
+        color: $white;
+    }
+
+    &:hover span {
+        text-decoration: none;
+        color: $white;
+    }
+}
+
+
 .btn-switch {
     display: flex;
     align-items: center;

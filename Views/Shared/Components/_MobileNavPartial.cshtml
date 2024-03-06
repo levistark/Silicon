@@ -11,7 +11,8 @@
         @if (_signInManager.IsSignedIn(User))
         {
             <div class="mobile-nav-profile-img">
-                <img src="#" alt="Alternate Text" />
+                <img src="/images/courses/user-profile-small.svg" alt="Your profile image" />
+                <button class="btn-update-img"><i class="fa-solid fa-rotate"></i></button>
             </div>
         }
         <nav class="mobile-menu">
@@ -32,14 +33,14 @@
         <div class="mobile-account-buttons">
             @if (_signInManager.IsSignedIn(User))
             {
-                <a asp-controller="Auth" asp-action="SignOut" class="btn-gray">
-                    <i class="fa-solid fa-right-to-bracket"></i>
+                <a asp-controller="Auth" asp-action="SignOut" class="btn-dark-gray">
+                    <i class="fa-solid fa-right-from-bracket"></i>
                     <span>Sign Out</span>
                 </a>
             }
             else
             {
-                <a asp-controller="Auth" asp-action="SignIn" class="btn-gray">
+                <a asp-controller="Auth" asp-action="SignIn" class="btn-dark-gray">
                     <i class="fa-solid fa-right-to-bracket"></i>
                     <span>Sign In</span>
                 </a>

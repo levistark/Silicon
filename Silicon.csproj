@@ -63,9 +63,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Account\" />
     <Folder Include="Models\Contact\" />
-    <Folder Include="Models\Courses\" />
     <Folder Include="Models\User\" />
     <Folder Include="Views\Shared\Sections\User\" />
   </ItemGroup>

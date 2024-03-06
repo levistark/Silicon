@@ -817,6 +817,34 @@ a:hover {
   color: #FFFFFF;
 }
 
+.btn-dark-gray {
+  border-radius: 6px;
+  border: 0;
+  text-align: center;
+  font-size: 14px;
+  padding: 8px 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background: #E2E5F1;
+  color: #27293f;
+  border: none;
+}
+.btn-dark-gray span {
+  transition: 0.3s;
+  color: #27293f;
+}
+.btn-dark-gray:hover {
+  text-decoration: none;
+  background: #565973;
+  color: #FFFFFF;
+}
+.btn-dark-gray:hover span {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
 .btn-switch {
   display: flex;
   align-items: center;
@@ -968,7 +996,11 @@ header .container .btn-user-profile {
   display: none;
   grid-area: mobile;
   border-radius: 50%;
-  background-size: cover;
+  overflow: hidden;
+  box-shadow: 0 0 0px 0px #6366F1;
+}
+header .container .btn-user-profile:hover {
+  box-shadow: 0 0 10px 1px #6366F1;
 }
 @media (min-width: 992px) {
   header .container .btn-user-profile {
@@ -976,7 +1008,11 @@ header .container .btn-user-profile {
     grid-area: buttons;
   }
 }
+header .container .btn-user-profile:hover img {
+  transform: scale(1.09);
+}
 header .container .btn-user-profile img {
+  transition: 0.2s;
   height: auto;
   width: 100%;
 }
@@ -2187,7 +2223,7 @@ footer .container p {
   background-color: #EEAAAA;
   border-radius: 6px;
   text-align: center;
-  color: var(--main-title-clr);
+  color: black;
 }
 #sign-in-page .container .content p {
   font-size: 11pt;
@@ -2344,6 +2380,7 @@ footer .container p {
   align-items: center;
   border-bottom: solid var(--main-clr-thin-gray);
   padding-bottom: 3rem;
+  margin-top: -2rem;
 }
 @media (min-width: 576px) {
   #user-profile .container .profile-sidebar {
@@ -2387,7 +2424,7 @@ footer .container p {
   align-items: center;
   padding: 7px;
   border-radius: 50%;
-  z-index: 1;
+  z-index: 0;
   color: var(--main-title-clr);
   background-color: var(--main-bg-clr);
   box-shadow: 2px 2px 5px 1px var(--main-bg-clr-shadow);
@@ -2565,6 +2602,7 @@ footer .container p {
   align-items: center;
   border-bottom: solid var(--main-clr-thin-gray);
   padding-bottom: 3rem;
+  margin-top: -2rem;
 }
 @media (min-width: 576px) {
   #user-profile-security .container .profile-sidebar {
@@ -2751,6 +2789,7 @@ footer .container p {
   align-items: center;
   border-bottom: solid var(--main-clr-thin-gray);
   padding-bottom: 3rem;
+  margin-top: -2rem;
 }
 @media (min-width: 576px) {
   #user-profile-saved-courses .container .profile-sidebar {
@@ -2794,7 +2833,7 @@ footer .container p {
   align-items: center;
   padding: 7px;
   border-radius: 50%;
-  z-index: 1;
+  z-index: 0;
   color: var(--main-title-clr);
   background-color: var(--main-bg-clr);
   box-shadow: 2px 2px 5px 1px var(--main-bg-clr-shadow);
@@ -3620,12 +3659,39 @@ footer .container p {
   color: var(--main-title-clr);
 }
 .mobile-nav-wrapper .mobile-nav .mobile-nav-profile-img {
+  margin-top: 1.5rem;
+  position: relative;
+  width: 7rem;
   border-radius: 50%;
   background-size: cover;
 }
 .mobile-nav-wrapper .mobile-nav .mobile-nav-profile-img img {
   height: auto;
   width: 100%;
+}
+.mobile-nav-wrapper .mobile-nav .mobile-nav-profile-img .btn-update-img {
+  outline: none;
+  border: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7px;
+  border-radius: 50%;
+  z-index: 1;
+  color: var(--main-title-clr);
+  background-color: var(--main-bg-clr);
+  box-shadow: 2px 2px 5px 1px var(--main-bg-clr-shadow);
+  transition: 0.2s;
+}
+.mobile-nav-wrapper .mobile-nav .mobile-nav-profile-img .btn-update-img:hover {
+  background-color: var(--main-title-clr);
+  color: var(--main-bg-clr);
+}
+.mobile-nav-wrapper .mobile-nav .mobile-nav-profile-img .btn-update-img i {
+  font-size: 10pt;
 }
 .mobile-nav-wrapper .mobile-nav .mobile-menu {
   margin-top: 2rem;
@@ -3661,7 +3727,4 @@ footer .container p {
   flex-direction: column;
   gap: 15px;
   width: 100%;
-}
-.mobile-nav-wrapper .mobile-nav .mobile-account-buttons .btn-gray {
-  background-color: #E2E5F1;
 }

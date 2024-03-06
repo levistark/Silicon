@@ -14,6 +14,7 @@
             align-items: center;
             border-bottom: solid var(--main-clr-thin-gray);
             padding-bottom: 3rem;
+            margin-top: -2rem;
 
             @include sm {
                 flex-direction: row;
@@ -58,7 +59,7 @@
 
                         padding: 7px;
                         border-radius: 50%;
-                        z-index: 1;
+                        z-index: 0;
 
                         color: var(--main-title-clr);
                         background-color: var(--main-bg-clr);

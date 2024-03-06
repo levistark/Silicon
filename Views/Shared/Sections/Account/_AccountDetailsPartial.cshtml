@@ -1,45 +1,29 @@
-﻿<section id="user-profile" class="page-section">
+﻿@model ApplicationUser
+<section id="user-profile" class="page-section">
     <div class="container">
 
-        <div class="profile-sidebar">
-            <div class="user-info">
-                <div class="image-container">
-                    <img src="/images/courses/user-profile-small.svg"></img>
-                    <button class="btn-update-img"><i class="fa-solid fa-rotate"></i></button>
-                </div>
-                <h6>User name</h6>
-                <p>email@domain.com</p>
-            </div>
-
-            <div class="btn-group">
-                <a asp-action="AccountDetails" asp-controller="Account" class="btn-theme-s"><i class="fa-solid fa-gear"></i>Account Details</a>
-                <a asp-action="AccountSecurity" asp-controller="Account" class="btn-gray"><i class="fa-solid fa-lock"></i>Security</a>
-                <a asp-action="AccountSavedItems" asp-controller="Account" class="btn-gray"><i class="fa-regular fa-bookmark"></i>Saved Courses</a>
-                <a asp-action="SignOut" asp-controller="Auth" class="btn-gray"><i class="fa-solid fa-right-from-bracket"></i>Sign out</a>
-            </div>
-
-        </div>
+        @await Html.PartialAsync("~/Views/Shared/Sections/Account/_AccountMenuPartial.cshtml", Model)
 
         <div class="account-details-container">
             <h1>Account Details</h1>
             <h5>Basic info</h5>
 
-            <form class="form-basic-info">
+            <form class="form-basic-info" method="post">
                 <div class="firstname-group">
                     <label>First name</label>
-                    <input type="text" placeholder="First name"></input>
+                    <input type="text" placeholder="@Model.FirstName"></input>
                 </div>
                 <div class="lastname-group">
                     <label>Last name</label>
-                    <input type="text" placeholder="Last name"></input>
+                    <input type="text" placeholder="@Model.LastName"></input>
                 </div>
                 <div class="email-group ">
                     <label>Email address</label>
-                    <input type="email" placeholder="email@domain.com"></input>
+                    <input type="email" placeholder="@Model.Email"></input>
                 </div>
                 <div class="phone-group">
                     <label>Phone</label>
-                    <input type="text" placeholder="+4671234567"></input>
+                    <input type="text" placeholder="Your phone number"></input>
                 </div>
                 <div class="bio-group">
                     <label>Bio <span>(optional)</span></label>

@@ -14,7 +14,7 @@ public class AuthController(SignInManager<ApplicationUser> signInManager, UserMa
     [Route("/signin")]
     public IActionResult SignIn()
     {
-        if (User != null)
+        if (_signInManager.IsSignedIn(User))
             return RedirectToAction("AccountDetails", "Account");
 
         return View(new SignInModel());
@@ -32,9 +32,11 @@ public class AuthController(SignInManager<ApplicationUser> signInManager, UserMa
             {
                 return RedirectToAction("AccountDetails", "Account");
             }
+
+            ModelState.AddModelError("Incorrect values", "Incorrect email or password");
+            ViewData["ErrorMessage"] = "Incorrect email or password";
         }
-        ModelState.AddModelError("Incorrect values", "Incorrect email or password");
-        ViewData["ErrorMessage"] = "Incorrect email or password";
+
         return View(model);
     }
 
@@ -42,7 +44,7 @@ public class AuthController(SignInManager<ApplicationUser> signInManager, UserMa
     [Route("/signup")]
     public IActionResult SignUp()
     {
-        if (User != null)
+        if (_signInManager.IsSignedIn(User))
             return RedirectToAction("AccountDetails", "Account");
 
         return View(new SignUpModel());
@@ -80,7 +82,7 @@ public class AuthController(SignInManager<ApplicationUser> signInManager, UserMa
         return RedirectToAction("Index", "Home");
     }
 
-    [HttpPost]
+    [HttpGet]
     [Route("/account/signout")]
     public new async Task<IActionResult> SignOut()
     {

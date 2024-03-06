@@ -7,6 +7,10 @@
             <nav>
                 <a class="menu-link" asp-controller="Home" asp-action="Index">Overview</a>
                 <a class="menu-link" asp-controller="Home" asp-action="Index">Features</a>
+                @if (_signInManager.IsSignedIn(User))
+                {
+                    <a class="menu-link" asp-controller="Courses" asp-action="Courses">Courses</a>
+                }
                 <a class="menu-link" asp-controller="Contact" asp-action="Contact">Contact</a>
             </nav>
         </div>

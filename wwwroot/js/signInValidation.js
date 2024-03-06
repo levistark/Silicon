@@ -63,6 +63,14 @@ function validateForm() {
     }
 }
 
+/*
+Validate the form on page load
+*/
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("signInEmail").value = "";
+    validateForm();
+})
+
 
 /* 
 Adding event-listeners for all inputs on the site

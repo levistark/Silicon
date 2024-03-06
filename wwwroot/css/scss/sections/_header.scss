@@ -68,7 +68,12 @@ header {
             display: none;
             grid-area: mobile;
             border-radius: 50%;
-            background-size: cover;
+            overflow: hidden;
+            box-shadow: 0 0 0px 0px $theme;
+
+            &:hover {
+                box-shadow: 0 0 10px 1px $theme;
+            }
 
 
             @include lg {
@@ -76,7 +81,12 @@ header {
                 grid-area: buttons;
             }
 
+            &:hover img {
+                transform: scale(1.09);
+            }
+
             img {
+                transition: 0.2s;
                 height: auto;
                 width: 100%;
             }

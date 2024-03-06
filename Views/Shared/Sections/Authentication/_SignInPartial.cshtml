@@ -8,7 +8,7 @@
         <div class="content">
                 @if (!string.IsNullOrEmpty(ViewData["ErrorMessage"]?.ToString()))
                 {
-                    <div class="signInErrorBox d-none" id="signInErrorBox">@ViewData["ErrorMessage"]</div>
+                    <div class="signInErrorBox" id="signInErrorBox">@ViewData["ErrorMessage"]</div>
                 }
                 else
                 {
@@ -20,7 +20,7 @@
 
             <form method="post" asp-controller="Auth" asp-action="SignIn" novalidate>
                 <label asp-for="Form.Email">Email</label>
-                <input asp-for="Form.Email">
+                <input asp-for="Form.Email" id="signInEmail">
                 <label asp-for="Form.Password">Password</label>
                 <input asp-for="Form.Password">
 
