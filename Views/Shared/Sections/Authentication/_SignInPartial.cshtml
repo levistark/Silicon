@@ -1,21 +1,28 @@
 ﻿@model SignInModel
 @{
-    ViewData["Title"] = "Sign Up";
+    ViewData["Title"] = "Sign In";
 }
 
 <section id="sign-in-page" class="page-section">
     <div class="container">
         <div class="content">
+                @if (!string.IsNullOrEmpty(ViewData["ErrorMessage"]?.ToString()))
+                {
+                    <div class="signInErrorBox d-none" id="signInErrorBox">@ViewData["ErrorMessage"]</div>
+                }
+                else
+                {
+                    <div class="signInErrorBox d-none" id="signInErrorBox">Incorrect email or password</div>
+                }
+
             <h1>Welcome Back</h1>
             <p>Don't have an account yet? <a asp-controller="Auth" asp-action="SignUp">Sign up here.</a></p>
 
-
-
             <form method="post" asp-controller="Auth" asp-action="SignIn" novalidate>
                 <label asp-for="Form.Email">Email</label>
-                <input asp-for="Form.Email"></input>
+                <input asp-for="Form.Email">
                 <label asp-for="Form.Password">Password</label>
-                <input asp-for="Form.Email"></input>
+                <input asp-for="Form.Password">
 
                 <div class="checkbox-group">
                     <label class="checkbox-container">
@@ -39,3 +46,4 @@
         </div>
     </div>
 </section>
+@await Html.PartialAsync("_SignInValidationScriptPartial")

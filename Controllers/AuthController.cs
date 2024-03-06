@@ -14,17 +14,27 @@ public class AuthController(SignInManager<ApplicationUser> signInManager, UserMa
     [Route("/signin")]
     public IActionResult SignIn()
     {
+        if (User != null)
+            return RedirectToAction("AccountDetails", "Account");
+
         return View(new SignInModel());
     }
 
     [HttpPost]
     [Route("/signin")]
-    public IActionResult SignIn(SignInModel model)
+    public async Task<IActionResult> SignIn(SignInModel model)
     {
         if (ModelState.IsValid)
         {
+            var result = await _signInManager.PasswordSignInAsync(model.Form.Email, model.Form.Password, model.Form.RememberMe, false);
 
+            if (result.Succeeded)
+            {
+                return RedirectToAction("AccountDetails", "Account");
+            }
         }
+        ModelState.AddModelError("Incorrect values", "Incorrect email or password");
+        ViewData["ErrorMessage"] = "Incorrect email or password";
         return View(model);
     }
 
@@ -32,6 +42,9 @@ public class AuthController(SignInManager<ApplicationUser> signInManager, UserMa
     [Route("/signup")]
     public IActionResult SignUp()
     {
+        if (User != null)
+            return RedirectToAction("AccountDetails", "Account");
+
         return View(new SignUpModel());
     }
 

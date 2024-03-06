@@ -45,7 +45,19 @@ const formErrorHandler = (e, validationResult) => {
     }
 }
 
-const textFormValidator = (e) => {
+let forms = document.querySelectorAll('form')
+let inputs = document.querySelectorAll('input')
+
+let signUpFormFields = {
+    firstName: false,
+    lastName: false,
+    email: false,
+    password: false,
+    passwordConfirm: false,
+    termsAndConditions: false,
+};
+
+const signUpTextValidator = (e) => {
     formErrorHandler(e, lengthValidator(e.target.value, 2, 20))
 
     // Check what type of text-field it is
@@ -60,21 +72,21 @@ const textFormValidator = (e) => {
     }
 }
 
-const emailFormValidator = (e) => {
+const signUpEmailValidator = (e) => {
     formErrorHandler(e, emailValidator(e.target.value))
 
     signUpFormFields.email = emailValidator(e.target.value)
     validateSignUpForm();
 } 
 
-const passwordFormValidator = (e) => {
+const signUpPasswordValidator = (e) => {
     formErrorHandler(e, passwordValidator(e.target.value))
 
     signUpFormFields.password = passwordValidator(e.target.value)
     validateSignUpForm();
 }
 
-const passwordConfirmFormValidator = (e, compareValue) => {
+const signUpPasswordConfirmValidator = (e, compareValue) => {
     formErrorHandler(e, compareValidator(e.target.value, compareValue))
 
     signUpFormFields.passwordConfirm = compareValidator(e.target.value, compareValue)
@@ -84,18 +96,6 @@ const passwordConfirmFormValidator = (e, compareValue) => {
 const checkboxFormValidator = (e) => {
     formErrorHandler(e, checkedValidator(e.target))
 }
-
-let forms = document.querySelectorAll('form')
-let inputs = document.querySelectorAll('input')
-
-let signUpFormFields = {
-    firstName: false,
-    lastName: false,
-    email: false,
-    password: false,
-    passwordConfirm: false,
-    termsAndConditions: false,
-};
 
 function validateSignUpForm() {
     let fieldValues = []
@@ -119,20 +119,25 @@ function validateSignUpForm() {
     }
 }
 
+
 /* 
 Adding event-listeners for all inputs on the site
 */
 inputs.forEach(input => {
+    
     if (input.dataset.val === 'true') {
         if (input.type === 'checkbox') {
             input.addEventListener('change', (e) => {
+
                 checkboxFormValidator(e)
 
-                // Add field result the key in signUpFormFields
+                // Checking if the checkbox is valid
                 signUpFormFields.termsAndConditions = checkedValidator(e.target)
 
                 // Checking if all the fields in the form are valid, then handling submit button state
                 validateSignUpForm();
+
+                
             })
         }
         else {
@@ -140,11 +145,11 @@ inputs.forEach(input => {
                 switch (e.target.type) {
 
                     case 'text':
-                        textFormValidator(e)
+                        signUpTextValidator(e)
                         break;
 
                     case 'email':
-                        emailFormValidator(e)
+                        signUpEmailValidator(e)
                         break;
 
                     case 'password':
@@ -153,14 +158,14 @@ inputs.forEach(input => {
                             let compareValue = document.querySelector('#Form_Password').value
 
                             if (compareValue.length !== 0) {
-                                passwordConfirmFormValidator(e, compareValue)
+                                signUpPasswordConfirmValidator(e, compareValue)
                             }
                             else {
-                                passwordFormValidator(e)
+                                signUpPasswordValidator(e)
                             }
                         }
                         else {
-                            passwordFormValidator(e)
+                            signUpPasswordValidator(e)
                         }
                         break;
                 }

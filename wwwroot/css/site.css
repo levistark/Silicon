@@ -964,6 +964,22 @@ header .container .btn-switch label {
     display: block;
   }
 }
+header .container .btn-user-profile {
+  display: none;
+  grid-area: mobile;
+  border-radius: 50%;
+  background-size: cover;
+}
+@media (min-width: 992px) {
+  header .container .btn-user-profile {
+    display: flex;
+    grid-area: buttons;
+  }
+}
+header .container .btn-user-profile img {
+  height: auto;
+  width: 100%;
+}
 header .container .account-buttons {
   grid-area: buttons;
   display: none;
@@ -2161,6 +2177,17 @@ footer .container p {
 }
 #sign-in-page .container .content {
   max-width: 600px;
+  position: relative;
+}
+#sign-in-page .container .content .signInErrorBox {
+  position: absolute;
+  top: -3.8rem;
+  width: 100%;
+  padding: 0.5rem 1.5rem;
+  background-color: #EEAAAA;
+  border-radius: 6px;
+  text-align: center;
+  color: var(--main-title-clr);
 }
 #sign-in-page .container .content p {
   font-size: 11pt;
@@ -3546,6 +3573,7 @@ footer .container p {
   background-color: rgba(0, 0, 0, 0.674);
   content: ".";
   visibility: none;
+  cursor: pointer;
 }
 .mobile-nav-wrapper .mobile-nav {
   position: fixed;
@@ -3590,6 +3618,14 @@ footer .container p {
   cursor: pointer;
   font-size: 15pt;
   color: var(--main-title-clr);
+}
+.mobile-nav-wrapper .mobile-nav .mobile-nav-profile-img {
+  border-radius: 50%;
+  background-size: cover;
+}
+.mobile-nav-wrapper .mobile-nav .mobile-nav-profile-img img {
+  height: auto;
+  width: 100%;
 }
 .mobile-nav-wrapper .mobile-nav .mobile-menu {
   margin-top: 2rem;

@@ -6,6 +6,19 @@
 
         .content {
             max-width: 600px;
+            position:relative;
+
+            .signInErrorBox {
+                position: absolute;
+                top: -3.8rem;
+                width: 100%;
+                padding: 0.5rem 1.5rem;
+                background-color: #EEAAAA;
+                border-radius: 6px;
+
+                text-align: center;
+                color: var(--main-title-clr);
+            }
 
             p {
                 font-size: 11pt;

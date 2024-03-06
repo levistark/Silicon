@@ -22,9 +22,9 @@
 
         @if (_signInManager.IsSignedIn(User))
         {
-            <a href="/user-profile.html" class="btn-user-profile">
+            <a asp-controller="Account" asp-action="AccountDetails" class="btn-user-profile">
                 <!-- Dynamic -->
-                <img src="/images/courses/user-profile-small.svg"></img>
+                <img src="/images/courses/user-profile-small.svg">
             </a>
         }
         else

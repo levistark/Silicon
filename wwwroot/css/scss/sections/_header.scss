@@ -64,6 +64,24 @@ header {
             }
         }
 
+        .btn-user-profile {
+            display: none;
+            grid-area: mobile;
+            border-radius: 50%;
+            background-size: cover;
+
+
+            @include lg {
+                display: flex;
+                grid-area: buttons;
+            }
+
+            img {
+                height: auto;
+                width: 100%;
+            }
+        }
+
         .account-buttons {
             grid-area: buttons;
             display: none;
@@ -73,6 +91,8 @@ header {
                 display: flex;
             }
         }
+
+
 
         .btn-mobile {
             grid-area: mobile;
