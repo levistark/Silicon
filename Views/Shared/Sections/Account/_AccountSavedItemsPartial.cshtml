@@ -1,9 +1,9 @@
-﻿@model ApplicationUser
+﻿@model AccountViewModel
 
 <section id="user-profile-saved-courses" class="page-section">
     <div class="container">
 
-        @await Html.PartialAsync("~/Views/Shared/Sections/Account/_AccountMenuPartial.cshtml", Model)
+        @await Html.PartialAsync("~/Views/Shared/Sections/Account/_AccountMenuPartial.cshtml", Model, ViewData)
 
 
         <div class="user-profile-saved-courses">

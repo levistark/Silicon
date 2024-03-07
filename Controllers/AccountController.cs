@@ -17,15 +17,21 @@ public class AccountController(SignInManager<ApplicationUser> signInManager, Use
             return RedirectToAction("SignIn", "Auth");
         }
 
-        var userEntity = await _userManager.GetUserAsync(User);
+        var viewModel = await GenerateAccountViewModelAsync();
 
-        if (userEntity != null)
-        {
-            var viewModel = new AccountViewModel() { User = userEntity };
+        if (viewModel != null)
             return View(viewModel);
-        }
-        return View();
 
+        await _signInManager.SignOutAsync();
+        return RedirectToAction("SignIn", "Auth");
+    }
+
+
+    [Route("/account/details")]
+    [HttpPost]
+    public IActionResult AccountDetails(AccountDetailsViewModel viewModel)
+    {
+        return RedirectToAction("AccountDetails", "Account");
     }
 
     [Route("/account/saved")]
@@ -35,14 +41,13 @@ public class AccountController(SignInManager<ApplicationUser> signInManager, Use
         {
             return RedirectToAction("SignIn", "Auth");
         }
-        var userEntity = await _userManager.GetUserAsync(User);
+        var viewModel = await GenerateAccountViewModelAsync();
 
-        if (userEntity != null)
-        {
-            var viewModel = new AccountViewModel() { User = userEntity };
+        if (viewModel != null)
             return View(viewModel);
-        }
-        return View();
+
+        await _signInManager.SignOutAsync();
+        return RedirectToAction("SignIn", "Auth");
     }
 
     [Route("/account/security")]
@@ -53,15 +58,52 @@ public class AccountController(SignInManager<ApplicationUser> signInManager, Use
             return RedirectToAction("SignIn", "Auth");
         }
 
+        var viewModel = await GenerateAccountViewModelAsync();
+
+        if (viewModel != null)
+            return View(viewModel);
+
+        await _signInManager.SignOutAsync();
+        return RedirectToAction("SignIn", "Auth");
+    }
+
+    private AccountBasicInfoFormModel ValidateBasicInfoForm(AccountBasicInfoFormModel formModel)
+    {
+        if (ModelState.IsValid)
+        {
+
+        }
+        else
+        {
+            ModelState.AddModelError("Already Exists", "User with the same email address already exists");
+            ViewData["ErrorMessage"] = "User with the same email address already exists";
+        }
+
+        return formModel;
+    }
+
+    private async Task<AccountViewModel> GenerateAccountViewModelAsync()
+    {
         var userEntity = await _userManager.GetUserAsync(User);
 
         if (userEntity != null)
         {
-            var viewModel = new AccountViewModel() { User = userEntity };
-            return View(viewModel);
+            var viewModel = new AccountViewModel()
+            {
+                User = userEntity,
+                AccountDetails = new AccountDetailsViewModel()
+                {
+                    BasicInfoForm = new AccountBasicInfoFormModel(),
+                    AddressForm = new AccountAddressFormModel()
+                },
+                SavedItems = new AccountSavedItemsViewModel(),
+                Security = new AccountSecurityViewModel()
+                {
+                    Form = new AccountSecurityFormModel()
+                }
+            };
+            return viewModel;
         }
-        return View();
+        return null!;
     }
-
-
 }

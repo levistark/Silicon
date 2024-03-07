@@ -1,4 +1,4 @@
-﻿@model ApplicationUser
+﻿@model AccountViewModel
 
 @{
     var controller = ViewContext.RouteData.Values["controller"]!.ToString();
@@ -11,8 +11,8 @@
             <img src="/images/courses/user-profile-small.svg"></img>
             <button class="btn-update-img"><i class="fa-solid fa-rotate"></i></button>
         </div>
-        <h6>@Model.FirstName @Model.LastName</h6>
-        <p>@Model.Email</p>
+        <h6>@Model.User.FirstName @Model.User.LastName</h6>
+        <p>@Model.User.Email</p>
     </div>
 
     <div class="btn-group">

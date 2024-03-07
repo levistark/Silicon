@@ -1,5 +1,7 @@
 using Infrastructure.Data.Context;
 using Infrastructure.Models.Identification;
+using Infrastructure.Repositories;
+using Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +14,9 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(x =>
     x.Password.RequiredLength = 8;
 }).AddEntityFrameworkStores<DataContext>();
 
+
+builder.Services.AddScoped<AddressRepository>();
+builder.Services.AddScoped<AddressManager>();
 
 var app = builder.Build();
 

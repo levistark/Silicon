@@ -1,35 +1,39 @@
-﻿@model ApplicationUser
+﻿@model AccountViewModel
 <section id="user-profile" class="page-section">
     <div class="container">
 
-        @await Html.PartialAsync("~/Views/Shared/Sections/Account/_AccountMenuPartial.cshtml", Model)
+        @await Html.PartialAsync("~/Views/Shared/Sections/Account/_AccountMenuPartial.cshtml", Model, ViewData)
 
         <div class="account-details-container">
             <h1>Account Details</h1>
             <h5>Basic info</h5>
 
-            <form class="form-basic-info" method="post">
+            <form asp-controller="Account" asp-action="AccountDetails" class="form-basic-info" method="post" novalidate>
                 <div class="firstname-group">
-                    <label>First name</label>
-                    <input type="text" placeholder="@Model.FirstName"></input>
+                    <label asp-for="AccountDetails.BasicInfoForm.FirstName"></label>
+                    <input asp-for="AccountDetails.BasicInfoForm.FirstName">
+                    <span asp-validation-for="AccountDetails.BasicInfoForm.FirstName"></span>
                 </div>
                 <div class="lastname-group">
-                    <label>Last name</label>
-                    <input type="text" placeholder="@Model.LastName"></input>
+                    <label asp-for="AccountDetails.BasicInfoForm.LastName"></label>
+                    <input asp-for="AccountDetails.BasicInfoForm.LastName">
+                    <span asp-validation-for="AccountDetails.BasicInfoForm.LastName"></span>
                 </div>
                 <div class="email-group ">
-                    <label>Email address</label>
-                    <input type="email" placeholder="@Model.Email"></input>
+                    <label asp-for="AccountDetails.BasicInfoForm.Email"></label>
+                    <input asp-for="AccountDetails.BasicInfoForm.Email">
+                    <span asp-validation-for="AccountDetails.BasicInfoForm.Email"></span>
                 </div>
                 <div class="phone-group">
-                    <label>Phone</label>
-                    <input type="text" placeholder="Your phone number"></input>
+                    <label asp-for="AccountDetails.BasicInfoForm.PhoneNumber"></label>
+                    <input asp-for="AccountDetails.BasicInfoForm.PhoneNumber">
+                    <span asp-validation-for="AccountDetails.BasicInfoForm.PhoneNumber"></span>
                 </div>
                 <div class="bio-group">
-                    <label>Bio <span>(optional)</span></label>
-                    <textarea placeholder="Add a short bio"></textarea>
+                    <label asp-for="AccountDetails.BasicInfoForm.Bio"></label>
+                    <textarea asp-for="AccountDetails.BasicInfoForm.Bio" placeholder="Add a short bio"></textarea>
+                    <span asp-validation-for="AccountDetails.BasicInfoForm.Bio"></span>
                 </div>
-
                 <div class="btn-group">
                     <button class="btn-gray">Cancel</button>
                     <button class="btn-theme">Save changes</button>
