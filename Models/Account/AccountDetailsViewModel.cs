@@ -4,7 +4,7 @@ public class AccountDetailsViewModel
 {
     public string? Title { get; set; }
 
-    public AccountBasicInfoFormModel BasicInfoForm = null!;
+    public AccountBasicInfoFormModel BasicInfoForm = new();
 
-    public AccountAddressFormModel AddressForm = null!;
+    public AccountAddressFormModel AddressForm = new();
 }

@@ -2509,6 +2509,13 @@ footer .container p {
   border-radius: 8px;
   background-color: transparent;
 }
+#user-profile .container .account-details-container .form-basic-info .field-validation-error {
+  position: absolute;
+  top: 15px;
+}
+#user-profile .container .account-details-container .form-basic-info .field-validation-error::after {
+  display: none;
+}
 #user-profile .container .account-details-container .form-basic-info .bio-group {
   grid-column: 1/-1;
   grid-row: span 2;
@@ -2564,6 +2571,13 @@ footer .container p {
   padding: 0.5rem 1rem;
   border-radius: 8px;
   background-color: transparent;
+}
+#user-profile .container .account-details-container .form-address-info .field-validation-error {
+  position: absolute;
+  top: 15px;
+}
+#user-profile .container .account-details-container .form-address-info .field-validation-error::after {
+  display: none;
 }
 #user-profile .container .account-details-container .form-address-info .address1-group {
   grid-column: 1/-1;

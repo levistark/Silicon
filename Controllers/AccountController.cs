@@ -9,30 +9,95 @@ public class AccountController(SignInManager<ApplicationUser> signInManager, Use
     private readonly SignInManager<ApplicationUser> _signInManager = signInManager;
     private readonly UserManager<ApplicationUser> _userManager = userManager;
 
+    [HttpGet]
     [Route("/account/details")]
-    public async Task<IActionResult> AccountDetails()
+    public async Task<IActionResult> AccountDetails(AccountViewModel viewModel)
     {
         if (!_signInManager.IsSignedIn(User))
         {
             return RedirectToAction("SignIn", "Auth");
         }
 
-        var viewModel = await GenerateAccountViewModelAsync();
+        var userEntity = await _userManager.GetUserAsync(User);
 
-        if (viewModel != null)
+        if (userEntity != null)
+        {
+            if (viewModel.AccountDetails.BasicInfoForm != null)
+            {
+                viewModel = new AccountViewModel()
+                {
+                    User = userEntity,
+                    AccountDetails = viewModel.AccountDetails
+                };
+            }
+            else
+            {
+                viewModel = new AccountViewModel()
+                {
+                    User = userEntity,
+                    AccountDetails =
+                    {
+                        BasicInfoForm = new()
+                    }
+                };
+            }
+
             return View(viewModel);
+        }
 
         await _signInManager.SignOutAsync();
         return RedirectToAction("SignIn", "Auth");
     }
 
 
-    [Route("/account/details")]
     [HttpPost]
-    public IActionResult AccountDetails(AccountDetailsViewModel viewModel)
+    [Route("/account/details/update-info")]
+    public async Task<IActionResult> SaveBasicInfo([Bind(Prefix = "AccountDetails.BasicInfoForm")] AccountBasicInfoFormModel basicInfoForm)
     {
-        return RedirectToAction("AccountDetails", "Account");
+        if (TryValidateModel(basicInfoForm))
+        {
+            var userToUpdate = await _userManager.GetUserAsync(User);
+
+            return RedirectToAction("AccountDetails", "Account");
+        }
+
+        var userEntity = await _userManager.GetUserAsync(User);
+        var viewModel = new AccountViewModel
+        {
+            User = userEntity!,
+            AccountDetails =
+            {
+                BasicInfoForm = basicInfoForm
+            }
+        };
+
+        return View("AccountDetails", viewModel);
     }
+
+    [HttpPost]
+    [Route("/account/details/update-address")]
+    public async Task<IActionResult> SaveAddressInfo([Bind(Prefix = "AccountDetails.AddressForm")] AccountAddressFormModel addressInfoForm)
+    {
+        if (TryValidateModel(addressInfoForm))
+        {
+            var userToUpdate = await _userManager.GetUserAsync(User);
+
+            return RedirectToAction("AccountDetails", "Account");
+        }
+
+        var userEntity = await _userManager.GetUserAsync(User);
+        var viewModel = new AccountViewModel
+        {
+            User = userEntity!,
+            AccountDetails =
+            {
+                AddressForm = addressInfoForm
+            }
+        };
+
+        return View("AccountDetails", viewModel);
+    }
+
 
     [Route("/account/saved")]
     public async Task<IActionResult> AccountSavedItems()
@@ -41,10 +106,15 @@ public class AccountController(SignInManager<ApplicationUser> signInManager, Use
         {
             return RedirectToAction("SignIn", "Auth");
         }
-        var viewModel = await GenerateAccountViewModelAsync();
 
-        if (viewModel != null)
+        var userEntity = await _userManager.GetUserAsync(User);
+
+        if (userEntity != null)
+        {
+            var viewModel = new AccountViewModel() { User = userEntity };
+
             return View(viewModel);
+        }
 
         await _signInManager.SignOutAsync();
         return RedirectToAction("SignIn", "Auth");
@@ -58,10 +128,14 @@ public class AccountController(SignInManager<ApplicationUser> signInManager, Use
             return RedirectToAction("SignIn", "Auth");
         }
 
-        var viewModel = await GenerateAccountViewModelAsync();
+        var userEntity = await _userManager.GetUserAsync(User);
 
-        if (viewModel != null)
+        if (userEntity != null)
+        {
+            var viewModel = new AccountViewModel() { User = userEntity };
+
             return View(viewModel);
+        }
 
         await _signInManager.SignOutAsync();
         return RedirectToAction("SignIn", "Auth");
@@ -82,28 +156,4 @@ public class AccountController(SignInManager<ApplicationUser> signInManager, Use
         return formModel;
     }
 
-    private async Task<AccountViewModel> GenerateAccountViewModelAsync()
-    {
-        var userEntity = await _userManager.GetUserAsync(User);
-
-        if (userEntity != null)
-        {
-            var viewModel = new AccountViewModel()
-            {
-                User = userEntity,
-                AccountDetails = new AccountDetailsViewModel()
-                {
-                    BasicInfoForm = new AccountBasicInfoFormModel(),
-                    AddressForm = new AccountAddressFormModel()
-                },
-                SavedItems = new AccountSavedItemsViewModel(),
-                Security = new AccountSecurityViewModel()
-                {
-                    Form = new AccountSecurityFormModel()
-                }
-            };
-            return viewModel;
-        }
-        return null!;
-    }
 }

@@ -8,61 +8,68 @@
             <h1>Account Details</h1>
             <h5>Basic info</h5>
 
-            <form asp-controller="Account" asp-action="AccountDetails" class="form-basic-info" method="post" novalidate>
-                <div class="firstname-group">
+            <form asp-controller="Account" asp-action="SaveBasicInfo" class="form-basic-info" method="post" novalidate>
+                <div class="firstname-group input-group">
                     <label asp-for="AccountDetails.BasicInfoForm.FirstName"></label>
-                    <input asp-for="AccountDetails.BasicInfoForm.FirstName">
+                    <input asp-for="AccountDetails.BasicInfoForm.FirstName" placeholder="@Model.User.FirstName">
                     <span asp-validation-for="AccountDetails.BasicInfoForm.FirstName"></span>
                 </div>
-                <div class="lastname-group">
+                <div class="lastname-group input-group">
                     <label asp-for="AccountDetails.BasicInfoForm.LastName"></label>
-                    <input asp-for="AccountDetails.BasicInfoForm.LastName">
+                    <input asp-for="AccountDetails.BasicInfoForm.LastName" placeholder="@Model.User.LastName">
                     <span asp-validation-for="AccountDetails.BasicInfoForm.LastName"></span>
                 </div>
-                <div class="email-group ">
+                <div class="email-group input-group">
                     <label asp-for="AccountDetails.BasicInfoForm.Email"></label>
-                    <input asp-for="AccountDetails.BasicInfoForm.Email">
+                    <input asp-for="AccountDetails.BasicInfoForm.Email" placeholder="@Model.User.Email">
                     <span asp-validation-for="AccountDetails.BasicInfoForm.Email"></span>
                 </div>
-                <div class="phone-group">
+                <div class="phone-group input-group">
                     <label asp-for="AccountDetails.BasicInfoForm.PhoneNumber"></label>
                     <input asp-for="AccountDetails.BasicInfoForm.PhoneNumber">
                     <span asp-validation-for="AccountDetails.BasicInfoForm.PhoneNumber"></span>
                 </div>
-                <div class="bio-group">
+                <div class="bio-group input-group">
                     <label asp-for="AccountDetails.BasicInfoForm.Bio"></label>
                     <textarea asp-for="AccountDetails.BasicInfoForm.Bio" placeholder="Add a short bio"></textarea>
                     <span asp-validation-for="AccountDetails.BasicInfoForm.Bio"></span>
                 </div>
                 <div class="btn-group">
-                    <button class="btn-gray">Cancel</button>
-                    <button class="btn-theme">Save changes</button>
+                    <button type="reset" class="btn-gray">Cancel</button>
+                    <button type="submit" class="btn-theme">Save changes</button>
                 </div>
             </form>
 
             <h5 class="address-heading">Address info</h5>
 
-            <form class="form-address-info">
-                <div class="address1-group">
-                    <label>Address line 1</label>
-                    <input type="text" placeholder="First name"></input>
+            <form asp-controller="Account" asp-action="SaveAddressInfo" class="form-address-info">
+                <div class="address1-group input-group">
+                    <label asp-for="AccountDetails.AddressForm.AddressLine1"></label>
+                    <input asp-for="AccountDetails.AddressForm.AddressLine1" />
+                    <span asp-validation-for="AccountDetails.AddressForm.AddressLine1"></span>
+
                 </div>
-                <div class="address2-group">
-                    <label>Address line 2 <span>(optional)</span></label>
-                    <input type="text" placeholder="Last name"></input>
+                <div class="address2-group input-group">
+                    <label asp-for="AccountDetails.AddressForm.AddressLine2"></label>
+                    <input asp-for=" AccountDetails.AddressForm.AddressLine2" />
+                    <span asp-validation-for="AccountDetails.AddressForm.AddressLine2"></span>
+
                 </div>
-                <div class="postal-group ">
-                    <label>Postal code</label>
-                    <input type="email" placeholder="email@domain.com"></input>
+                <div class="postal-group input-group">
+                    <label asp-for="AccountDetails.AddressForm.PostalCode"></label>
+                    <input asp-for="AccountDetails.AddressForm.PostalCode" />
+                    <span asp-validation-for="AccountDetails.AddressForm.PostalCode"></span>
+
                 </div>
-                <div class="city-group">
-                    <label>City</label>
-                    <input type="text" placeholder="Add a short bio"></input>
+                <div class="city-group input-group">
+                    <label asp-for="AccountDetails.AddressForm.City"></label>
+                    <input asp-for="AccountDetails.AddressForm.City" />
+                    <span asp-validation-for="AccountDetails.AddressForm.City"></span>
                 </div>
 
                 <div class="btn-group">
-                    <button class="btn-gray">Cancel</button>
-                    <button class="btn-theme">Save changes</button>
+                    <button type="reset" class="btn-gray">Cancel</button>
+                    <button type="submit" class="btn-theme">Save changes</button>
                 </div>
             </form>
         </div>

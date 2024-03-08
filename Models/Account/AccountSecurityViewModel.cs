@@ -2,5 +2,5 @@
 public class AccountSecurityViewModel
 {
     public string? Title { get; set; }
-    public AccountSecurityFormModel Form { get; set; } = null!;
+    public AccountSecurityFormModel Form { get; set; } = new AccountSecurityFormModel();
 }

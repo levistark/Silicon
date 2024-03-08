@@ -21,7 +21,7 @@ public class AccountBasicInfoFormModel
     [DataType(DataType.EmailAddress)]
     [Display(Name = "Email", Prompt = "Enter your email address")]
     [Required(ErrorMessage = "You must enter a valid email")]
-    [RegularExpression("^[\\w!#$%&'*+\\-/=?\\^_`{|}~]+(\\.[\\w!#$%&'*+\\-/=?\\^_`{|}~]+)*@((([\\-\\w]+\\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\\.){3}[0-9]{1,3}))\\z")]
+    [RegularExpression("^[\\w!#$%&'*+\\-/=?\\^_`{|}~]+(\\.[\\w!#$%&'*+\\-/=?\\^_`{|}~]+)*@((([\\-\\w]+\\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\\.){3}[0-9]{1,3}))\\z", ErrorMessage = "Please enter a valid email")]
     public string Email { get; set; } = null!;
 
     [DataType(DataType.PhoneNumber)]

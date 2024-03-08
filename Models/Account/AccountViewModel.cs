@@ -4,8 +4,8 @@ namespace Silicon.Models.Account;
 
 public class AccountViewModel
 {
-    public ApplicationUser User { get; set; } = null!;
-    public AccountDetailsViewModel AccountDetails { get; set; } = null!;
-    public AccountSavedItemsViewModel SavedItems { get; set; } = null!;
-    public AccountSecurityViewModel Security { get; set; } = null!;
+    public ApplicationUser User { get; set; } = new();
+    public AccountDetailsViewModel AccountDetails { get; set; } = new();
+    public AccountSavedItemsViewModel SavedItems { get; set; } = new();
+    public AccountSecurityViewModel Security { get; set; } = new();
 }

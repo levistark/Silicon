@@ -79,7 +79,7 @@ public class AuthController(SignInManager<ApplicationUser> signInManager, UserMa
 
             return RedirectToAction("Details", "Account");
         }
-        return RedirectToAction("Index", "Home");
+        return View(model);
     }
 
     [HttpGet]
