@@ -8,4 +8,7 @@ public class AccountViewModel
     public AccountDetailsViewModel AccountDetails { get; set; } = new();
     public AccountSavedItemsViewModel SavedItems { get; set; } = new();
     public AccountSecurityViewModel Security { get; set; } = new();
+
+    public string? Message { get; set; }
+    public Enum? StatusCode { get; set; }
 }

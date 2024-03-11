@@ -2476,6 +2476,29 @@ footer .container p {
 #user-profile .container .profile-sidebar .btn-group .btn-gray:hover {
   background-color: var(--main-bg-clr-secondary);
 }
+#user-profile .container .account-details-container {
+  position: relative;
+}
+#user-profile .container .account-details-container .updateErrorBox {
+  position: absolute;
+  top: -3.8rem;
+  width: 100%;
+  padding: 0.5rem 1.5rem;
+  background-color: #EEAAAA;
+  border-radius: 6px;
+  text-align: center;
+  color: black;
+}
+#user-profile .container .account-details-container .updateSuccessBox {
+  position: absolute;
+  top: -3.8rem;
+  width: 100%;
+  padding: 0.5rem 1.5rem;
+  background-color: lightgreen;
+  border-radius: 6px;
+  text-align: center;
+  color: black;
+}
 @media (min-width: 1200px) {
   #user-profile .container .account-details-container {
     padding-left: 6rem;

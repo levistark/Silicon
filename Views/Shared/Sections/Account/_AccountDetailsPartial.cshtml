@@ -8,6 +8,20 @@
             <h1>Account Details</h1>
             <h5>Basic info</h5>
 
+            @if (TempData["Success"] != null)
+            {
+                <div class="updateSuccessBox" id="updateSuccessBox">@TempData["Success"]?.ToString()</div>
+            }
+            else if (TempData["Failed"] != null)
+            {
+                <div class="updateErrorBox" id="updateErrorBox">@TempData["Failed"]?.ToString()</div>
+            }
+            else if (TempData["AlreadyExists"] != null)
+            {
+                <div class="updateErrorBox" id="updateErrorBox">@TempData["AlreadyExists"]?.ToString()</div>
+            }
+            
+
             <form asp-controller="Account" asp-action="SaveBasicInfo" class="form-basic-info" method="post" novalidate>
                 <div class="firstname-group input-group">
                     <label asp-for="AccountDetails.BasicInfoForm.FirstName"></label>
