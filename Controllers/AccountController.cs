@@ -1,4 +1,5 @@
-﻿using Infrastructure.Models.Identification;
+﻿using Infrastructure.Entities;
+using Infrastructure.Models.Identification;
 using Infrastructure.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -104,29 +105,59 @@ public class AccountController(SignInManager<ApplicationUser> signInManager, Use
         return RedirectToAction("SignIn", "Auth");
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="addressInfoForm"></param>
+    /// <returns></returns>
     [HttpPost]
     [Route("/account/details/update-address")]
     public async Task<IActionResult> SaveAddressInfo([Bind(Prefix = "AccountDetails.AddressForm")] AccountAddressFormModel addressInfoForm)
     {
         var userEntity = await _userManager.GetUserAsync(User);
+        var viewModel = new AccountViewModel() { User = userEntity! };
 
-        if (TryValidateModel(addressInfoForm))
+        if (userEntity != null)
         {
-            var userToUpdate = await _userManager.GetUserAsync(User);
+            if (TryValidateModel(addressInfoForm))
+            {
+                var result = await _addressManager.CreateAddressAsync(new AddressEntity()
+                {
+                    AddressLine1 = addressInfoForm.AddressLine1,
+                    AddressLine2 = addressInfoForm.AddressLine2,
+                    PostalCode = addressInfoForm.PostalCode,
+                    City = addressInfoForm.City
+                });
 
-            return RedirectToAction("AccountDetails", "Account");
+                if (result != null)
+                {
+                    userEntity.AddressId = result.Id;
+                    var userAddressUpdate = await _userManager.UpdateAsync(userEntity);
+
+                    if (userAddressUpdate.Succeeded)
+                    {
+                        // Return with Success message
+                        TempData["Success"] = "User successfully updated";
+                        return RedirectToAction("AccountDetails", "Account");
+                    }
+                }
+
+                // Return with Failed message
+                TempData["Failed"] = "User could not be updated";
+                return RedirectToAction("AccountDetails", "Account");
+            }
+
+            // Return with viewModel errors
+            viewModel.AccountDetails.AddressForm = addressInfoForm;
+            return View("AccountDetails", viewModel);
         }
 
-        var viewModel = new AccountViewModel
+        // If user does not exist in database, sign out session and redirect to Sign in page
+        else
         {
-            User = userEntity!,
-            AccountDetails =
-            {
-                AddressForm = addressInfoForm
-            }
-        };
-
-        return View("AccountDetails", viewModel);
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("SignIn", "Auth");
+        }
     }
 
 
@@ -201,7 +232,7 @@ public class AccountController(SignInManager<ApplicationUser> signInManager, Use
                     Email = userEntity.Email!,
                     PhoneNumber = userEntity.PhoneNumber,
                     Bio = userEntity.Bio
-                },
+                }
             }
         };
 
