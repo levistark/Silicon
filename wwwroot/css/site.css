@@ -2539,6 +2539,12 @@ footer .container p {
 #user-profile .container .account-details-container .form-basic-info .field-validation-error::after {
   display: none;
 }
+#user-profile .container .account-details-container .form-basic-info .phone-group .field-validation-error {
+  display: none;
+}
+#user-profile .container .account-details-container .form-basic-info .phone-group .field-validation-error::after {
+  display: none;
+}
 #user-profile .container .account-details-container .form-basic-info .bio-group {
   grid-column: 1/-1;
   grid-row: span 2;
@@ -2551,6 +2557,12 @@ footer .container p {
   border-radius: 8px;
   resize: vertical; /* Allows vertical resizing */
   background-color: transparent;
+}
+#user-profile .container .account-details-container .form-basic-info .bio-group .field-validation-error {
+  display: none;
+}
+#user-profile .container .account-details-container .form-basic-info .bio-group .field-validation-error::after {
+  display: none;
 }
 #user-profile .container .account-details-container .form-basic-info .btn-group {
   margin-top: 1rem;
@@ -2607,6 +2619,12 @@ footer .container p {
 }
 #user-profile .container .account-details-container .form-address-info .address2-group {
   grid-column: 1/-1;
+}
+#user-profile .container .account-details-container .form-address-info .address2-group .field-validation-error {
+  display: none;
+}
+#user-profile .container .account-details-container .form-address-info .address2-group .field-validation-error::after {
+  display: none;
 }
 #user-profile .container .account-details-container .form-address-info .btn-group {
   margin-top: 1.5rem;

@@ -187,6 +187,16 @@
                     }
                 }
 
+                .phone-group {
+                    .field-validation-error {
+                        display: none;
+
+                        &::after {
+                            display: none;
+                        }
+                    }
+                }
+
                 .bio-group {
                     grid-column: 1 / -1;
                     grid-row: span 2;
@@ -199,6 +209,14 @@
                         border-radius: 8px;
                         resize: vertical; /* Allows vertical resizing */
                         background-color: transparent;
+                    }
+
+                    .field-validation-error {
+                        display: none;
+
+                        &::after {
+                            display: none;
+                        }
                     }
                 }
 
@@ -266,6 +284,14 @@
 
                 .address2-group {
                     grid-column: 1 / -1;
+
+                    .field-validation-error {
+                        display: none;
+
+                        &::after {
+                            display: none;
+                        }
+                    }
                 }
 
                 .btn-group {

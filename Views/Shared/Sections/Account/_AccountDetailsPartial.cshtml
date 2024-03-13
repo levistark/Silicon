@@ -45,12 +45,12 @@
                 </div>
                 <div class="bio-group input-group">
                     <label asp-for="AccountDetails.BasicInfoForm.Bio"></label>
-                    <textarea asp-for="AccountDetails.BasicInfoForm.Bio" placeholder="Add a short bio"></textarea>
+                    <textarea asp-for="AccountDetails.BasicInfoForm.Bio" id="basicInfoBio" placeholder="Add a short bio"></textarea>
                     <span asp-validation-for="AccountDetails.BasicInfoForm.Bio"></span>
                 </div>
                 <div class="btn-group">
                     <button type="reset" class="btn-gray">Cancel</button>
-                    <button type="submit" class="btn-theme">Save changes</button>
+                    <button type="submit" class="btn-theme" id="basicInfoSubmitBtn">Save changes</button>
                 </div>
             </form>
 
@@ -83,9 +83,10 @@
 
                 <div class="btn-group">
                     <button type="reset" class="btn-gray">Cancel</button>
-                    <button type="submit" class="btn-theme">Save changes</button>
+                    <button type="submit" class="btn-theme" id="addressInfoSubmitBtn">Save changes</button>
                 </div>
             </form>
         </div>
     </div>
 </section>
+@await Html.PartialAsync("_AccountBasicInfoValidationPartial")
