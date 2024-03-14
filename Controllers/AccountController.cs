@@ -1,11 +1,14 @@
 ﻿using Infrastructure.Entities;
 using Infrastructure.Models.Identification;
 using Infrastructure.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Silicon.Models.Account;
 
 namespace Silicon.Controllers;
+
+[Authorize]
 public class AccountController(SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> userManager, AddressManager addressManager) : Controller
 {
     private readonly SignInManager<ApplicationUser> _signInManager = signInManager;
@@ -40,12 +43,6 @@ public class AccountController(SignInManager<ApplicationUser> signInManager, Use
         await _signInManager.SignOutAsync();
         return RedirectToAction("SignIn", "Auth");
     }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="basicInfoForm"></param>
-    /// <returns></returns>
 
     [HttpPost]
     [Route("/account/details/update-info")]
@@ -105,11 +102,6 @@ public class AccountController(SignInManager<ApplicationUser> signInManager, Use
         return RedirectToAction("SignIn", "Auth");
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="addressInfoForm"></param>
-    /// <returns></returns>
     [HttpPost]
     [Route("/account/details/update-address")]
     public async Task<IActionResult> SaveAddressInfo([Bind(Prefix = "AccountDetails.AddressForm")] AccountAddressFormModel addressInfoForm)

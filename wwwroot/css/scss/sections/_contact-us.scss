@@ -131,9 +131,52 @@
                             width: 100%;
                             outline: none;
                             padding: 0.5rem 1rem;
-                            //border: solid var(--main-clr-input-border);
                             border-radius: 8px;
                             background-color: transparent;
+                        }
+
+                        .field-validation-error {
+                            position: absolute;
+                            top: 15px;
+
+                            &::after {
+                                display: none;
+                            }
+                        }
+
+                        .service-group {
+                            margin-top: 1rem;
+                            position: relative;
+
+                            label {
+                                margin-top: 0;
+                            }
+
+                            .dropbtn {
+                                position: relative;
+                                display: block;
+                                margin-top: 0;
+                                width: 100%;
+                                color: var(--main-text-clr);
+                                padding: 0.5rem 1rem;
+                                background-color: inherit;
+                                border-radius: 8px;
+                                border: solid 1px var(--main-clr-input-border);
+                                appearance: none;
+                                -webkit-appearance: none;
+                                -moz-appearance: none;
+
+
+                                &:hover {
+                                    border: solid 1px var(--main-text-clr);
+                                }
+                            }
+
+                            i {
+                                position: absolute;
+                                top: 45px;
+                                right: 20px;
+                            }
                         }
 
                         .message-group {
@@ -142,7 +185,6 @@
                                 height: 200px;
                                 outline: none;
                                 padding: 0.5rem 1rem;
-                                //border: solid var(--main-clr-input-border);
                                 border-radius: 8px;
                                 background-color: transparent;
                             }

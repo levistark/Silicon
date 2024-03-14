@@ -3,6 +3,7 @@ using Infrastructure.Models.Identification;
 using Infrastructure.Repositories;
 using Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
+using Silicon.Helpers.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
@@ -14,6 +15,16 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(x =>
     x.Password.RequiredLength = 8;
 }).AddEntityFrameworkStores<DataContext>();
 
+builder.Services.ConfigureApplicationCookie(x =>
+{
+    x.Cookie.HttpOnly = true;
+    x.LoginPath = "/signin";
+    x.LogoutPath = "/signout";
+    x.AccessDeniedPath = "/denied";
+    x.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+    x.SlidingExpiration = true;
+    x.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+});
 
 builder.Services.AddScoped<AddressRepository>();
 builder.Services.AddScoped<AddressManager>();
@@ -25,6 +36,8 @@ app.UseStatusCodePagesWithReExecute("/error", "?statusCode={0}");
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
+app.UseAuthentication();
+app.UseUserSessionValidation();
 app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",

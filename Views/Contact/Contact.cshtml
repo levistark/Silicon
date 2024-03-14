@@ -1,4 +1,5 @@
-﻿@{
+﻿@model ContactViewModel
+@{
     ViewData["Title"] = "Contact Us";
 }
 
@@ -14,5 +15,5 @@
 
     @await Html.PartialAsync("~/Views/Shared/Components/_FooterPartial.cshtml")
 </div>
-
+@await Html.PartialAsync("_AccountBasicInfoValidationPartial")
 

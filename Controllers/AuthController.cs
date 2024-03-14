@@ -56,13 +56,14 @@ public class AuthController(SignInManager<ApplicationUser> signInManager, UserMa
     {
         if (ModelState.IsValid)
         {
-
             if (await _userManager.Users.AnyAsync(x => x.Email == model.Form.Email))
             {
                 ModelState.AddModelError("Already Exists", "User with the same email address already exists");
                 ViewData["ErrorMessage"] = "User with the same email address already exists";
                 return View(model);
             }
+
+
 
             var result = await _userManager.CreateAsync(new ApplicationUser()
             {

@@ -5,8 +5,8 @@
     return false
 }
 
-const postalCodeValidator = (postalcode) => {
-    return /^[\w\s]{6}$/.test(postalcode)
+const emailValidator = (email) => {
+    return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
 }
 
 const formErrorHandler = (e, validationResult) => {
@@ -31,46 +31,50 @@ const formErrorHandler = (e, validationResult) => {
 let inputs = document.querySelectorAll('input')
 
 let formFields = {
-    addressLine1: true,
-    addressLine2: true,
-    postalCode: true,
-    city: true,
+    firstName: true,
+    lastName: true,
+    email: true,
+    tel: true,
+    bio: true,
 };
 
 
+
 const formTextValidator = (e) => {
+    formErrorHandler(e, lengthValidator(e.target.value, 2, 45))
 
-    switch (e.target.name) {
-        case "AccountDetails.AddressForm.AddressLine1":
-            formFields.addressLine1 = lengthValidator(e.target.value, 1, 50)
-            formErrorHandler(e, lengthValidator(e.target.value, 1, 50))
+    switch (e.target.type) {
+        case "text":
+            if (e.target.name == "AccountDetails.BasicInfoForm.FirstName") {
+                formFields.firstName = lengthValidator(e.target.value, 2, 25)
+            }
+            else {
+                formFields.lastName = lengthValidator(e.target.value, 2, 35)
+            }
             break;
+        case "tel":
+            formFields.tel = lengthValidator(e.target.value, 1, 35)
 
-        case "AccountDetails.AddressForm.AddressLine2":
-            formFields.addressLine2 = lengthValidator(e.target.value, 1, 50)
-            formErrorHandler(e, lengthValidator(e.target.value, 1, 50))
             break;
-
-        case "AccountDetails.AddressForm.City":
-            formFields.City = lengthValidator(e.target.value, 2, 50)
-            formErrorHandler(e, lengthValidator(e.target.value, 2, 50))
+        case "textarea":
+            formFields.bio = lengthValidator(e.target.value, 1, 300)
             break;
     }
-
     validateForm();
+
 }
 
-const formPostalCodeValidator = (e) => {
-    formErrorHandler(e, postalCodeValidator(e.target.value))
+const formEmailValidator = (e) => {
+    formErrorHandler(e, emailValidator(e.target.value))
 
-    formFields.postalCode = postalCodeValidator(e.target.value)
+    formFields.email = emailValidator(e.target.value)
     validateForm();
 }
 
 function validateForm() {
     let fieldValues = []
 
-    const submitBtn = document.querySelector('#addressInfoSubmitBtn')
+    const submitBtn = document.querySelector('#basicInfoSubmitBtn')
 
     for (let fieldKey in formFields) {
         let fieldValue = formFields[fieldKey];
@@ -100,8 +104,8 @@ inputs.forEach(input => {
     if (input.dataset.val === 'true') {
 
         input.addEventListener('keyup', (e) => {
-            if (e.target.Name == "AccountDetails.AddressForm.PostalCode") {
-                formPostalCodeValidator(e)
+            if (e.target.type == "email") {
+                formEmailValidator(e)
             }
             else {
                 formTextValidator(e)
@@ -109,6 +113,11 @@ inputs.forEach(input => {
         })
     }
 })
+
+document.getElementById("basicInfoBio").addEventListener('keyup', (e) => {
+    formTextValidator(e)
+})
+
 
 /*
 Validate the form on page load

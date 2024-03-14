@@ -679,6 +679,40 @@ form .input-validation-error::placeholder {
     display: none;
   }
 }
+@keyframes dropDown {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+    z-index: 0;
+  }
+  10% {
+    opacity: 0;
+    transform: translateY(135px);
+    z-index: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(143px);
+    z-index: 2;
+  }
+}
+@keyframes dropUp {
+  0% {
+    opacity: 1;
+    transform: translateY(143);
+    z-index: 2;
+  }
+  10% {
+    opacity: 0;
+    transform: translateY(135px);
+    z-index: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+    z-index: 0;
+  }
+}
 a {
   line-height: 160%;
   font-weight: 400;
@@ -2305,6 +2339,17 @@ footer .container p {
 }
 #sign-up-page .container .content {
   max-width: 600px;
+  position: relative;
+}
+#sign-up-page .container .content .signUpErrorBox {
+  position: absolute;
+  top: -3.8rem;
+  width: 100%;
+  padding: 0.5rem 1.5rem;
+  background-color: #EEAAAA;
+  border-radius: 6px;
+  text-align: center;
+  color: black;
 }
 #sign-up-page .container .content p {
   font-size: 11pt;
@@ -3206,6 +3251,42 @@ footer .container p {
   padding: 0.5rem 1rem;
   border-radius: 8px;
   background-color: transparent;
+}
+#contact-us-page main #contact-us-section .container .form-container form .field-validation-error {
+  position: absolute;
+  top: 15px;
+}
+#contact-us-page main #contact-us-section .container .form-container form .field-validation-error::after {
+  display: none;
+}
+#contact-us-page main #contact-us-section .container .form-container form .service-group {
+  margin-top: 1rem;
+  position: relative;
+}
+#contact-us-page main #contact-us-section .container .form-container form .service-group label {
+  margin-top: 0;
+}
+#contact-us-page main #contact-us-section .container .form-container form .service-group .dropbtn {
+  position: relative;
+  display: block;
+  margin-top: 0;
+  width: 100%;
+  color: var(--main-text-clr);
+  padding: 0.5rem 1rem;
+  background-color: inherit;
+  border-radius: 8px;
+  border: solid 1px var(--main-clr-input-border);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+#contact-us-page main #contact-us-section .container .form-container form .service-group .dropbtn:hover {
+  border: solid 1px var(--main-text-clr);
+}
+#contact-us-page main #contact-us-section .container .form-container form .service-group i {
+  position: absolute;
+  top: 45px;
+  right: 20px;
 }
 #contact-us-page main #contact-us-section .container .form-container form .message-group textarea {
   width: 100%;

@@ -1,10 +1,35 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Infrastructure.Models.Identification;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Silicon.Models.Contact;
 
 namespace Silicon.Controllers;
-public class ContactController : Controller
+public class ContactController(SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> userManager) : Controller
 {
-    public IActionResult Contact()
+    private readonly SignInManager<ApplicationUser> _signInManager = signInManager;
+    private readonly UserManager<ApplicationUser> _userManager = userManager;
+
+    [HttpGet]
+    public IActionResult Contact(ContactViewModel viewModel)
     {
-        return View();
+        return View(new ContactViewModel());
     }
+
+    [HttpPost]
+    [Route("/contact/submit")]
+    public async Task<IActionResult> ContactSubmit([Bind(Prefix = "ContactForm")] ContactFormModel contactForm)
+    {
+        var userEntity = await _userManager.GetUserAsync(User);
+        var viewModel = new ContactViewModel() { User = userEntity! };
+
+        if (TryValidateModel(contactForm))
+        {
+            // Send email...
+        }
+
+        // Return with viewModel errors
+        viewModel.ContactForm = contactForm;
+        return View("Contact", viewModel);
+    }
+
 }

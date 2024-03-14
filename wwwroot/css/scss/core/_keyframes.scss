@@ -62,4 +62,45 @@
     }
 }
 
+@keyframes dropDown {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+        z-index: 0;
+    }
+
+    10% {
+        opacity: 0;
+        transform: translateY(135px);
+        z-index: 1;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(143px);
+        z-index: 2;
+
+    }
+}
+
+@keyframes dropUp {
+    0% {
+        opacity: 1;
+        transform: translateY(143);
+        z-index: 2;
+    }
+
+    10% {
+        opacity: 0;
+        transform: translateY(135px);
+        z-index: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(0);
+        z-index: 0;
+    }
+}
+
 

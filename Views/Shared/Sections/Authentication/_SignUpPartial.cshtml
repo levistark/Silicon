@@ -5,6 +5,11 @@
 <section id="sign-up-page" class="page-section">
     <div class="container">
         <div class="content">
+            @if (!string.IsNullOrEmpty(ViewData["ErrorMessage"]?.ToString()))
+            {
+                <div class="signUpErrorBox" id="signUpErrorBox">@ViewData["ErrorMessage"]</div>
+            }
+
             <h1>Create Account</h1> 
             <p>Already have an account? <a asp-controller="Auth" asp-action="SignIn">Sign in here.</a></p>
 
@@ -46,7 +51,7 @@
                 </div>
                 <span class="checkbox-validation-message" asp-validation-for="Form.TermsAndConditions"></span>
 
-                <button type="submit" id="signUpFormBtn" disabled class="btn-disabled">Sign up</button>
+                <button type="submit" id="signUpFormBtn" class="btn-disabled">Sign up</button>
             </form>
         </div>
     </div>
