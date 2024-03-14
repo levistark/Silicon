@@ -1,4 +1,4 @@
-﻿const lengthValidator = (value, minLenght, maxLength) => {
+﻿const addressLengthValidator = (value, minLenght, maxLength) => {
     if (value.length >= minLenght && value.length <= maxLength)
         return true
 
@@ -9,7 +9,7 @@ const postalCodeValidator = (postalcode) => {
     return /^[\w\s]{6}$/.test(postalcode)
 }
 
-const formErrorHandler = (e, validationResult) => {
+const addressFormErrorHandler = (e, validationResult) => {
     let spanElement = document.querySelector(`[data-valmsg-for="${e.target.name}"]`)
 
     if (validationResult) {
@@ -19,18 +19,13 @@ const formErrorHandler = (e, validationResult) => {
         spanElement.innerHTML = ''
     }
     else {
-        if (e.target.name != "AccountDetails.BasicInfoForm.PhoneNumber" && e.target.name != "AccountDetails.BasicInfoForm.Bio") {
-            e.target.classList.add('input-validation-error')
-            spanElement.classList.add('field-validation-error')
-            spanElement.classList.remove('field-validation-valid')
-            spanElement.innerHTML = e.target.dataset.valRequired
-        }
+        e.target.classList.add('input-validation-error')
+        spanElement.classList.add('field-validation-error')
+        spanElement.classList.remove('field-validation-valid')
+        spanElement.innerHTML = e.target.dataset.valRequired
     }
 }
-
-let inputs = document.querySelectorAll('input')
-
-let formFields = {
+let addressFormFields = {
     addressLine1: true,
     addressLine2: true,
     postalCode: true,
@@ -38,42 +33,42 @@ let formFields = {
 };
 
 
-const formTextValidator = (e) => {
+const addressFormTextValidator = (e) => {
 
     switch (e.target.name) {
         case "AccountDetails.AddressForm.AddressLine1":
-            formFields.addressLine1 = lengthValidator(e.target.value, 1, 50)
-            formErrorHandler(e, lengthValidator(e.target.value, 1, 50))
+            addressFormFields.addressLine1 = addressLengthValidator(e.target.value, 1, 50)
+            addressFormErrorHandler(e, addressLengthValidator(e.target.value, 1, 50))
             break;
 
         case "AccountDetails.AddressForm.AddressLine2":
-            formFields.addressLine2 = lengthValidator(e.target.value, 1, 50)
-            formErrorHandler(e, lengthValidator(e.target.value, 1, 50))
+            addressFormFields.addressLine2 = addressLengthValidator(e.target.value, 1, 50)
+            addressFormErrorHandler(e, addressLengthValidator(e.target.value, 1, 50))
             break;
 
         case "AccountDetails.AddressForm.City":
-            formFields.City = lengthValidator(e.target.value, 2, 50)
-            formErrorHandler(e, lengthValidator(e.target.value, 2, 50))
+            addressFormFields.City = addressLengthValidator(e.target.value, 2, 50)
+            addressFormErrorHandler(e, addressLengthValidator(e.target.value, 2, 50))
             break;
     }
 
-    validateForm();
+    validateAddressForm();
 }
 
-const formPostalCodeValidator = (e) => {
-    formErrorHandler(e, postalCodeValidator(e.target.value))
+const addressFormPostalCodeValidator = (e) => {
+    addressFormErrorHandler(e, postalCodeValidator(e.target.value))
 
-    formFields.postalCode = postalCodeValidator(e.target.value)
-    validateForm();
+    addressFormFields.postalCode = postalCodeValidator(e.target.value)
+    validateAddressForm();
 }
 
-function validateForm() {
+function validateAddressForm() {
     let fieldValues = []
 
     const submitBtn = document.querySelector('#addressInfoSubmitBtn')
 
-    for (let fieldKey in formFields) {
-        let fieldValue = formFields[fieldKey];
+    for (let fieldKey in addressFormFields) {
+        let fieldValue = addressFormFields[fieldKey];
         fieldValues.push(fieldValue);
     }
 
@@ -101,10 +96,10 @@ inputs.forEach(input => {
 
         input.addEventListener('keyup', (e) => {
             if (e.target.Name == "AccountDetails.AddressForm.PostalCode") {
-                formPostalCodeValidator(e)
+                addressFormPostalCodeValidator(e)
             }
             else {
-                formTextValidator(e)
+                addressFormTextValidator(e)
             }
         })
     }
@@ -114,5 +109,5 @@ inputs.forEach(input => {
 Validate the form on page load
 */
 document.addEventListener("DOMContentLoaded", () => {
-    validateForm();
+    validateAddressForm();
 })

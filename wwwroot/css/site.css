@@ -713,6 +713,20 @@ form .input-validation-error::placeholder {
     z-index: 0;
   }
 }
+@keyframes alertFadeout {
+  0% {
+    opacity: 1;
+    display: block;
+  }
+  90% {
+    opacity: 0;
+    display: block;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
 a {
   line-height: 160%;
   font-weight: 400;
@@ -2821,6 +2835,8 @@ footer .container p {
   border-radius: 6px;
   text-align: center;
   color: black;
+  animation: alertFadeout 1s forwards;
+  animation-delay: 3s;
 }
 #user-profile-security .container .user-profile-security .updateSuccessBox {
   position: absolute;
@@ -2831,6 +2847,8 @@ footer .container p {
   border-radius: 6px;
   text-align: center;
   color: black;
+  animation: alertFadeout 1s forwards;
+  animation-delay: 3s;
 }
 #user-profile-security .container .user-profile-security .form-security {
   display: grid;

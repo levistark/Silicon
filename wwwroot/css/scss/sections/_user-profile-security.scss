@@ -143,6 +143,8 @@
                 border-radius: 6px;
                 text-align: center;
                 color: black;
+                animation: alertFadeout 1s forwards;
+                animation-delay: 3s;
             }
 
             .updateSuccessBox {
@@ -154,6 +156,8 @@
                 border-radius: 6px;
                 text-align: center;
                 color: black;
+                animation: alertFadeout 1s forwards;
+                animation-delay: 3s;
             }
 
             .form-security {

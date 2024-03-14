@@ -25,7 +25,7 @@
                 </div >
                 <div class="new-password-group input-group">
                     <label asp-for="Security.Form.NewPassword"></label>
-                    <input asp-for="Security.Form.NewPassword">
+                    <input asp-for="Security.Form.NewPassword" id="newPassword">
                     <span asp-validation-for="Security.Form.NewPassword"></span>
                 </div>
                 <div class="confirm-password-group input-group">
@@ -35,7 +35,7 @@
                 </div>
                 <div class="btn-group">
                     <button type="reset" class="btn-gray">Cancel</button>
-                    <button id="securitySubmitBtn" type="submit"  class="btn-theme">Save changes</button>
+                    <button id="securitySubmitBtn" type="submit"  class="btn-disabled" disabled>Save changes</button>
                 </div>
             </form>
 
