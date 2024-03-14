@@ -6,7 +6,7 @@ public class AccountBasicInfoFormModel
 {
     [DataType(DataType.Text)]
     [Display(Name = "First name", Prompt = "Enter your first name")]
-    [Required(ErrorMessage = "You must enter a first name")]
+    [Required(ErrorMessage = "Full name required")]
     [MinLength(2, ErrorMessage = "Invalid first name")]
     [MaxLength(20, ErrorMessage = "Invalid first name")]
     public string FirstName { get; set; } = null!;

@@ -10,9 +10,11 @@ public class ContactController(SignInManager<ApplicationUser> signInManager, Use
     private readonly UserManager<ApplicationUser> _userManager = userManager;
 
     [HttpGet]
+    [Route("/contact")]
     public IActionResult Contact(ContactViewModel viewModel)
     {
-        return View(new ContactViewModel());
+        ModelState.Clear();
+        return View();
     }
 
     [HttpPost]

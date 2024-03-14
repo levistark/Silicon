@@ -2798,6 +2798,9 @@ footer .container p {
 #user-profile-security .container .profile-sidebar .btn-group .btn-gray:hover {
   background-color: var(--main-bg-clr-secondary);
 }
+#user-profile-security .container .user-profile-security {
+  position: relative;
+}
 #user-profile-security .container .user-profile-security h1 {
   margin-bottom: 1rem;
 }
@@ -2808,6 +2811,26 @@ footer .container p {
 }
 #user-profile-security .container .user-profile-security h5 {
   color: #6366F1;
+}
+#user-profile-security .container .user-profile-security .updateErrorBox {
+  position: absolute;
+  top: -3.8rem;
+  width: 100%;
+  padding: 0.5rem 1.5rem;
+  background-color: #EEAAAA;
+  border-radius: 6px;
+  text-align: center;
+  color: black;
+}
+#user-profile-security .container .user-profile-security .updateSuccessBox {
+  position: absolute;
+  top: -3.8rem;
+  width: 100%;
+  padding: 0.5rem 1.5rem;
+  background-color: lightgreen;
+  border-radius: 6px;
+  text-align: center;
+  color: black;
 }
 #user-profile-security .container .user-profile-security .form-security {
   display: grid;
@@ -2833,6 +2856,16 @@ footer .container p {
   padding: 0.5rem 1rem;
   border-radius: 8px;
   background-color: transparent;
+}
+#user-profile-security .container .user-profile-security .form-security .input-group {
+  position: relative;
+}
+#user-profile-security .container .user-profile-security .form-security .input-group .field-validation-error {
+  position: absolute;
+  top: 15px;
+}
+#user-profile-security .container .user-profile-security .form-security .input-group .field-validation-error::after {
+  display: none;
 }
 #user-profile-security .container .user-profile-security .form-security .new-password-group {
   grid-row: 2;
@@ -3267,7 +3300,6 @@ footer .container p {
   margin-top: 0;
 }
 #contact-us-page main #contact-us-section .container .form-container form .service-group .dropbtn {
-  position: relative;
   display: block;
   margin-top: 0;
   width: 100%;
@@ -3275,13 +3307,11 @@ footer .container p {
   padding: 0.5rem 1rem;
   background-color: inherit;
   border-radius: 8px;
-  border: solid 1px var(--main-clr-input-border);
+  border: solid 2px var(--main-clr-input-border);
   appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
 }
 #contact-us-page main #contact-us-section .container .form-container form .service-group .dropbtn:hover {
-  border: solid 1px var(--main-text-clr);
+  border: solid 2px #6366F1;
 }
 #contact-us-page main #contact-us-section .container .form-container form .service-group i {
   position: absolute;

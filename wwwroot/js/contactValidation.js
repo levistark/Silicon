@@ -31,37 +31,25 @@ const formErrorHandler = (e, validationResult) => {
 let inputs = document.querySelectorAll('input')
 
 let formFields = {
-    firstName: true,
-    lastName: true,
-    email: true,
-    tel: true,
-    bio: true,
+    fullName: false,
+    email: false,
+    message: false,
 };
 
 
 
 const formTextValidator = (e) => {
     formErrorHandler(e, lengthValidator(e.target.value, 2, 45))
+    formFields.fullName = lengthValidator(e.target.value, 2, 25)
 
-    switch (e.target.type) {
-        case "text":
-            if (e.target.name == "AccountDetails.BasicInfoForm.FirstName") {
-                formFields.firstName = lengthValidator(e.target.value, 2, 25)
-            }
-            else {
-                formFields.lastName = lengthValidator(e.target.value, 2, 35)
-            }
-            break;
-        case "tel":
-            formFields.tel = lengthValidator(e.target.value, 1, 35)
-
-            break;
-        case "textarea":
-            formFields.bio = lengthValidator(e.target.value, 1, 300)
-            break;
-    }
     validateForm();
+}
 
+const formTextAreaValidator = (e) => {
+    formErrorHandler(e, lengthValidator(e.target.value, 7, 300))
+    formFields.message = lengthValidator(e.target.value, 7, 300)
+
+    validateForm();
 }
 
 const formEmailValidator = (e) => {
@@ -74,23 +62,25 @@ const formEmailValidator = (e) => {
 function validateForm() {
     let fieldValues = []
 
-    const submitBtn = document.querySelector('#basicInfoSubmitBtn')
+    const submitBtn = document.querySelector('#contactSubmitBtn')
 
     for (let fieldKey in formFields) {
         let fieldValue = formFields[fieldKey];
-        fieldValues.push(fieldValue);
+        fieldValues.push(fieldValue);   
     }
+
+    console.log(fieldValues)
 
     if (fieldValues.includes(false)) {
         submitBtn.disabled = true
         submitBtn.classList.add('btn-disabled')
-        submitBtn.classList.remove('btn-theme')
+        submitBtn.classList.remove('btn-theme-s')
 
         return false
     } else {
         submitBtn.disabled = false
         submitBtn.classList.remove('btn-disabled')
-        submitBtn.classList.add('btn-theme')
+        submitBtn.classList.add('btn-theme-s')
         return true
     }
 
@@ -114,10 +104,9 @@ inputs.forEach(input => {
     }
 })
 
-document.getElementById("basicInfoBio").addEventListener('keyup', (e) => {
-    formTextValidator(e)
+document.getElementById("contactMessage").addEventListener('keyup', (e) => {
+    formTextAreaValidator(e)
 })
-
 
 /*
 Validate the form on page load

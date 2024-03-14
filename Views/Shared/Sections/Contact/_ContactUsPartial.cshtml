@@ -31,7 +31,7 @@
         </div>
         <div class="form-container">
             <h2>Get in Contact With Us</h2>
-            <form asp-controller="Contact" asp-action="ContactSubmit" novalidate method="post">
+            <form asp-controller="Contact" asp-action="ContactSubmit" method="post" novalidate>
                 <div class="input-group">
                     <label asp-for="ContactForm.FullName"></label>
                     <input asp-for="ContactForm.FullName">
@@ -45,7 +45,7 @@
 
                 <div class="input-group service-group">
                     <label asp-for="ContactForm.ContactService"></label>
-                    <select asp-for="ContactForm.ContactService" class="dropbtn">
+                    <select asp-for="ContactForm.ContactService.Title" class="dropbtn">
                         <option disabled="" selected="">Desired service</option>
                         <option value="Service 1">Service 1</option>
                         <option value="Service 2">Service 2</option>
@@ -58,11 +58,12 @@
                 
                 <div class="input-group message-group">
                     <label asp-for="@Model.ContactForm.Message"></label>
-                    <textarea asp-for="@Model.ContactForm.Message"></textarea>
+                    <textarea id="contactMessage" asp-for="@Model.ContactForm.Message"></textarea>
                     <span asp-validation-for="@Model.ContactForm.Message"></span>
                 </div>
-                <button class="btn-theme-s">Send Contact Request</button>
+                <button type="submit" id="contactSubmitBtn" disabled class="btn-disabled">Send Contact Request</button>
             </form>
         </div>
     </div>
 </section>
+@await Html.PartialAsync("_ContactValidationPartial")

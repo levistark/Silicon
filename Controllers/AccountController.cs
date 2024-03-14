@@ -44,6 +44,7 @@ public class AccountController(SignInManager<ApplicationUser> signInManager, Use
         return RedirectToAction("SignIn", "Auth");
     }
 
+
     [HttpPost]
     [Route("/account/details/update-info")]
     public async Task<IActionResult> SaveBasicInfo([Bind(Prefix = "AccountDetails.BasicInfoForm")] AccountBasicInfoFormModel basicInfoForm)
@@ -101,6 +102,7 @@ public class AccountController(SignInManager<ApplicationUser> signInManager, Use
         await _signInManager.SignOutAsync();
         return RedirectToAction("SignIn", "Auth");
     }
+
 
     [HttpPost]
     [Route("/account/details/update-address")]
@@ -174,8 +176,9 @@ public class AccountController(SignInManager<ApplicationUser> signInManager, Use
         return RedirectToAction("SignIn", "Auth");
     }
 
+
     [Route("/account/security")]
-    public async Task<IActionResult> AccountSecurity()
+    public async Task<IActionResult> AccountSecurity(AccountViewModel viewModel)
     {
         if (!_signInManager.IsSignedIn(User))
         {
@@ -186,8 +189,8 @@ public class AccountController(SignInManager<ApplicationUser> signInManager, Use
 
         if (userEntity != null)
         {
-            var viewModel = new AccountViewModel() { User = userEntity };
-
+            viewModel.User = userEntity;
+            ModelState.Clear();
             return View(viewModel);
         }
 
@@ -195,19 +198,64 @@ public class AccountController(SignInManager<ApplicationUser> signInManager, Use
         return RedirectToAction("SignIn", "Auth");
     }
 
-    private AccountBasicInfoFormModel ValidateBasicInfoForm(AccountBasicInfoFormModel formModel)
-    {
-        if (ModelState.IsValid)
-        {
 
+    [HttpPost]
+    [Route("/account/save-password")]
+
+    public async Task<IActionResult> SaveNewPassword([Bind(Prefix = "Security.Form")] AccountSecurityFormModel securityForm)
+    {
+        var userEntity = await _userManager.GetUserAsync(User);
+        var viewModel = new AccountViewModel() { User = userEntity! };
+
+        // Checking if the user exists in database
+        if (userEntity != null)
+        {
+            // Validating the form
+            if (ModelState.IsValid)
+            {
+                var isCurrentPassword = await _userManager.CheckPasswordAsync(userEntity, securityForm.CurrentPassword);
+
+                // Checking if the users current password is correct
+                if (isCurrentPassword)
+                {
+                    // Checking that the new password isn't the same as the old one
+                    if (securityForm.CurrentPassword != securityForm.NewPassword)
+                    {
+                        var result = await _userManager.ChangePasswordAsync(userEntity, securityForm.CurrentPassword, securityForm.NewPassword);
+
+                        // Returning results
+                        if (result.Succeeded)
+                        {
+                            TempData["Success"] = "Password was successfully updated";
+                            return RedirectToAction("AccountSecurity", "Account", viewModel);
+                        }
+                        else
+                        {
+                            TempData["Failed"] = "Password update failed";
+                            return RedirectToAction("AccountSecurity", "Account", viewModel);
+                        }
+                    }
+                    else
+                    {
+                        TempData["Failed"] = "New password can't be the same as your old password";
+                        return RedirectToAction("AccountSecurity", "Account", viewModel);
+                    }
+                }
+                else
+                {
+                    TempData["Failed"] = "Wrong current password";
+                    return RedirectToAction("AccountSecurity", "Account", viewModel);
+                }
+            }
+            viewModel.Security.Form = securityForm;
+            return View("AccountSecurity", viewModel);
         }
+        // If no user is found
         else
         {
-            ModelState.AddModelError("Already Exists", "User with the same email address already exists");
-            ViewData["ErrorMessage"] = "User with the same email address already exists";
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("SignIn", "Auth");
         }
-
-        return formModel;
     }
 
     private async Task<AccountViewModel> PopulateAccountDetailsViewModel(ApplicationUser userEntity)

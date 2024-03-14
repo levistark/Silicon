@@ -9,11 +9,9 @@
     @await Html.PartialAsync("~/Views/Shared/Components/_PageNavPartial.cshtml")
 
     <main>
-        @await Html.PartialAsync("~/Views/Shared/Sections/Contact/_ContactUsPartial.cshtml")
+        @await Html.PartialAsync("~/Views/Shared/Sections/Contact/_ContactUsPartial.cshtml", Model)
         @await Html.PartialAsync("~/Views/Shared/Sections/Contact/_ContactMapPartial.cshtml")
     </main>
 
     @await Html.PartialAsync("~/Views/Shared/Components/_FooterPartial.cshtml")
 </div>
-@await Html.PartialAsync("_AccountBasicInfoValidationPartial")
-
