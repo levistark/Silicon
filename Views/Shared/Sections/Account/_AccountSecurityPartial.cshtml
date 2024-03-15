@@ -43,16 +43,21 @@
 
             <p>When you delete your account, your public profile will be deactivated immediately. If you change your mind before the 14 days are up, sign in with your email and passwordn, and we'll send you a link to reactivate your account</p>
 
-            <div class="checkbox-group">
-                <label class="checkbox-container">
-                    <input type="checkbox" id="delete-checkbox">
-                    <span class="checkmark"></span>
-                </label>
-                <label for="delete-checkbox">Yes, I want to delete my account</label>
-            </div>
+            <form asp-action="DeleteAccount" asp-controller="Account">
+                <div class="checkbox-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" asp-for="Security.DeleteAccount.DeleteConfirmation" id="delete-checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label asp-for="Security.DeleteAccount.DeleteConfirmation" for="delete-checkbox">Yes, I want to delete my account</label>
+                </div>
+                <span class="checkbox-validation-message" asp-validation-for="Security.DeleteAccount.DeleteConfirmation"></span>
 
-            <button class="btn-danger">Delete</button>
+                <button type="submit" id="deleteAccountSubmitBtn" disabled class="btn-disabled">Delete</button>
+            </form>
+            
         </div>
     </div>
 </section>
 @await Html.PartialAsync("_AccountSecurityValidationPartial")
+@await Html.PartialAsync("_AccountDeleteValidationPartial")

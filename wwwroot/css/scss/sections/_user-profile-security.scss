@@ -233,19 +233,31 @@
                 margin-top: 3rem;
             }
 
-            .checkbox-group {
-                margin-top: 1rem;
-                margin-bottom: 1rem;
-                display: flex;
-                gap: 0.5rem;
-                align-items: center;
-                position: relative;
+            form {
+                .checkbox-group {
+                    margin-top: 1rem;
+                    margin-bottom: 0.5rem;
+                    display: flex;
+                    gap: 0.5rem;
+                    align-items: center;
+                    position: relative;
 
 
-                label {
-                    margin-top: 0;
-                    margin-bottom: 0;
-                    cursor: pointer;
+                    label {
+                        margin-top: 0;
+                        margin-bottom: 0;
+                        cursor: pointer;
+                    }
+                }
+
+                .checkbox-validation-message {
+                    &::after {
+                        display: none;
+                    }
+                }
+
+                button {
+                    margin-top: 1rem;
                 }
             }
         }

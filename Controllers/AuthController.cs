@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Silicon.Models.Authentication;
+using System.Security.Claims;
 
 namespace Silicon.Controllers;
 public class AuthController(SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> userManager) : Controller
@@ -33,8 +34,7 @@ public class AuthController(SignInManager<ApplicationUser> signInManager, UserMa
                 return RedirectToAction("AccountDetails", "Account");
             }
 
-            ModelState.AddModelError("Incorrect values", "Incorrect email or password");
-            ViewData["ErrorMessage"] = "Incorrect email or password";
+            TempData["Failed"] = "Incorrect email or password";
         }
 
         return View(model);
@@ -58,12 +58,9 @@ public class AuthController(SignInManager<ApplicationUser> signInManager, UserMa
         {
             if (await _userManager.Users.AnyAsync(x => x.Email == model.Form.Email))
             {
-                ModelState.AddModelError("Already Exists", "User with the same email address already exists");
-                ViewData["ErrorMessage"] = "User with the same email address already exists";
+                TempData["Failed"] = "User with the same email address already exists";
                 return View(model);
             }
-
-
 
             var result = await _userManager.CreateAsync(new ApplicationUser()
             {
@@ -75,6 +72,7 @@ public class AuthController(SignInManager<ApplicationUser> signInManager, UserMa
 
             if (result.Succeeded)
             {
+                TempData["Success"] = "Account successfully created. Please log in below";
                 return RedirectToAction("SignIn", "Auth");
             }
 
@@ -89,5 +87,61 @@ public class AuthController(SignInManager<ApplicationUser> signInManager, UserMa
     {
         await _signInManager.SignOutAsync();
         return RedirectToAction("Index", "Home");
+    }
+
+    [HttpGet]
+    public IActionResult Facebook()
+    {
+        var authProps = _signInManager.ConfigureExternalAuthenticationProperties("Facebook", Url.Action("FacebookCallback"));
+        return new ChallengeResult("Facebook", authProps);
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> FacebookCallback()
+    {
+        var info = await _signInManager.GetExternalLoginInfoAsync();
+        if (info != null)
+        {
+            var userEntity = new ApplicationUser()
+            {
+                FirstName = info.Principal.FindFirstValue(ClaimTypes.GivenName!)!,
+                LastName = info.Principal.FindFirstValue(ClaimTypes.Surname!)!,
+                Email = info.Principal.FindFirstValue(ClaimTypes.Email!)!,
+                UserName = info.Principal.FindFirstValue(ClaimTypes.Email!)!,
+            };
+
+            var user = await _userManager.FindByEmailAsync(userEntity.Email);
+
+            if (user == null)
+            {
+                var result = await _userManager.CreateAsync(userEntity);
+
+                if (result.Succeeded)
+                {
+                    user = await _userManager.FindByEmailAsync(userEntity.Email);
+                }
+            }
+
+            if (user != null)
+            {
+                if (user.FirstName != userEntity.FirstName || user.LastName != userEntity.LastName || user.Email != userEntity.Email)
+                {
+                    user.FirstName = userEntity.FirstName;
+                    user.LastName = userEntity.LastName;
+                    user.Email = userEntity.Email;
+
+                    await _userManager.UpdateAsync(user);
+                }
+
+                await _signInManager.SignInAsync(user, isPersistent: false);
+
+                if (HttpContext.User != null)
+                {
+                    return RedirectToAction("Details", "Account");
+                }
+            }
+        }
+        ViewData["StatusMessage"] = "danger|Failed to authenticate with Facebook";
+        return RedirectToAction("AccountDetails", "Account");
     }
 }

@@ -6,7 +6,7 @@
 
         .content {
             max-width: 600px;
-            position:relative;
+            position: relative;
 
             .signInErrorBox {
                 position: absolute;
@@ -17,6 +17,19 @@
                 border-radius: 6px;
                 text-align: center;
                 color: black;
+            }
+
+            .signInSuccessBox {
+                position: absolute;
+                top: -3.8rem;
+                width: 100%;
+                padding: 0.5rem 1.5rem;
+                background-color: lightgreen;
+                border-radius: 6px;
+                text-align: center;
+                color: black;
+                animation: alertFadeout 1s forwards;
+                animation-delay: 3s;
             }
 
             p {

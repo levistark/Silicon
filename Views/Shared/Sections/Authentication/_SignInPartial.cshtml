@@ -6,14 +6,16 @@
 <section id="sign-in-page" class="page-section">
     <div class="container">
         <div class="content">
-                @if (!string.IsNullOrEmpty(ViewData["ErrorMessage"]?.ToString()))
+                @if (!string.IsNullOrEmpty(TempData["Failed"]?.ToString()))
                 {
-                    <div class="signInErrorBox" id="signInErrorBox">@ViewData["ErrorMessage"]</div>
+                    <div class="signInErrorBox" id="signInErrorBox">@TempData["Failed"]!.ToString()</div>
                 }
-                else
+                else if (!string.IsNullOrEmpty(TempData["Success"]?.ToString()))
                 {
-                    <div class="signInErrorBox d-none" id="signInErrorBox">Incorrect email or password</div>
+                    <div class="signInSuccessBox" id="signInSuccessBox">@TempData["Success"]!.ToString()</div>
                 }
+
+            <div class="signInErrorBox d-none" id="signInErrorBox">Wrong email or password</div>
 
             <h1>Welcome Back</h1>
             <p>Don't have an account yet? <a asp-controller="Auth" asp-action="SignUp">Sign up here.</a></p>
@@ -39,8 +41,8 @@
             <div class="third-party-login">
                 <h6>Or sign in with your social network</h6>
                 <div class="btn-group">
-                    <a href="" class="btn-gray"><i class="fa-brands fa-google"></i>Google</a>
-                    <a href="" class="btn-gray"><i class="fa-brands fa-facebook-f"></i>Facebook</a>
+                    <a asp-action="Google" asp-controller="Auth" class="btn-gray"><i class="fa-brands fa-google"></i>Google</a>
+                    <a asp-action="Facebook" asp-controller="Auth" class="btn-gray"><i class="fa-brands fa-facebook-f"></i>Facebook</a>
                 </div>
             </div>
         </div>

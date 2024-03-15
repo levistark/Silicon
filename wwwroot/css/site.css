@@ -2273,6 +2273,18 @@ footer .container p {
   text-align: center;
   color: black;
 }
+#sign-in-page .container .content .signInSuccessBox {
+  position: absolute;
+  top: -3.8rem;
+  width: 100%;
+  padding: 0.5rem 1.5rem;
+  background-color: lightgreen;
+  border-radius: 6px;
+  text-align: center;
+  color: black;
+  animation: alertFadeout 1s forwards;
+  animation-delay: 3s;
+}
 #sign-in-page .container .content p {
   font-size: 11pt;
 }
@@ -2547,6 +2559,8 @@ footer .container p {
   border-radius: 6px;
   text-align: center;
   color: black;
+  animation: alertFadeout 1s forwards;
+  animation-delay: 3s;
 }
 #user-profile .container .account-details-container .updateSuccessBox {
   position: absolute;
@@ -2557,6 +2571,8 @@ footer .container p {
   border-radius: 6px;
   text-align: center;
   color: black;
+  animation: alertFadeout 1s forwards;
+  animation-delay: 3s;
 }
 @media (min-width: 1200px) {
   #user-profile .container .account-details-container {
@@ -2910,18 +2926,24 @@ footer .container p {
 #user-profile-security .container .user-profile-security .delete-account-heading {
   margin-top: 3rem;
 }
-#user-profile-security .container .user-profile-security .checkbox-group {
+#user-profile-security .container .user-profile-security form .checkbox-group {
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   display: flex;
   gap: 0.5rem;
   align-items: center;
   position: relative;
 }
-#user-profile-security .container .user-profile-security .checkbox-group label {
+#user-profile-security .container .user-profile-security form .checkbox-group label {
   margin-top: 0;
   margin-bottom: 0;
   cursor: pointer;
+}
+#user-profile-security .container .user-profile-security form .checkbox-validation-message::after {
+  display: none;
+}
+#user-profile-security .container .user-profile-security form button {
+  margin-top: 1rem;
 }
 
 #user-profile-saved-courses .container {

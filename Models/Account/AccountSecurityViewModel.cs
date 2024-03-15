@@ -2,5 +2,6 @@
 public class AccountSecurityViewModel
 {
     public string? Title { get; set; }
-    public AccountSecurityFormModel Form { get; set; } = new AccountSecurityFormModel();
+    public AccountSecurityFormModel Form { get; set; } = new();
+    public AccountSecurityDeleteAccountFormModel DeleteAccount { get; set; } = new();
 }

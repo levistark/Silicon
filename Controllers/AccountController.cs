@@ -154,7 +154,6 @@ public class AccountController(SignInManager<ApplicationUser> signInManager, Use
         }
     }
 
-
     [Route("/account/saved")]
     public async Task<IActionResult> AccountSavedItems()
     {
@@ -201,7 +200,6 @@ public class AccountController(SignInManager<ApplicationUser> signInManager, Use
 
     [HttpPost]
     [Route("/account/save-password")]
-
     public async Task<IActionResult> SaveNewPassword([Bind(Prefix = "Security.Form")] AccountSecurityFormModel securityForm)
     {
         var userEntity = await _userManager.GetUserAsync(User);
@@ -249,6 +247,45 @@ public class AccountController(SignInManager<ApplicationUser> signInManager, Use
             }
             viewModel.Security.Form = securityForm;
             return View("AccountSecurity", viewModel);
+        }
+        // If no user is found
+        else
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("SignIn", "Auth");
+        }
+    }
+
+
+    [HttpPost]
+    [Route("/account/security/delete-account")]
+    public async Task<IActionResult> DeleteAccount([Bind(Prefix = "Security.DeleteAccount")] AccountSecurityDeleteAccountFormModel checkbox)
+    {
+        var userEntity = await _userManager.GetUserAsync(User);
+        var viewModel = new AccountViewModel() { User = userEntity! };
+
+        if (userEntity != null)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _userManager.DeleteAsync(userEntity);
+
+                if (result.Succeeded)
+                {
+                    TempData["Success"] = "Account successfully deleted";
+                    return RedirectToAction("SignIn", "Auth");
+                }
+                else
+                {
+                    TempData["Failed"] = "Account successfully deleted";
+                    return RedirectToAction("AccontSecurity", viewModel);
+                }
+            }
+            else
+            {
+                viewModel.Security.DeleteAccount = checkbox;
+                return View("AccountSecurity", viewModel);
+            }
         }
         // If no user is found
         else
