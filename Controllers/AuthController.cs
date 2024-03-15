@@ -92,12 +92,20 @@ public class AuthController(SignInManager<ApplicationUser> signInManager, UserMa
     [HttpGet]
     public IActionResult Facebook()
     {
-        var authProps = _signInManager.ConfigureExternalAuthenticationProperties("Facebook", Url.Action("FacebookCallback"));
+        var authProps = _signInManager.ConfigureExternalAuthenticationProperties("Facebook", Url.Action("ExternalLoginCallback"));
         return new ChallengeResult("Facebook", authProps);
     }
 
     [HttpGet]
-    public async Task<IActionResult> FacebookCallback()
+    public IActionResult Google()
+    {
+        var authProps = _signInManager.ConfigureExternalAuthenticationProperties("Google", Url.Action("ExternalLoginCallback"));
+        return new ChallengeResult("Google", authProps);
+    }
+
+
+    [HttpGet]
+    public async Task<IActionResult> ExternalLoginCallback()
     {
         var info = await _signInManager.GetExternalLoginInfoAsync();
         if (info != null)
@@ -108,6 +116,7 @@ public class AuthController(SignInManager<ApplicationUser> signInManager, UserMa
                 LastName = info.Principal.FindFirstValue(ClaimTypes.Surname!)!,
                 Email = info.Principal.FindFirstValue(ClaimTypes.Email!)!,
                 UserName = info.Principal.FindFirstValue(ClaimTypes.Email!)!,
+                IsExternalAccount = true,
             };
 
             var user = await _userManager.FindByEmailAsync(userEntity.Email);
@@ -141,7 +150,10 @@ public class AuthController(SignInManager<ApplicationUser> signInManager, UserMa
                 }
             }
         }
-        ViewData["StatusMessage"] = "danger|Failed to authenticate with Facebook";
+        ViewData["StatusMessage"] = "danger|Failed to authenticate with 3rd party account";
         return RedirectToAction("AccountDetails", "Account");
     }
+
+
+
 }

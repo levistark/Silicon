@@ -310,7 +310,8 @@ public class AccountController(SignInManager<ApplicationUser> signInManager, Use
                     PhoneNumber = userEntity.PhoneNumber,
                     Bio = userEntity.Bio
                 }
-            }
+            },
+            IsExternalAccount = userEntity.IsExternalAccount,
         };
 
         if (userEntity.AddressId != null)

@@ -25,18 +25,43 @@
             <form asp-controller="Account" asp-action="SaveBasicInfo" class="form-basic-info" method="post" novalidate>
                 <div class="firstname-group input-group">
                     <label asp-for="AccountDetails.BasicInfoForm.FirstName"></label>
-                    <input asp-for="AccountDetails.BasicInfoForm.FirstName" placeholder="@Model.User.FirstName">
-                    <span asp-validation-for="AccountDetails.BasicInfoForm.FirstName"></span>
+                    @if (Model.IsExternalAccount)
+                    {
+                        <input asp-for="AccountDetails.BasicInfoForm.FirstName" disabled placeholder="@Model.User.FirstName">
+                    }
+                    else
+                    {
+                        <input asp-for="AccountDetails.BasicInfoForm.FirstName" placeholder="@Model.User.FirstName">
+                        <span asp-validation-for="AccountDetails.BasicInfoForm.FirstName"></span>
+                    }
+                    
                 </div>
                 <div class="lastname-group input-group">
                     <label asp-for="AccountDetails.BasicInfoForm.LastName"></label>
-                    <input asp-for="AccountDetails.BasicInfoForm.LastName" placeholder="@Model.User.LastName">
-                    <span asp-validation-for="AccountDetails.BasicInfoForm.LastName"></span>
+
+                    @if (Model.IsExternalAccount)
+                    {
+                        <input asp-for="AccountDetails.BasicInfoForm.LastName" disabled placeholder="@Model.User.LastName">
+                    }
+                    else
+                    {
+                        <input asp-for="AccountDetails.BasicInfoForm.LastName" placeholder="@Model.User.LastName">
+                        <span asp-validation-for="AccountDetails.BasicInfoForm.LastName"></span>
+                    }
+                    
                 </div>
                 <div class="email-group input-group">
                     <label asp-for="AccountDetails.BasicInfoForm.Email"></label>
-                    <input asp-for="AccountDetails.BasicInfoForm.Email" placeholder="@Model.User.Email">
-                    <span asp-validation-for="AccountDetails.BasicInfoForm.Email"></span>
+
+                    @if (Model.IsExternalAccount)
+                    {
+                        <input asp-for="AccountDetails.BasicInfoForm.Email" disabled placeholder="@Model.User.Email">
+                    }
+                    else
+                    {
+                        <input asp-for="AccountDetails.BasicInfoForm.Email" placeholder="@Model.User.Email">
+                        <span asp-validation-for="AccountDetails.BasicInfoForm.Email"></span>
+                    }
                 </div>
                 <div class="phone-group input-group">
                     <label asp-for="AccountDetails.BasicInfoForm.PhoneNumber"></label>

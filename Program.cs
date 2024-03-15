@@ -28,12 +28,17 @@ builder.Services.ConfigureApplicationCookie(x =>
 
 builder.Services.AddScoped<AddressRepository>();
 builder.Services.AddScoped<AddressManager>();
+
 builder.Services.AddAuthentication().AddFacebook(x =>
 {
     x.AppId = "399096742977803";
     x.AppSecret = "a0d28ebaff102027ddff6d2acdfdf9ec";
-    x.Fields.Add("first_name");
-    x.Fields.Add("last_name");
+});
+
+builder.Services.AddAuthentication().AddGoogle(x =>
+{
+    x.ClientId = "68485155341-v6i89d1k40kmt49cvteo2su5cs4nh8bk.apps.googleusercontent.com";
+    x.ClientSecret = "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";
 });
 
 var app = builder.Build();
