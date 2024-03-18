@@ -1,5 +1,4 @@
-﻿
-/* 
+﻿/* 
 This function handles the load of the user's last theme setting.
 It uses localStorage to load the last saved color class (lastBodyClass) from the body-tag
 */
@@ -15,6 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('#switch-mode').checked = false;
         document.querySelector('#mobile-switch-mode').checked = false;
     }
+
+    window.scrollTo({ top: localStorage.getItem('lastScrollPosition'), behavior: "instant" })
+
+})
+
+window.addEventListener('scroll', () => {
+    localStorage.setItem('lastScrollPosition', window.scrollY)
 })
 
 /*
@@ -77,5 +83,18 @@ async function toggleNavBar() {
         await sideBar.classList.remove('flyInAnimation')
     }
 }
+
+//$(document).scroll(function () {
+//    localStorage['homePage'] = document.URL;
+//    localStorage['scrollTop'] = $(document).scrollTop();
+//    console.log(1)
+//});
+//$(document).ready(function () {
+//    if (localStorage['homePage'] == document.URL) {
+//        $(document).scrollTop(localStorage['scrollTop']);
+//    }
+//    console.log(2)
+//});
+
 
 

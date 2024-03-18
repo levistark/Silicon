@@ -11,7 +11,7 @@ public class CoursesController : Controller
     }
 
     [HttpGet]
-    public IActionResult Course()
+    public IActionResult CourseDetails()
     {
         return View();
     }

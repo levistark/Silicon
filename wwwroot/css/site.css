@@ -1721,37 +1721,53 @@ footer .container p {
 #start-signup .container .content .heading-box img {
   margin-left: 3rem;
 }
-#start-signup .container .content .grid-container {
+#start-signup .container .content .start-signup-form .grid-container {
   margin: 3rem 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
   gap: 1rem;
 }
-#start-signup .container .content .grid-container h6 {
+#start-signup .container .content .start-signup-form .grid-container h6 {
   color: var(--main-title-clr);
 }
-#start-signup .container .content .grid-container .grid-item {
+#start-signup .container .content .start-signup-form .grid-container .grid-item {
   display: flex;
   flex-direction: column;
 }
-#start-signup .container .content .grid-container .grid-item .checkbox-container {
+#start-signup .container .content .start-signup-form .grid-container .grid-item .checkbox-container {
   display: block;
 }
-#start-signup .container .content .grid-container .grid-item .checkbox-container label {
+#start-signup .container .content .start-signup-form .grid-container .grid-item .checkbox-container label {
   margin-left: 1rem;
   color: var(--main-text-clr);
+  font-size: 12pt;
 }
-#start-signup .container .content .input-container {
+#start-signup .container .content .start-signup-form .grid-container .grid-item .checkbox-container span {
+  margin-top: 1.2rem;
+}
+#start-signup .container .content .start-signup-form .grid-container .grid-item .checkbox-container .field-validation-error {
+  position: absolute;
+  top: -40px;
+  left: 0;
+}
+#start-signup .container .content .start-signup-form .grid-container .grid-item .checkbox-container .field-validation-error::after {
+  display: none;
+}
+#start-signup .container .content .start-signup-form .grid-container .grid-item .checkbox-container .checkbox-validation-message::after {
+  display: none;
+}
+#start-signup .container .content .start-signup-form .input-container {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 @media (min-width: 768px) {
-  #start-signup .container .content .input-container {
+  #start-signup .container .content .start-signup-form .input-container {
     flex-direction: row;
   }
 }
-#start-signup .container .content .input-container .input-email-container {
+#start-signup .container .content .start-signup-form .input-container .input-email-container {
   background-color: transparent;
   width: 100%;
   height: 3rem;
@@ -1761,16 +1777,16 @@ footer .container p {
   border: solid var(--main-clr-input-border);
 }
 @media (min-width: 768px) {
-  #start-signup .container .content .input-container .input-email-container {
+  #start-signup .container .content .start-signup-form .input-container .input-email-container {
     width: 80%;
   }
 }
-#start-signup .container .content .input-container .input-email-container i {
+#start-signup .container .content .start-signup-form .input-container .input-email-container i {
   margin-left: 1rem;
   font-size: 18pt;
   color: #9397AD;
 }
-#start-signup .container .content .input-container .input-email-container .input-email {
+#start-signup .container .content .start-signup-form .input-container .input-email-container .input-email {
   margin-left: 1rem;
   width: 80%;
   border: none;
@@ -1781,24 +1797,39 @@ footer .container p {
   background-color: transparent;
   color: var(--main-text-clr);
 }
-#start-signup .container .content .input-container .input-email-container .input-email:hover {
+#start-signup .container .content .start-signup-form .input-container .input-email-container .input-email:hover {
   border: none !important;
 }
-#start-signup .container .content .input-container .input-email-container .input-email:focus {
+#start-signup .container .content .start-signup-form .input-container .input-email-container .input-email:focus {
   border: none !important;
 }
-#start-signup .container .content .input-container .btn-theme {
+#start-signup .container .content .start-signup-form .input-container .input-email-container .field-validation-error {
+  position: absolute;
+  top: 15px;
+}
+#start-signup .container .content .start-signup-form .input-container .input-email-container .field-validation-error::after {
+  display: none;
+}
+#start-signup .container .content .start-signup-form .input-container .home-signup-submit {
   height: 3rem;
   margin-top: 1rem;
 }
 @media (min-width: 768px) {
-  #start-signup .container .content .input-container .btn-theme {
+  #start-signup .container .content .start-signup-form .input-container .home-signup-submit {
     margin-top: 0;
     margin-left: 5%;
     width: 15%;
   }
 }
-#start-signup .container .content p {
+#start-signup .container .content .start-signup-form .input-container .field-validation-error {
+  position: absolute;
+  top: -27px;
+  left: 0;
+}
+#start-signup .container .content .start-signup-form .input-container .field-validation-error::after {
+  display: none;
+}
+#start-signup .container .content .start-signup-form p {
   display: block;
   margin-top: 1rem;
   color: var(--main-text-clr);
@@ -1902,6 +1933,12 @@ footer .container p {
   display: flex;
   align-items: center;
   gap: 20px;
+}
+.header-page-navigation nav ol li #houseIcon {
+  margin-right: 0.5rem;
+}
+.header-page-navigation nav ol li .current-page-link {
+  color: #6366F1 !important;
 }
 .header-page-navigation a {
   color: var(--main-text-clr);

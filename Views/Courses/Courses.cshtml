@@ -4,7 +4,14 @@
 
 @await Html.PartialAsync("~/Views/Shared/Components/_MobileNavPartial.cshtml")
 @await Html.PartialAsync("~/Views/Shared/Components/_HeaderPartial.cshtml")
-@await Html.PartialAsync("~/Views/Shared/Components/_PageNavPartial.cshtml")
+@await Html.PartialAsync("~/Views/Shared/Components/_PageNavPartial.cshtml", new PageNavModel() 
+{ 
+    Pages = 
+    [
+        new LinkModel() { Title = "Home", Url = "/" },
+        new LinkModel() { Title = "Courses", Url = "/courses", CurrentPage = true }
+    ]
+})
 
 <main>
     @await Html.PartialAsync("~/Views/Shared/Sections/Courses/_CoursesPartial.cshtml")

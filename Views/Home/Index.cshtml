@@ -1,18 +1,19 @@
 ﻿@{
     ViewData["Title"] = "Home";
 }
+@model IndexHomeModel
 
 @await Html.PartialAsync("~/Views/Shared/Components/_MobileNavPartial.cshtml")
 @await Html.PartialAsync("~/Views/Shared/Components/_HeaderPartial.cshtml")
 
 <main>
-    @await Html.PartialAsync("~/Views/Shared/Sections/Home/_HomeShowcasePartial.cshtml", new ShowcaseModel())
-    @await Html.PartialAsync("~/Views/Shared/Sections/Home/_HomeFeaturesPartial.cshtml", new FeaturesModel())
-    @await Html.PartialAsync("~/Views/Shared/Sections/Home/_HomeLightDarkPartial.cshtml", new LightDarkModel())
-    @await Html.PartialAsync("~/Views/Shared/Sections/Home/_HomeFeaturesListPartial.cshtml", new FeaturesListModel())
-    @await Html.PartialAsync("~/Views/Shared/Sections/Home/_HomeAppPartial.cshtml", new AppModel())
-    @await Html.PartialAsync("~/Views/Shared/Sections/Home/_HomeToolIntegrationsPartial.cshtml", new ToolIntegrationsModel())
-    @await Html.PartialAsync("~/Views/Shared/Sections/Home/_HomeSignUpPartial.cshtml")
+    @await Html.PartialAsync("~/Views/Shared/Sections/Home/_HomeShowcasePartial.cshtml", Model.Showcase)
+    @await Html.PartialAsync("~/Views/Shared/Sections/Home/_HomeFeaturesPartial.cshtml", Model.Features)
+    @await Html.PartialAsync("~/Views/Shared/Sections/Home/_HomeLightDarkPartial.cshtml", Model.LightDark)
+    @await Html.PartialAsync("~/Views/Shared/Sections/Home/_HomeFeaturesListPartial.cshtml", Model.FeaturesList)
+    @await Html.PartialAsync("~/Views/Shared/Sections/Home/_HomeAppPartial.cshtml", Model.App)
+    @await Html.PartialAsync("~/Views/Shared/Sections/Home/_HomeToolIntegrationsPartial.cshtml", Model.ToolIntegrations)
+    @await Html.PartialAsync("~/Views/Shared/Sections/Home/_HomeSignUpPartial.cshtml", Model.SignUp.Form)
 </main>
 
 @await Html.PartialAsync("~/Views/Shared/Components/_FooterPartial.cshtml")
