@@ -1,0 +1,14 @@
+C:\VSProjects\ASP.NET\Silicon\Infrastructure\bin\Debug\net8.0\Infrastructure.deps.json
+C:\VSProjects\ASP.NET\Silicon\Infrastructure\bin\Debug\net8.0\Infrastructure.runtimeconfig.json
+C:\VSProjects\ASP.NET\Silicon\Infrastructure\bin\Debug\net8.0\Infrastructure.dll
+C:\VSProjects\ASP.NET\Silicon\Infrastructure\bin\Debug\net8.0\Infrastructure.pdb
+C:\VSProjects\ASP.NET\Silicon\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.AssemblyReference.cache
+C:\VSProjects\ASP.NET\Silicon\Infrastructure\obj\Debug\net8.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\VSProjects\ASP.NET\Silicon\Infrastructure\obj\Debug\net8.0\Infrastructure.AssemblyInfoInputs.cache
+C:\VSProjects\ASP.NET\Silicon\Infrastructure\obj\Debug\net8.0\Infrastructure.AssemblyInfo.cs
+C:\VSProjects\ASP.NET\Silicon\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.CoreCompileInputs.cache
+C:\VSProjects\ASP.NET\Silicon\Infrastructure\obj\Debug\net8.0\Infrastructure.dll
+C:\VSProjects\ASP.NET\Silicon\Infrastructure\obj\Debug\net8.0\refint\Infrastructure.dll
+C:\VSProjects\ASP.NET\Silicon\Infrastructure\obj\Debug\net8.0\Infrastructure.pdb
+C:\VSProjects\ASP.NET\Silicon\Infrastructure\obj\Debug\net8.0\Infrastructure.genruntimeconfig.cache
+C:\VSProjects\ASP.NET\Silicon\Infrastructure\obj\Debug\net8.0\ref\Infrastructure.dll

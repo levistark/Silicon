@@ -1,0 +1,6 @@
+@Silicon_API_HostAddress = http://localhost:5074
+
+GET {{Silicon_API_HostAddress}}/api/Courses
+Accept: application/json
+
+###

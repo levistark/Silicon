@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Name": "Silicon\\Silicon.csproj",
+        "Action": "Start"
+      },
+      {
+        "Name": "Silicon_API\\Silicon_API.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
