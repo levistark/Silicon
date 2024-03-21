@@ -1,0 +1,126 @@
+header {
+    padding: 15px 0;
+    position: relative;
+
+    .container {
+        display: grid;
+        align-items: center;
+        justify-content: space-between;
+        grid-template-columns: 1fr auto;
+        grid-template-areas: "logo mobile";
+        gap: 40px;
+
+        @include md {
+            grid-template-columns: 1fr auto auto;
+            grid-template-areas: "logo switch mobile";
+        }
+
+        @include lg {
+            grid-template-columns: auto 1fr auto auto;
+            grid-template-areas: "logo menu switch buttons";
+        }
+
+        #logo {
+            display: block;
+            grid-area: logo;
+            background-image: var(--main-logo);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-size: fill;
+            background-color: transparent;
+            min-width: 125px;
+            min-height: 60px;
+        }
+
+        #menu {
+            grid-area: menu;
+            display: none;
+
+            @include lg {
+                display: block;
+            }
+
+            nav {
+                display: flex;
+                gap: 15px;
+
+                a {
+                    color: var(--main-text-clr);
+                }
+            }
+        }
+
+        .btn-switch {
+            grid-area: switch;
+            display: none;
+
+            label {
+                margin: 0 3px;
+                color: var(--main-text-clr);
+            }
+
+            @include md {
+                display: block;
+            }
+        }
+
+        .btn-user-profile {
+            display: none;
+            grid-area: mobile;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 0px 0px $theme;
+
+            &:hover {
+                box-shadow: 0 0 10px 1px $theme;
+            }
+
+
+            @include lg {
+                display: flex;
+                grid-area: buttons;
+            }
+
+            &:hover img {
+                transform: scale(1.09);
+            }
+
+            img {
+                transition: 0.2s;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        .account-buttons {
+            grid-area: buttons;
+            display: none;
+            gap: 15px;
+
+            @include lg {
+                display: flex;
+            }
+        }
+
+
+
+        .btn-mobile {
+            grid-area: mobile;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+
+
+            @include lg {
+                display: none;
+            }
+
+            i {
+                font-size: 18pt;
+                color: var(--main-title-clr);
+            }
+        }
+    }
+}

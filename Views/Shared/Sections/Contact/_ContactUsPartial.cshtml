@@ -1,0 +1,69 @@
+﻿@model ContactViewModel
+<section id="contact-us-section">
+    <div class="container">
+        <div class="contact-options">
+            <h1>Contact Us</h1>
+            <div class="content-container">
+                <div class="content-group">
+                    <div class="icon-circle">
+                        <i class="fa-regular fa-envelope"></i>
+                    </div>
+                    <div class="content">
+                        <h5>
+                            Email us</h6>
+                            <p>Please feel free to drop us a line. We will <br>respond as soon as possible</p>
+                            <a href="#">Leave a message <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="content-group">
+                    <div class="icon-circle">
+                        <i class="fa-regular fa-envelope"></i>
+                    </div>
+                    <div class="content">
+                        <h5>
+                            Careers</h6>
+                            <p>Sit ac ipsum leo lorem magna nunc mattis <br>maecenas non vetibulum</p>
+                            <a href="#">Send an application <i class="fa-solid fa-user-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="form-container">
+            <h2>Get in Contact With Us</h2>
+            <form asp-controller="Contact" asp-action="ContactSubmit" method="post" novalidate>
+                <div class="input-group">
+                    <label asp-for="ContactForm.FullName"></label>
+                    <input asp-for="ContactForm.FullName">
+                    <span asp-validation-for="ContactForm.FullName"></span>
+                </div>
+                <div class="input-group">
+                    <label asp-for="ContactForm.Email"></label>
+                    <input asp-for="ContactForm.Email">
+                    <span asp-validation-for="ContactForm.Email"></span>
+                </div>
+
+                <div class="input-group service-group">
+                    <label asp-for="ContactForm.ContactService"></label>
+                    <select asp-for="ContactForm.ContactService.Title" class="dropbtn">
+                        <option disabled="" selected="">Desired service</option>
+                        <option value="Service 1">Service 1</option>
+                        <option value="Service 2">Service 2</option>
+                        <option value="Service 3">Service 3</option>
+                    </select>
+                    <label asp-for="ContactForm.ContactService">
+                        <i class="fa-solid fa-caret-down"></i>
+                    </label>
+                </div>
+                
+                <div class="input-group message-group">
+                    <label asp-for="@Model.ContactForm.Message"></label>
+                    <textarea id="contactMessage" asp-for="@Model.ContactForm.Message"></textarea>
+                    <span asp-validation-for="@Model.ContactForm.Message"></span>
+                </div>
+                <button type="submit" id="contactSubmitBtn" disabled class="btn-disabled">Send Contact Request</button>
+            </form>
+        </div>
+    </div>
+</section>
+@await Html.PartialAsync("_ContactValidationPartial")

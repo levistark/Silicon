@@ -1,0 +1,290 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    @include standard-text;
+    font-size: 16px;
+    background-color: var(--main-bg-clr);
+    min-height: 100vh;
+}
+
+body.dark img {
+    filter: brightness(.85) contrast(1.2) !important;
+  }
+
+:root {
+    --main-logo: url("/images/logo/Silicon-Logotype-LightMode.svg");
+    --main-bg-clr: white;
+    --main-title-clr: black;
+    --main-text-clr: #{$gray-700};
+    --main-bg-clr-transparent: rgba(255, 255, 255, 0.770);
+    --main-bg-clr-secondary: #{$gray-100};
+    --main-bg-clr-secondary-transparent: #f3f6ffc7;
+    --main-bg-clr-custom: transparent;
+    --main-bg-clr-shadow: #0b0f1942;
+    --main-clr-input-border: #{$gray-500};
+    --main-clr-thin-gray: #{$gray-300};
+    --main-clr-hover: #{$white};
+    --main-appstore-img: url("/images/app/app_appstore.svg");
+    --main-googleplay-img: url("/images/app/app_googleplay.svg");
+    --main-illustration-img: url("/images/courses/officedesk-illustration.svg");
+    --notfound-img: url("/images/404.svg");
+}
+
+.dark {
+    --main-bg-clr: #{$gray-900};
+    --main-title-clr: #{$white};
+    --main-text-clr: #{$gray-400};
+    --main-logo: url("/images/logo/Silicon-Logotype-DarkMode.svg");
+    --main-bg-clr-transparent: #0b0f19b5;
+    --main-bg-clr-secondary: #{$gray-850};
+    --main-bg-clr-secondary-transparent: #171722a4;
+    --main-bg-clr-custom: #{$gray-850};
+    --main-bg-clr-shadow: #f3f6ff51;
+    --main-clr-thin-gray: #{$gray-800};
+    --main-clr-input-border: #{$gray-700};
+    --main-clr-hover: #{$gray-800};
+    --main-appstore-img: url("/images/app/appstore-darkmode.svg");
+    --main-googleplay-img: url("/images/app/googleplay-darkmode.svg");
+    --main-illustration-img: url("/images/courses/officedesk-illustration_dark.svg");
+    --notfound-img: url("/images/404_dark.svg");
+}
+
+p, .p { @include standard-text; color: var(--main-text-clr); }
+
+label { @include standard-text; color: var(--main-title-clr); }
+
+span { @include standard-text; color: var(--main-text-clr); }
+
+small { @include standard-text; color: var(--main-text-clr); }
+
+button {
+    transition: 0.3s;
+}
+
+input {
+    color: var(--main-text-clr);
+    border: solid var(--main-clr-input-border) 2px;
+
+    &:hover {
+        border: solid 2px $theme;
+    }
+
+    &:focus {
+        border: solid 2px var(--main-text-clr);
+    }
+}
+
+textarea {
+    color: var(--main-text-clr);
+    border: solid 2px var(---main-clr-input-border);
+
+    &:hover {
+        border: solid 2px var(--main-text-clr);
+        border: solid 2px $theme;
+    }
+
+    &:focus {
+        border: solid 2px var(--main-text-clr);
+    }
+}
+
+.text-xs { @include text-xs; }
+.text-s { @include text-s; }
+.text-m { @include text-m; }
+.text-lg { @include text-lg; }
+.text-xl { @include text-xl; }
+.text-lead { @include text-lead; }
+
+.d1 { @include d1; }
+.d2 { @include d2; }
+.d3 { @include d3; }
+.d4 { @include d4; }
+.d5 { @include d5; }
+.d6 { @include d6; }
+
+h1, .h1 { @include h1; color: var(--main-title-clr); }
+h2, .h2 { @include h2; color: var(--main-title-clr); }
+h3, .h3 { @include h3; color: var(--main-title-clr); }
+h4, .h4 { @include h4; color: var(--main-title-clr); }
+h5, .h5 { @include h5; color: var(--main-title-clr); }
+h6, .h6 { @include h6; color: var(--main-title-clr); }
+
+.hidenav {
+    animation: hideNav 0.5s forwards;
+    animation-delay: 0.2s;
+}
+
+.hidebackdrop {
+    animation: hideNav 0.5s forwards;
+    animation-delay: 0.2s;
+}
+
+.flyOutAnimation {
+    animation: navFlyOut 0.6s forwards;
+}
+
+.flyInAnimation {
+    right: -18rem;
+    animation: navFlyInSmall 0.6s forwards;
+
+    @include sm {
+        animation: navFlyInLarge 0.6s forwards;
+    }
+}
+
+.fadeIn {
+    animation: fade-in 0.4s forwards;
+}
+
+
+.page-section {
+    padding: 4rem 0;
+
+    @include sm {
+        padding: 6rem 0;
+    }
+}
+
+p {
+    margin-bottom: 0;
+}
+
+.img-scale {
+    scale: 0.5;
+    
+    @include sm {
+        scale: 0.7;
+    }
+
+    @include md {
+        scale: 0.8;
+    }
+
+    @include lg {
+        scale: 0.9;
+    }
+
+    @include xl {
+        scale: 1;
+    }
+}
+form {
+    transition: 0.3s;
+    .input-group {
+        position: relative;
+
+        span {
+            margin-top:2px;
+
+            @include sm {
+                position: absolute;
+                top: 18px;
+                right: 0;
+            }
+        }
+    }
+
+    .field-validation-error {
+        top: 0;
+        right: 0;
+        @include text-s;
+        color: $danger;
+
+        &::after {
+            position: absolute;
+            font-size: 2em;
+            display: block;
+            content: '\2BBF';
+            right: 15px;
+            top: 58px;
+
+            @include sm {
+                top: 38px;
+            }
+        }
+    }
+
+    .input-validation-error {
+        //position: relative;
+        border-color: $danger !important;
+        color: $danger;
+
+        &::placeholder {
+            color: $danger;
+        }
+    }
+}
+
+/* Customize the label (the container) */
+.checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container input {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    border: none;
+    z-index: -1;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: -10px !important;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border: 2px solid var(--main-clr-input-border);
+    border-radius: 4px;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkmark {
+    background-color: $theme;
+    border: none;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .checkmark:after {
+    left: 7px;
+    top: 3.5px;
+    width: 6px;
+    height: 11px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}

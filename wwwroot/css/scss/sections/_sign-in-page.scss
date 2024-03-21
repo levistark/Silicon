@@ -1,0 +1,123 @@
+#sign-in-page {
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .content {
+            max-width: 600px;
+            position: relative;
+
+            .signInErrorBox {
+                position: absolute;
+                top: -3.8rem;
+                width: 100%;
+                padding: 0.5rem 1.5rem;
+                background-color: #EEAAAA;
+                border-radius: 6px;
+                text-align: center;
+                color: black;
+            }
+
+            .signInSuccessBox {
+                position: absolute;
+                top: -3.8rem;
+                width: 100%;
+                padding: 0.5rem 1.5rem;
+                background-color: lightgreen;
+                border-radius: 6px;
+                text-align: center;
+                color: black;
+                animation: alertFadeout 1s forwards;
+                animation-delay: 3s;
+            }
+
+            p {
+                font-size: 11pt;
+            }
+
+            form {
+                margin-bottom: 1rem;
+
+                label {
+                    font-weight: bold;
+                    font-size: 11;
+                    margin-top: 1rem;
+                    margin-bottom: 0.5rem;
+                }
+
+                input {
+                    width: 100%;
+                    outline: none;
+                    padding: 0.5rem 1rem;
+                    border-radius: 8px;
+                    background-color: transparent;
+                }
+
+                .checkbox-group {
+                    margin-top: 1rem;
+                    margin-bottom: 0.5rem;
+                    display: flex;
+                    gap: 0.5rem;
+                    align-items: center;
+                    position: relative;
+
+                    label {
+                        margin-top: 0;
+                        margin-bottom: 0;
+                        cursor: pointer;
+                    }
+                }
+
+                .checkbox-validation-message {
+                    &::after {
+                        display: none;
+                    }
+                }
+
+                button {
+                    margin-top: 1rem;
+                    width: 100%;
+                }
+            }
+
+            .third-party-login {
+                margin-top: 2rem;
+                border-top: solid var(--main-clr-input-border);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 2rem;
+
+
+                h6 {
+                    margin: 1rem 0;
+                }
+
+                .btn-group {
+                    margin-top: 1rem;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 1rem;
+
+                    @include sm {
+                        flex-direction: row;
+                    }
+
+                    .btn-gray {
+                        padding: 13px 5px;
+                        width: 15rem;
+                        background-color: var(--main-bg-clr-secondary);
+                        color: var(--main-title-clr);
+
+                        &:hover {
+                            background-color: var(--main-text-clr);
+                            color: var(--main-bg-clr);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

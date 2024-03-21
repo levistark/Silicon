@@ -1,0 +1,56 @@
+﻿<section class="course-details-showcase">
+    <div class="showcase-bg-container">
+        <img src="/images/course-details/course-details-showcase.png" class="course-details-bg"></img>
+    </div>
+
+
+    <div class="container">
+        @await Html.PartialAsync("~/Views/Shared/Components/_PageNavPartial.cshtml", new PageNavModel()
+        {
+            Pages =
+            [
+                new LinkModel() { Title = "Home", Url = "/" },
+                new LinkModel() { Title = "Courses", Url = "/courses"},
+                new LinkModel() { Title = "CourseDetails", Url = "/courses/courseId", CurrentPage = true}
+            ]
+        })
+        <div class="showcase-content">
+            <div class="tag-container">
+                <div class="tag green-tag">Best Seller</div>
+                <div class="tag gray-tag">Digital</div>
+            </div>
+            <h1>Fullstack Web Developer Course from Scratch</h1>
+            <p>Egestas feugiat lorem ey neqye suspendisse ullamcorperer sceierisqye aliquam mauris</p>
+            <div class="showcase-spec">
+                <div class="course-rating">
+                    <div class="star-box">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    1.2K reviews
+                </div>
+                <div class="course-likes">
+                    <i class="fa-regular fa-thumbs-up"></i>
+                    5K likes
+                </div>
+                <div class="course-length">
+                    <i class="fa-regular fa-clock"></i>
+                    148 hours
+                </div>
+            </div>
+
+            <div class="showcase-author">
+                <div class="img-container">
+                    <img src="/images/course-details/author-small.png" class="img-author-small img-scale"></img>
+                </div>
+                <div class="showcase-author-textbox">
+                    <h6>Created by</h6>
+                    <p>Albert Flores</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
