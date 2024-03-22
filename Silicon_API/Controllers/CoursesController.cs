@@ -25,4 +25,21 @@ public class CoursesController(CourseRepository courseRepository) : ControllerBa
         catch (Exception ex) { Debug.WriteLine(ex.Message); }
         return NotFound();
     }
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetOne(int id)
+    {
+        try
+        {
+            var course = await _courseRepository.ReadOneAsync(x => x.Id == id);
+
+            if (course != null)
+            {
+                return Ok(course);
+            }
+            return NotFound();
+        }
+        catch (Exception ex) { Debug.WriteLine(ex.Message); }
+        return NotFound();
+    }
 }
