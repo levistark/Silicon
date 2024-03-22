@@ -26,6 +26,38 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Silicon_API.Controllers.CourseSubscriptionsController",
+    "Method": "CreateCourseSubscription",
+    "RelativePath": "api/CourseSubscriptions",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Infrastructure.DTOs.CourseSubscriptionModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Silicon_API.Controllers.CourseSubscriptionsController",
+    "Method": "GetCoursesByUserId",
+    "RelativePath": "api/CourseSubscriptions/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Silicon_API.Controllers.SubscribersController",
     "Method": "Create",
     "RelativePath": "api/Subscribers",

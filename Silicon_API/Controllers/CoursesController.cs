@@ -1,13 +1,15 @@
 ﻿using Infrastructure.Repositories;
+using Infrastructure.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace Silicon_API.Controllers;
 [Route("api/[controller]")]
 [ApiController]
-public class CoursesController(CourseRepository courseRepository) : ControllerBase
+public class CoursesController(CourseRepository courseRepository, CourseManager courseManager) : ControllerBase
 {
     private readonly CourseRepository _courseRepository = courseRepository;
+    private readonly CourseManager _courseManager = courseManager;
 
     [HttpGet]
     public async Task<IActionResult> GetAll()

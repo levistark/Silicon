@@ -9,8 +9,7 @@
       },
       {
         "Name": "Silicon_API\\Silicon_API.csproj",
-        "Action": "Start",
-        "DebugTarget": ""
+        "Action": "Start"
       }
     ]
   }

@@ -1,5 +1,6 @@
 using Infrastructure.Data.Context;
 using Infrastructure.Repositories;
+using Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 
@@ -18,6 +19,9 @@ builder.Services.AddScoped<CourseBadgeRepository>();
 builder.Services.AddScoped<CourseSpecificationsRepository>();
 builder.Services.AddScoped<UserCourseSubscriptionRepository>();
 builder.Services.AddScoped<SubscriberRepository>();
+builder.Services.AddScoped<UserRepository>();
+builder.Services.AddScoped<CourseManager>();
+builder.Services.AddScoped<CourseSubscriptionManager>();
 
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
