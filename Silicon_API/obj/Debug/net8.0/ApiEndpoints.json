@@ -24,5 +24,58 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Silicon_API.Controllers.SubscribersController",
+    "Method": "Create",
+    "RelativePath": "api/Subscribers",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entity",
+        "Type": "Infrastructure.Entities.SubscriberEntity",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Silicon_API.Controllers.SubscribersController",
+    "Method": "Delete",
+    "RelativePath": "api/Subscribers",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Silicon_API.Controllers.SubscribersController",
+    "Method": "Update",
+    "RelativePath": "api/Subscribers",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "oldEmail",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "newEmail",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

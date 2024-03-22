@@ -12,3 +12,4 @@ C:\VSProjects\ASP.NET\Silicon\Infrastructure\obj\Debug\net8.0\refint\Infrastruct
 C:\VSProjects\ASP.NET\Silicon\Infrastructure\obj\Debug\net8.0\Infrastructure.pdb
 C:\VSProjects\ASP.NET\Silicon\Infrastructure\obj\Debug\net8.0\Infrastructure.genruntimeconfig.cache
 C:\VSProjects\ASP.NET\Silicon\Infrastructure\obj\Debug\net8.0\ref\Infrastructure.dll
+C:\VSProjects\ASP.NET\Silicon\Infrastructure\obj\Debug\net8.0\Infrastructure.sourcelink.json

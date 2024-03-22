@@ -17,7 +17,7 @@ builder.Services.AddScoped<CourseStepRepository>();
 builder.Services.AddScoped<CourseBadgeRepository>();
 builder.Services.AddScoped<CourseSpecificationsRepository>();
 builder.Services.AddScoped<UserCourseSubscriptionRepository>();
-
+builder.Services.AddScoped<SubscriberRepository>();
 
 builder.Services.AddControllers()
     .AddJsonOptions(options =>

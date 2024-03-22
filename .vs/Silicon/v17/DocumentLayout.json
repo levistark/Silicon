@@ -3,24 +3,20 @@
   "WorkspaceRootPath": "C:\\VSProjects\\ASP.NET\\Silicon\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon\\wwwroot\\css\\scss\\components\\_buttons.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}",
-      "RelativeMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|solutionrelative:silicon\\wwwroot\\css\\scss\\components\\_buttons.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}"
+      "AbsoluteMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon\\wwwroot\\css\\scss\\sections\\_start-signup.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}",
+      "RelativeMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|solutionrelative:silicon\\wwwroot\\css\\scss\\sections\\_start-signup.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon\\views\\shared\\sections\\authentication\\_signinpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|solutionrelative:silicon\\views\\shared\\sections\\authentication\\_signinpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{D5AE9D8F-E06A-47BC-9023-0CDEAB79251B}|Silicon_API\\Silicon_API.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon_api\\controllers\\subscriberscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5AE9D8F-E06A-47BC-9023-0CDEAB79251B}|Silicon_API\\Silicon_API.csproj|solutionrelative:silicon_api\\controllers\\subscriberscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon\\wwwroot\\js\\signinvalidation.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|solutionrelative:silicon\\wwwroot\\js\\signinvalidation.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon\\views\\shared\\sections\\home\\_homesignuppartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|solutionrelative:silicon\\views\\shared\\sections\\home\\_homesignuppartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon\\views\\shared\\_signinvalidationscriptpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|solutionrelative:silicon\\views\\shared\\_signinvalidationscriptpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|solutionrelative:silicon\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|solutionrelative:silicon\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,71 +26,62 @@
       "DocumentGroups": [
         {
           "DockedWidth": 209,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "_buttons.scss",
-              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\wwwroot\\css\\scss\\components\\_buttons.scss",
-              "RelativeDocumentMoniker": "Silicon\\wwwroot\\css\\scss\\components\\_buttons.scss",
-              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\wwwroot\\css\\scss\\components\\_buttons.scss",
-              "RelativeToolTip": "Silicon\\wwwroot\\css\\scss\\components\\_buttons.scss",
-              "ViewState": "AQIAABgAAAAAAAAAAAAAACAAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002663|",
-              "WhenOpened": "2024-03-22T10:09:41.184Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "_SignInValidationScriptPartial.cshtml",
-              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\Views\\Shared\\_SignInValidationScriptPartial.cshtml",
-              "RelativeDocumentMoniker": "Silicon\\Views\\Shared\\_SignInValidationScriptPartial.cshtml",
-              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\Views\\Shared\\_SignInValidationScriptPartial.cshtml",
-              "RelativeToolTip": "Silicon\\Views\\Shared\\_SignInValidationScriptPartial.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAA2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-22T10:08:32.573Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "_SignInPartial.cshtml",
-              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\Views\\Shared\\Sections\\Authentication\\_SignInPartial.cshtml",
-              "RelativeDocumentMoniker": "Silicon\\Views\\Shared\\Sections\\Authentication\\_SignInPartial.cshtml",
-              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\Views\\Shared\\Sections\\Authentication\\_SignInPartial.cshtml",
-              "RelativeToolTip": "Silicon\\Views\\Shared\\Sections\\Authentication\\_SignInPartial.cshtml",
-              "ViewState": "AQIAABcAAAAAAAAAAAAAACMAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-22T10:07:51.419Z",
+              "Title": "SubscribersController.cs",
+              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon_API\\Controllers\\SubscribersController.cs",
+              "RelativeDocumentMoniker": "Silicon_API\\Controllers\\SubscribersController.cs",
+              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon_API\\Controllers\\SubscribersController.cs",
+              "RelativeToolTip": "Silicon_API\\Controllers\\SubscribersController.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAA4AAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T12:36:18.196Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "site.js",
-              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\wwwroot\\js\\site.js",
-              "RelativeDocumentMoniker": "Silicon\\wwwroot\\js\\site.js",
-              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\wwwroot\\js\\site.js",
-              "RelativeToolTip": "Silicon\\wwwroot\\js\\site.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAACAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-03-22T10:05:48.888Z",
+              "DocumentIndex": 0,
+              "Title": "_start-signup.scss",
+              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\wwwroot\\css\\scss\\sections\\_start-signup.scss",
+              "RelativeDocumentMoniker": "Silicon\\wwwroot\\css\\scss\\sections\\_start-signup.scss",
+              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\wwwroot\\css\\scss\\sections\\_start-signup.scss",
+              "RelativeToolTip": "Silicon\\wwwroot\\css\\scss\\sections\\_start-signup.scss",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAADsAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002663|",
+              "WhenOpened": "2024-03-22T12:32:25.109Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "signInValidation.js",
-              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\wwwroot\\js\\signInValidation.js",
-              "RelativeDocumentMoniker": "Silicon\\wwwroot\\js\\signInValidation.js",
-              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\wwwroot\\js\\signInValidation.js",
-              "RelativeToolTip": "Silicon\\wwwroot\\js\\signInValidation.js",
-              "ViewState": "AQIAACoAAAAAAAAAAAAAADIAAAACAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-03-22T10:01:00.844Z",
+              "Title": "_HomeSignUpPartial.cshtml",
+              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\Views\\Shared\\Sections\\Home\\_HomeSignUpPartial.cshtml",
+              "RelativeDocumentMoniker": "Silicon\\Views\\Shared\\Sections\\Home\\_HomeSignUpPartial.cshtml",
+              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\Views\\Shared\\Sections\\Home\\_HomeSignUpPartial.cshtml",
+              "RelativeToolTip": "Silicon\\Views\\Shared\\Sections\\Home\\_HomeSignUpPartial.cshtml",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABQAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-22T12:30:25.125Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Silicon\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Silicon\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAmwB0AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T10:15:17.761Z",
               "EditorCaption": ""
             }
           ]

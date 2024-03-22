@@ -4,11 +4,13 @@
     "Projects": [
       {
         "Name": "Silicon\\Silicon.csproj",
-        "Action": "Start"
+        "Action": "Start",
+        "DebugTarget": ""
       },
       {
         "Name": "Silicon_API\\Silicon_API.csproj",
-        "Action": "Start"
+        "Action": "Start",
+        "DebugTarget": ""
       }
     ]
   }

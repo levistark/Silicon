@@ -14,4 +14,5 @@ public class DataContext(DbContextOptions<DataContext> options) : IdentityDbCont
     public virtual DbSet<BadgeEntity> Badges { get; set; }
     public virtual DbSet<CourseBadgeEntity> CourseBadges { get; set; }
     public virtual DbSet<SocialMediaEntity> SocialMediaPlatforms { get; set; }
+    public virtual DbSet<SubscriberEntity> Subscribers { get; set; }
 }
