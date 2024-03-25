@@ -3,35 +3,24 @@
   "WorkspaceRootPath": "C:\\VSProjects\\ASP.NET\\Silicon\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1FAEE8F8-5EF2-473B-9972-235B19BB94CF}|Infrastructure\\Infrastructure.csproj|c:\\vsprojects\\asp.net\\silicon\\infrastructure\\data\\contexts\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FAEE8F8-5EF2-473B-9972-235B19BB94CF}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\data\\contexts\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon\\views\\shared\\sections\\courses\\_coursespartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|solutionrelative:silicon\\views\\shared\\sections\\courses\\_coursespartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon\\wwwroot\\css\\scss\\sections\\_our-courses.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}",
+      "RelativeMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|solutionrelative:silicon\\wwwroot\\css\\scss\\sections\\_our-courses.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|solutionrelative:silicon\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D5AE9D8F-E06A-47BC-9023-0CDEAB79251B}|Silicon_API\\Silicon_API.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon_api\\controllers\\coursesubscriptionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D5AE9D8F-E06A-47BC-9023-0CDEAB79251B}|Silicon_API\\Silicon_API.csproj|solutionrelative:silicon_api\\controllers\\coursesubscriptionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1FAEE8F8-5EF2-473B-9972-235B19BB94CF}|Infrastructure\\Infrastructure.csproj|c:\\vsprojects\\asp.net\\silicon\\infrastructure\\services\\coursesubscriptionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FAEE8F8-5EF2-473B-9972-235B19BB94CF}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\services\\coursesubscriptionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__VSPROJECTS_ASP.NET_SILICON_INFRASTRUCTURE_DATA_LOCAL_DB.MDF/True/SqlTable/dbo.AspNetUsers.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FAEE8F8-5EF2-473B-9972-235B19BB94CF}|Infrastructure\\Infrastructure.csproj|c:\\vsprojects\\asp.net\\silicon\\infrastructure\\repositories\\usercoursesubscriptionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FAEE8F8-5EF2-473B-9972-235B19BB94CF}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\usercoursesubscriptionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FAEE8F8-5EF2-473B-9972-235B19BB94CF}|Infrastructure\\Infrastructure.csproj|c:\\vsprojects\\asp.net\\silicon\\infrastructure\\entities\\course\\usercoursesubscriptionentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FAEE8F8-5EF2-473B-9972-235B19BB94CF}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\entities\\course\\usercoursesubscriptionentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FAEE8F8-5EF2-473B-9972-235B19BB94CF}|Infrastructure\\Infrastructure.csproj|c:\\vsprojects\\asp.net\\silicon\\infrastructure\\repositories\\courserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FAEE8F8-5EF2-473B-9972-235B19BB94CF}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\courserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|solutionrelative:silicon\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|solutionrelative:silicon\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -40,108 +29,72 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 234,
-          "SelectedChildIndex": 0,
+          "DockedWidth": 225,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_our-courses.scss",
+              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\wwwroot\\css\\scss\\sections\\_our-courses.scss",
+              "RelativeDocumentMoniker": "Silicon\\wwwroot\\css\\scss\\sections\\_our-courses.scss",
+              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\wwwroot\\css\\scss\\sections\\_our-courses.scss",
+              "RelativeToolTip": "Silicon\\wwwroot\\css\\scss\\sections\\_our-courses.scss",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002663|",
+              "WhenOpened": "2024-03-25T15:18:20.365Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DataContext.cs",
-              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Infrastructure\\Data\\Contexts\\DataContext.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Data\\Contexts\\DataContext.cs",
-              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Infrastructure\\Data\\Contexts\\DataContext.cs",
-              "RelativeToolTip": "Infrastructure\\Data\\Contexts\\DataContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAABOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T15:24:32.198Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UserCourseSubscriptionRepository.cs",
-              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Infrastructure\\Repositories\\UserCourseSubscriptionRepository.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\UserCourseSubscriptionRepository.cs",
-              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Infrastructure\\Repositories\\UserCourseSubscriptionRepository.cs",
-              "RelativeToolTip": "Infrastructure\\Repositories\\UserCourseSubscriptionRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T15:23:12.429Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UserCourseSubscriptionEntity.cs",
-              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Infrastructure\\Entities\\Course\\UserCourseSubscriptionEntity.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Entities\\Course\\UserCourseSubscriptionEntity.cs",
-              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Infrastructure\\Entities\\Course\\UserCourseSubscriptionEntity.cs",
-              "RelativeToolTip": "Infrastructure\\Entities\\Course\\UserCourseSubscriptionEntity.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAEBQwA4AAAA+AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T15:21:54.401Z",
+              "Title": "_CoursesPartial.cshtml",
+              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\Views\\Shared\\Sections\\Courses\\_CoursesPartial.cshtml",
+              "RelativeDocumentMoniker": "Silicon\\Views\\Shared\\Sections\\Courses\\_CoursesPartial.cshtml",
+              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\Views\\Shared\\Sections\\Courses\\_CoursesPartial.cshtml",
+              "RelativeToolTip": "Silicon\\Views\\Shared\\Sections\\Courses\\_CoursesPartial.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-25T12:18:21.069Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "CourseSubscriptionManager.cs",
-              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Infrastructure\\Services\\CourseSubscriptionManager.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Services\\CourseSubscriptionManager.cs",
-              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Infrastructure\\Services\\CourseSubscriptionManager.cs",
-              "RelativeToolTip": "Infrastructure\\Services\\CourseSubscriptionManager.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAswBsAAAAQAAAA",
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Silicon\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Silicon\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAswCIAAABlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T15:16:45.405Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CourseSubscriptionsController.cs",
-              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon_API\\Controllers\\CourseSubscriptionsController.cs",
-              "RelativeDocumentMoniker": "Silicon_API\\Controllers\\CourseSubscriptionsController.cs",
-              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon_API\\Controllers\\CourseSubscriptionsController.cs",
-              "RelativeToolTip": "Silicon_API\\Controllers\\CourseSubscriptionsController.cs",
-              "ViewState": "AQIAABoAAAAAAAAAAAAnwCcAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T14:36:09.513Z",
+              "WhenOpened": "2024-03-25T12:12:13.565Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "dbo.AspNetUsers [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__VSPROJECTS_ASP.NET_SILICON_INFRASTRUCTURE_DATA_LOCAL_DB.MDF/True/SqlTable/dbo.AspNetUsers.sql",
-              "ToolTip": "dbo.AspNetUsers [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-03-22T15:12:38.976Z",
+              "Title": "CourseSubscriptionsController.cs",
+              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon_API\\Controllers\\CourseSubscriptionsController.cs",
+              "RelativeDocumentMoniker": "Silicon_API\\Controllers\\CourseSubscriptionsController.cs",
+              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon_API\\Controllers\\CourseSubscriptionsController.cs",
+              "RelativeToolTip": "Silicon_API\\Controllers\\CourseSubscriptionsController.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAnwBkAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-25T12:02:11.818Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CourseRepository.cs",
-              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Infrastructure\\Repositories\\CourseRepository.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\CourseRepository.cs",
-              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Infrastructure\\Repositories\\CourseRepository.cs",
-              "RelativeToolTip": "Infrastructure\\Repositories\\CourseRepository.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAA5wDAAAAAFAAAA",
+              "DocumentIndex": 4,
+              "Title": "CoursesController.cs",
+              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\Controllers\\CoursesController.cs",
+              "RelativeDocumentMoniker": "Silicon\\Controllers\\CoursesController.cs",
+              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\Controllers\\CoursesController.cs",
+              "RelativeToolTip": "Silicon\\Controllers\\CoursesController.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAAAYwDUAAAA/AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T15:23:22.579Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "Silicon\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "Silicon\\Controllers\\AccountController.cs",
-              "ViewState": "AQIAAG4AAAAAAAAAAAAzwLcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T13:53:40.893Z",
+              "WhenOpened": "2024-03-25T10:25:16.755Z",
               "EditorCaption": ""
             }
           ]
