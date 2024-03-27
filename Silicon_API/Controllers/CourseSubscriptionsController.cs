@@ -1,4 +1,5 @@
 ﻿using Infrastructure.DTOs;
+using Infrastructure.Entities.Course;
 using Infrastructure.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -40,5 +41,30 @@ public class CourseSubscriptionsController(CourseSubscriptionManager courseSubsc
         }
         catch (Exception ex) { Debug.WriteLine(ex.Message); }
         return NotFound();
+    }
+
+    [HttpDelete("{userId}+{courseId}")]
+    public async Task<IActionResult> DeleteCourseSubscription(string userId, int courseId)
+    {
+        try
+        {
+            var existingSubscription = await _courseSubscriptionManager.GetUserSavedCourse(userId, courseId);
+
+            if (existingSubscription != null)
+            {
+                if (await _courseSubscriptionManager.DeleteCourseSubscription(new UserCourseSubscriptionEntity()
+                {
+                    UserId = userId,
+                    CourseId = courseId
+                }))
+                    return Ok();
+                else
+                    return BadRequest();
+            }
+
+            return NotFound();
+        }
+        catch (Exception ex) { Debug.WriteLine(ex.Message); }
+        return BadRequest();
     }
 }

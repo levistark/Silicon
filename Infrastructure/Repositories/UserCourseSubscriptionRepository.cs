@@ -2,7 +2,6 @@
 using Infrastructure.Entities.Course;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
-using System.Linq.Expressions;
 
 namespace Infrastructure.Repositories;
 public class UserCourseSubscriptionRepository : Repo<UserCourseSubscriptionEntity>
@@ -16,22 +15,58 @@ public class UserCourseSubscriptionRepository : Repo<UserCourseSubscriptionEntit
     {
         try
         {
-            return await _dataContext.UserCourseSubscriptions.Include(i => i.CourseIdNavigation).Include(i => i.User).ToListAsync();
+            return await _dataContext.UserCourseSubscriptions.ToListAsync();
         }
         catch (Exception ex) { Debug.WriteLine(ex.Message); }
         return null!;
     }
 
-    public override async Task<UserCourseSubscriptionEntity> ReadOneAsync(Expression<Func<UserCourseSubscriptionEntity, bool>> predicate)
+    public virtual async Task<UserCourseSubscriptionEntity> ReadOneAsync(string UserId, int CourseId)
     {
         try
         {
-            var existingEntity = await _dataContext.UserCourseSubscriptions.Include(i => i.CourseIdNavigation).Include(i => i.User).FirstOrDefaultAsync();
+            var existingEntity = await _dataContext.UserCourseSubscriptions.FirstOrDefaultAsync(x => x.UserId == UserId && x.CourseId == CourseId);
 
             if (existingEntity != null)
                 return existingEntity;
         }
         catch (Exception ex) { Debug.WriteLine(ex.Message); }
         return null!;
+    }
+
+    public virtual async Task<bool> DeleteAsync(UserCourseSubscriptionEntity entity)
+    {
+        try
+        {
+            // Check if the entity is being tracked
+            var existingEntity = _dataContext.UserCourseSubscriptions.Find(entity.UserId, entity.CourseId);
+            if (existingEntity != null)
+            {
+                // If the entity is being tracked, remove the tracked entity
+                _dataContext.UserCourseSubscriptions.Remove(existingEntity);
+            }
+            else
+            {
+                // If the entity is not being tracked, attach and remove the entity
+                _dataContext.UserCourseSubscriptions.Attach(entity);
+                _dataContext.UserCourseSubscriptions.Remove(entity);
+            }
+
+            await _dataContext.SaveChangesAsync();
+            return true;
+        }
+        catch (Exception ex) { Debug.WriteLine(ex); }
+        return false;
+    }
+
+    public virtual async Task<bool> Existing(string userId, int courseId)
+    {
+        try
+        {
+            return await _dataContext.UserCourseSubscriptions.AnyAsync(pd => pd.UserId == userId && pd.CourseId == courseId);
+
+        }
+        catch (Exception ex) { Debug.WriteLine(ex.Message); }
+        return false;
     }
 }

@@ -31,6 +31,19 @@ public class CourseSubscriptionManager(UserCourseSubscriptionRepository userCour
         catch (Exception ex) { Debug.WriteLine(ex.Message); }
         return null!;
     }
+
+    public async Task<UserCourseSubscriptionEntity> GetUserSavedCourse(string UserId, int CourseId)
+    {
+        try
+        {
+            if (UserId != null && CourseId != 0)
+            {
+                return await _userCourseRepository.ReadOneAsync(UserId, CourseId);
+            }
+        }
+        catch (Exception ex) { Debug.WriteLine(ex.Message); }
+        return null!;
+    }
     public async Task<UserCourseSubscriptionEntity> CreateCourseSubscription(CourseSubscriptionModel model)
     {
         try
@@ -46,5 +59,14 @@ public class CourseSubscriptionManager(UserCourseSubscriptionRepository userCour
         }
         catch (Exception ex) { Debug.WriteLine(ex.Message); }
         return null!;
+    }
+    public async Task<bool> DeleteCourseSubscription(UserCourseSubscriptionEntity courseEntity)
+    {
+        try
+        {
+            return await _userCourseRepository.DeleteAsync(courseEntity);
+        }
+        catch (Exception ex) { Debug.WriteLine(ex.Message); }
+        return false;
     }
 }

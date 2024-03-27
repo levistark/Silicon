@@ -5,8 +5,12 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data.Context;
-public class DataContext(DbContextOptions<DataContext> options) : IdentityDbContext<ApplicationUser>(options)
+public class DataContext : IdentityDbContext<ApplicationUser>
 {
+    public DataContext(DbContextOptions<DataContext> options) : base(options)
+    {
+    }
+
     public virtual DbSet<AddressEntity> Addresses { get; set; }
     public virtual DbSet<CourseEntity> Courses { get; set; }
     public virtual DbSet<CourseStepEntity> CourseSteps { get; set; }

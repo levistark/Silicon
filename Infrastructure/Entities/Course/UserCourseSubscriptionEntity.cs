@@ -1,13 +1,17 @@
 ﻿using Infrastructure.Models.Identification;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Infrastructure.Entities.Course;
+
+[PrimaryKey("UserId", "CourseId")]
 public class UserCourseSubscriptionEntity
 {
     [Key]
-    public int Id { get; set; }
     public string UserId { get; set; } = null!;
+
+    [Key]
     public int CourseId { get; set; }
 
     [InverseProperty("CourseSubscriptions")]
