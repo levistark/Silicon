@@ -59,6 +59,22 @@
   },
   {
     "ContainingType": "Silicon_API.Controllers.CourseSubscriptionsController",
+    "Method": "DeleteAllUserCourseSubscriptions",
+    "RelativePath": "api/CourseSubscriptions/{userId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Silicon_API.Controllers.CourseSubscriptionsController",
     "Method": "DeleteCourseSubscription",
     "RelativePath": "api/CourseSubscriptions/{userId}\u002B{courseId}",
     "HttpMethod": "DELETE",

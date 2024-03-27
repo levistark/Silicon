@@ -16,7 +16,7 @@ public class CourseSubscriptionManager(UserCourseSubscriptionRepository userCour
             var subscriptions = await _userCourseRepository.ReadAllAsync();
             var userSubscriptions = new List<CourseEntity>();
 
-            if (subscriptions != null)
+            if (subscriptions != null && subscriptions.Count() > 0)
             {
                 foreach (var subscription in subscriptions)
                 {

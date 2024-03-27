@@ -34,7 +34,7 @@ public class CourseSubscriptionsController(CourseSubscriptionManager courseSubsc
         {
             var userCourses = await _courseSubscriptionManager.GetUserSavedCourses(userId);
 
-            if (userCourses.Count() > 0)
+            if (userCourses != null && userCourses.Count() > 0)
             {
                 return Ok(userCourses);
             }
@@ -62,6 +62,38 @@ public class CourseSubscriptionsController(CourseSubscriptionManager courseSubsc
                     return BadRequest();
             }
 
+            return NotFound();
+        }
+        catch (Exception ex) { Debug.WriteLine(ex.Message); }
+        return BadRequest();
+    }
+
+    [HttpDelete("{userId}")]
+    public async Task<IActionResult> DeleteAllUserCourseSubscriptions(string userId)
+    {
+        try
+        {
+            var courses = await _courseSubscriptionManager.GetUserSavedCourses(userId);
+
+            if (courses != null && courses.Count() > 0)
+            {
+                foreach (var sub in courses)
+                {
+                    await _courseSubscriptionManager.DeleteCourseSubscription(new UserCourseSubscriptionEntity()
+                    {
+                        UserId = userId,
+                        CourseId = sub.Id
+                    });
+                }
+
+                var test = await _courseSubscriptionManager.GetUserSavedCourses(userId);
+                if (test != null && test.Count() > 0)
+                {
+                    return BadRequest();
+                }
+
+                return Ok();
+            }
             return NotFound();
         }
         catch (Exception ex) { Debug.WriteLine(ex.Message); }

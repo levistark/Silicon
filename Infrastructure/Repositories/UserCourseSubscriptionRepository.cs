@@ -15,7 +15,7 @@ public class UserCourseSubscriptionRepository : Repo<UserCourseSubscriptionEntit
     {
         try
         {
-            return await _dataContext.UserCourseSubscriptions.ToListAsync();
+            return await _dataContext.UserCourseSubscriptions.Include(x => x.CourseIdNavigation).ThenInclude(x => x.Author).ToListAsync();
         }
         catch (Exception ex) { Debug.WriteLine(ex.Message); }
         return null!;
@@ -25,7 +25,7 @@ public class UserCourseSubscriptionRepository : Repo<UserCourseSubscriptionEntit
     {
         try
         {
-            var existingEntity = await _dataContext.UserCourseSubscriptions.FirstOrDefaultAsync(x => x.UserId == UserId && x.CourseId == CourseId);
+            var existingEntity = await _dataContext.UserCourseSubscriptions.Include(x => x.CourseIdNavigation).ThenInclude(x => x.Author).FirstOrDefaultAsync(x => x.UserId == UserId && x.CourseId == CourseId);
 
             if (existingEntity != null)
                 return existingEntity;
