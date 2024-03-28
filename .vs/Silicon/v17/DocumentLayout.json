@@ -3,75 +3,32 @@
   "WorkspaceRootPath": "C:\\VSProjects\\ASP.NET\\Silicon\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon\\wwwroot\\css\\scss\\sections\\_header.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}",
+      "RelativeMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|solutionrelative:silicon\\wwwroot\\css\\scss\\sections\\_header.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon\\views\\shared\\components\\_headerpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|solutionrelative:silicon\\views\\shared\\components\\_headerpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|solutionrelative:silicon\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|solutionrelative:silicon\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon\\controllers\\contactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|solutionrelative:silicon\\controllers\\contactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D5AE9D8F-E06A-47BC-9023-0CDEAB79251B}|Silicon_API\\Silicon_API.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon_api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{D5AE9D8F-E06A-47BC-9023-0CDEAB79251B}|Silicon_API\\Silicon_API.csproj|solutionrelative:silicon_api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D5AE9D8F-E06A-47BC-9023-0CDEAB79251B}|Silicon_API\\Silicon_API.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon_api\\controllers\\contactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D5AE9D8F-E06A-47BC-9023-0CDEAB79251B}|Silicon_API\\Silicon_API.csproj|solutionrelative:silicon_api\\controllers\\contactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D5AE9D8F-E06A-47BC-9023-0CDEAB79251B}|Silicon_API\\Silicon_API.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon_api\\filters\\useapikeyattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D5AE9D8F-E06A-47BC-9023-0CDEAB79251B}|Silicon_API\\Silicon_API.csproj|solutionrelative:silicon_api\\filters\\useapikeyattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D5AE9D8F-E06A-47BC-9023-0CDEAB79251B}|Silicon_API\\Silicon_API.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon_api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{D5AE9D8F-E06A-47BC-9023-0CDEAB79251B}|Silicon_API\\Silicon_API.csproj|solutionrelative:silicon_api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D5AE9D8F-E06A-47BC-9023-0CDEAB79251B}|Silicon_API\\Silicon_API.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D5AE9D8F-E06A-47BC-9023-0CDEAB79251B}|Silicon_API\\Silicon_API.csproj|solutionrelative:silicon_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D5AE9D8F-E06A-47BC-9023-0CDEAB79251B}|Silicon_API\\Silicon_API.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon_api\\controllers\\subscriberscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D5AE9D8F-E06A-47BC-9023-0CDEAB79251B}|Silicon_API\\Silicon_API.csproj|solutionrelative:silicon_api\\controllers\\subscriberscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__VSPROJECTS_ASP.NET_SILICON_INFRASTRUCTURE_DATA_LOCAL_DB.MDF/True/SqlTable/dbo.AspNetUsers.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D5AE9D8F-E06A-47BC-9023-0CDEAB79251B}|Silicon_API\\Silicon_API.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon_api\\silicon_api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{D5AE9D8F-E06A-47BC-9023-0CDEAB79251B}|Silicon_API\\Silicon_API.csproj|solutionrelative:silicon_api\\silicon_api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D5AE9D8F-E06A-47BC-9023-0CDEAB79251B}|Silicon_API\\Silicon_API.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon_api\\controllers\\coursesubscriptionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D5AE9D8F-E06A-47BC-9023-0CDEAB79251B}|Silicon_API\\Silicon_API.csproj|solutionrelative:silicon_api\\controllers\\coursesubscriptionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D5AE9D8F-E06A-47BC-9023-0CDEAB79251B}|Silicon_API\\Silicon_API.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon_api\\silicon_api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{D5AE9D8F-E06A-47BC-9023-0CDEAB79251B}|Silicon_API\\Silicon_API.csproj|solutionrelative:silicon_api\\silicon_api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D5AE9D8F-E06A-47BC-9023-0CDEAB79251B}|Silicon_API\\Silicon_API.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon_api\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D5AE9D8F-E06A-47BC-9023-0CDEAB79251B}|Silicon_API\\Silicon_API.csproj|solutionrelative:silicon_api\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon\\views\\shared\\sections\\contact\\_contactuspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|solutionrelative:silicon\\views\\shared\\sections\\contact\\_contactuspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|solutionrelative:silicon\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon\\views\\shared\\sections\\account\\_accountsaveditemspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|solutionrelative:silicon\\views\\shared\\sections\\account\\_accountsaveditemspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{D5AE9D8F-E06A-47BC-9023-0CDEAB79251B}|Silicon_API\\Silicon_API.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon_api\\controllers\\coursesubscriptionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5AE9D8F-E06A-47BC-9023-0CDEAB79251B}|Silicon_API\\Silicon_API.csproj|solutionrelative:silicon_api\\controllers\\coursesubscriptionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B19FFB5-8CB8-4605-BFBD-B7BE971A110F}|Silicon\\Silicon.csproj|solutionrelative:silicon\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D5AE9D8F-E06A-47BC-9023-0CDEAB79251B}|Silicon_API\\Silicon_API.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon_api\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5AE9D8F-E06A-47BC-9023-0CDEAB79251B}|Silicon_API\\Silicon_API.csproj|solutionrelative:silicon_api\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5AE9D8F-E06A-47BC-9023-0CDEAB79251B}|Silicon_API\\Silicon_API.csproj|c:\\vsprojects\\asp.net\\silicon\\silicon_api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D5AE9D8F-E06A-47BC-9023-0CDEAB79251B}|Silicon_API\\Silicon_API.csproj|solutionrelative:silicon_api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -81,102 +38,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 222,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\Program.cs",
-              "RelativeDocumentMoniker": "Silicon\\Program.cs",
-              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\Program.cs",
-              "RelativeToolTip": "Silicon\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAACAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T14:07:07.216Z",
+              "DocumentIndex": 0,
+              "Title": "_header.scss",
+              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\wwwroot\\css\\scss\\sections\\_header.scss",
+              "RelativeDocumentMoniker": "Silicon\\wwwroot\\css\\scss\\sections\\_header.scss",
+              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\wwwroot\\css\\scss\\sections\\_header.scss",
+              "RelativeToolTip": "Silicon\\wwwroot\\css\\scss\\sections\\_header.scss",
+              "ViewState": "AQIAAEoAAAAAAAAAAAAAwFIAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002663|",
+              "WhenOpened": "2024-03-28T15:09:15.729Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Silicon\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Silicon\\Properties\\launchSettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-03-28T13:39:22.899Z",
+              "DocumentIndex": 1,
+              "Title": "_HeaderPartial.cshtml",
+              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\Views\\Shared\\Components\\_HeaderPartial.cshtml",
+              "RelativeDocumentMoniker": "Silicon\\Views\\Shared\\Components\\_HeaderPartial.cshtml",
+              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\Views\\Shared\\Components\\_HeaderPartial.cshtml",
+              "RelativeToolTip": "Silicon\\Views\\Shared\\Components\\_HeaderPartial.cshtml",
+              "ViewState": "AQIAABYAAAAAAAAAAAAAACEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-28T15:00:07.338Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ContactController.cs",
-              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon_API\\Controllers\\ContactController.cs",
-              "RelativeDocumentMoniker": "Silicon_API\\Controllers\\ContactController.cs",
-              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon_API\\Controllers\\ContactController.cs",
-              "RelativeToolTip": "Silicon_API\\Controllers\\ContactController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAALAAAA",
+              "Title": "CourseSubscriptionsController.cs",
+              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon_API\\Controllers\\CourseSubscriptionsController.cs",
+              "RelativeDocumentMoniker": "Silicon_API\\Controllers\\CourseSubscriptionsController.cs",
+              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon_API\\Controllers\\CourseSubscriptionsController.cs",
+              "RelativeToolTip": "Silicon_API\\Controllers\\CourseSubscriptionsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T12:10:00.179Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon_API\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Silicon_API\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon_API\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Silicon_API\\Properties\\launchSettings.json",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAABoAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-03-28T12:04:24.743Z",
+              "WhenOpened": "2024-03-28T14:57:24.49Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "UseApiKeyAttribute.cs",
-              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon_API\\Filters\\UseApiKeyAttribute.cs",
-              "RelativeDocumentMoniker": "Silicon_API\\Filters\\UseApiKeyAttribute.cs",
-              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon_API\\Filters\\UseApiKeyAttribute.cs",
-              "RelativeToolTip": "Silicon_API\\Filters\\UseApiKeyAttribute.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
+              "Title": "CoursesController.cs",
+              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon_API\\Controllers\\CoursesController.cs",
+              "RelativeDocumentMoniker": "Silicon_API\\Controllers\\CoursesController.cs",
+              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon_API\\Controllers\\CoursesController.cs",
+              "RelativeToolTip": "Silicon_API\\Controllers\\CoursesController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABCAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T09:00:09.831Z",
+              "WhenOpened": "2024-03-28T14:56:58.708Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon_API\\Program.cs",
-              "RelativeDocumentMoniker": "Silicon_API\\Program.cs",
-              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon_API\\Program.cs",
-              "RelativeToolTip": "Silicon_API\\Program.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAACMAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T08:58:52.405Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "SubscribersController.cs",
-              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon_API\\Controllers\\SubscribersController.cs",
-              "RelativeDocumentMoniker": "Silicon_API\\Controllers\\SubscribersController.cs",
-              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon_API\\Controllers\\SubscribersController.cs",
-              "RelativeToolTip": "Silicon_API\\Controllers\\SubscribersController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T00:00:31.21Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon_API\\appsettings.json",
               "RelativeDocumentMoniker": "Silicon_API\\appsettings.json",
@@ -184,134 +102,33 @@
               "RelativeToolTip": "Silicon_API\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-03-28T11:59:59.938Z",
+              "WhenOpened": "2024-03-28T14:56:51.371Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ContactController.cs",
-              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\Controllers\\ContactController.cs",
-              "RelativeDocumentMoniker": "Silicon\\Controllers\\ContactController.cs",
-              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\Controllers\\ContactController.cs",
-              "RelativeToolTip": "Silicon\\Controllers\\ContactController.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAAACkAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-27T23:49:22.014Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Silicon_API",
-              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon_API\\Silicon_API.csproj",
-              "RelativeDocumentMoniker": "Silicon_API\\Silicon_API.csproj",
-              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon_API\\Silicon_API.csproj",
-              "RelativeToolTip": "Silicon_API\\Silicon_API.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-03-28T08:59:47.222Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "dbo.AspNetUsers [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__VSPROJECTS_ASP.NET_SILICON_INFRASTRUCTURE_DATA_LOCAL_DB.MDF/True/SqlTable/dbo.AspNetUsers.sql",
-              "ToolTip": "dbo.AspNetUsers [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-03-28T11:58:19.667Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Silicon_API.http",
-              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon_API\\Silicon_API.http",
-              "RelativeDocumentMoniker": "Silicon_API\\Silicon_API.http",
-              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon_API\\Silicon_API.http",
-              "RelativeToolTip": "Silicon_API\\Silicon_API.http",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2024-03-28T12:00:16.059Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "CoursesController.cs",
-              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon_API\\Controllers\\CoursesController.cs",
-              "RelativeDocumentMoniker": "Silicon_API\\Controllers\\CoursesController.cs",
-              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon_API\\Controllers\\CoursesController.cs",
-              "RelativeToolTip": "Silicon_API\\Controllers\\CoursesController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAswBEAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T00:00:48.511Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "_ContactUsPartial.cshtml",
-              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\Views\\Shared\\Sections\\Contact\\_ContactUsPartial.cshtml",
-              "RelativeDocumentMoniker": "Silicon\\Views\\Shared\\Sections\\Contact\\_ContactUsPartial.cshtml",
-              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\Views\\Shared\\Sections\\Contact\\_ContactUsPartial.cshtml",
-              "RelativeToolTip": "Silicon\\Views\\Shared\\Sections\\Contact\\_ContactUsPartial.cshtml",
-              "ViewState": "AQIAACEAAAAAAAAAAAAAADIAAABEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-27T23:55:41.837Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "CourseSubscriptionsController.cs",
-              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon_API\\Controllers\\CourseSubscriptionsController.cs",
-              "RelativeDocumentMoniker": "Silicon_API\\Controllers\\CourseSubscriptionsController.cs",
-              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon_API\\Controllers\\CourseSubscriptionsController.cs",
-              "RelativeToolTip": "Silicon_API\\Controllers\\CourseSubscriptionsController.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAAAswC4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-27T23:19:11.295Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 3,
               "Title": "CoursesController.cs",
               "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\Controllers\\CoursesController.cs",
               "RelativeDocumentMoniker": "Silicon\\Controllers\\CoursesController.cs",
               "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\Controllers\\CoursesController.cs",
               "RelativeToolTip": "Silicon\\Controllers\\CoursesController.cs",
-              "ViewState": "AQIAACUAAAAAAAAAAAAYwEgAAAA6AAAA",
+              "ViewState": "AQIAADAAAAAAAAAAAAAiwD0AAACaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-27T23:30:59.681Z",
+              "WhenOpened": "2024-03-28T14:56:48.223Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "Silicon\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "Silicon\\Controllers\\AccountController.cs",
-              "ViewState": "AQIAAMQAAAAAAAAAAAAAAM0AAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-27T23:09:15.97Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "_AccountSavedItemsPartial.cshtml",
-              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\Views\\Shared\\Sections\\Account\\_AccountSavedItemsPartial.cshtml",
-              "RelativeDocumentMoniker": "Silicon\\Views\\Shared\\Sections\\Account\\_AccountSavedItemsPartial.cshtml",
-              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\Views\\Shared\\Sections\\Account\\_AccountSavedItemsPartial.cshtml",
-              "RelativeToolTip": "Silicon\\Views\\Shared\\Sections\\Account\\_AccountSavedItemsPartial.cshtml",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABIAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-27T22:01:40.977Z",
+              "DocumentIndex": 2,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Silicon\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Silicon\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-03-28T14:51:52.245Z",
               "EditorCaption": ""
             }
           ]

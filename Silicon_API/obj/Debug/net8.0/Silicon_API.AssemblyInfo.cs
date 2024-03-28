@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Silicon_API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bda1e71a17b70ca26947c76e12f67a585112b69e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e21f3055bc481cba350ce84811620e1df19e129f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Silicon_API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Silicon_API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
