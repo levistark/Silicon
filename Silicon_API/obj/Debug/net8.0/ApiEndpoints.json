@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "Silicon_API.Controllers.ContactController",
+    "Method": "CreateContact",
+    "RelativePath": "api/Contact",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Infrastructure.Models.ContactSubmissionModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Silicon_API.Controllers.CoursesController",
     "Method": "GetAll",
     "RelativePath": "api/Courses",
