@@ -4,3 +4,6 @@ GET {{Silicon_API_HostAddress}}/api/Courses
 Accept: application/json
 
 ###
+
+GET {{Silicon_API_HostAddress}}/api/CourseSubscriptions/6e0eb79d-90a8-44a7-97fb-d754efe41c21?key=NWZjZGNjMzktNTg5YS00NzEzLWI3MzQtM2E4MTE0ZTU4Y2Q4
+Accept: application/json

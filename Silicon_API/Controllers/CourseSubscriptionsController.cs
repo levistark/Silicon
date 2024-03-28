@@ -2,11 +2,13 @@
 using Infrastructure.Entities.Course;
 using Infrastructure.Services;
 using Microsoft.AspNetCore.Mvc;
+using Silicon_API.Filters;
 using System.Diagnostics;
 
 namespace Silicon_API.Controllers;
 [Route("api/[controller]")]
 [ApiController]
+[UseApiKey]
 public class CourseSubscriptionsController(CourseSubscriptionManager courseSubscriptionManager) : ControllerBase
 {
     private readonly CourseSubscriptionManager _courseSubscriptionManager = courseSubscriptionManager;

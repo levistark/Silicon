@@ -1,11 +1,13 @@
 ﻿using Infrastructure.Entities;
 using Infrastructure.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using Silicon_API.Filters;
 using System.Diagnostics;
 
 namespace Silicon_API.Controllers;
 [Route("api/[controller]")]
 [ApiController]
+[UseApiKey]
 public class SubscribersController(SubscriberRepository subscriberRepository) : ControllerBase
 {
     private readonly SubscriberRepository _subscriberRepository = subscriberRepository;
