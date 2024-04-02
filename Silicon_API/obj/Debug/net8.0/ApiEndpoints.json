@@ -1,5 +1,15 @@
 [
   {
+    "ContainingType": "Silicon_API.Controllers.AuthController",
+    "Method": "GetToken",
+    "RelativePath": "api/Auth",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Silicon_API.Controllers.ContactController",
     "Method": "CreateContact",
     "RelativePath": "api/Contact",
