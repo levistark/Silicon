@@ -11,6 +11,16 @@
   },
   {
     "ContainingType": "Silicon_API.Controllers.ContactController",
+    "Method": "GetAllContactSubmissions",
+    "RelativePath": "api/Contact",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Silicon_API.Controllers.ContactController",
     "Method": "CreateContact",
     "RelativePath": "api/Contact",
     "HttpMethod": "POST",
@@ -21,6 +31,22 @@
         "Name": "model",
         "Type": "Infrastructure.Models.ContactSubmissionModel",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Silicon_API.Controllers.ContactController",
+    "Method": "DeleteContact",
+    "RelativePath": "api/Contact",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

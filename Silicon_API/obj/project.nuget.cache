@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "jSJ4cIUfSQX7ABM8FLebjiOKY/PP8MsI2IUYt46L6skWEMohw96Dgh1ht7xk1MK5mwub8twJZvE2zU6XTSS4hw==",
+  "dgSpecHash": "2MZzVpyD0/fmt0ULWjkW3S28AHfF7eT4+FEo/fg2Ca9IACdQvyICr3pfccLl5n3iyHCtA+Y3WaBwhdDVisAXuQ==",
   "success": true,
   "projectFilePath": "C:\\VSProjects\\ASP.NET\\Silicon\\Silicon_API\\Silicon_API.csproj",
   "expectedPackageFiles": [
@@ -50,6 +50,7 @@
     "C:\\Users\\Levi\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\Levi\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\Levi\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\Levi\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Levi\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\Levi\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "C:\\Users\\Levi\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
