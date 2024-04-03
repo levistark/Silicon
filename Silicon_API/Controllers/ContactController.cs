@@ -10,8 +10,8 @@ namespace Silicon_API.Controllers;
 [UseApiKey]
 public class ContactController : ControllerBase
 {
-    private readonly List<ContactSubmissionModel> _contactList = new List<ContactSubmissionModel>()
-    {
+    private static readonly List<ContactSubmissionModel> _contactList =
+    [
         new ContactSubmissionModel()
         {
             Id = 0,
@@ -19,7 +19,7 @@ public class ContactController : ControllerBase
             Email = "test1",
             Message = "test1"
         }
-    };
+    ];
 
     [HttpGet]
     public IActionResult GetAllContactSubmissions()
@@ -38,8 +38,15 @@ public class ContactController : ControllerBase
     {
         try
         {
-            _contactList.Add(model);
-            return Ok(model);
+            if (ModelState.IsValid)
+            {
+                if (_contactList.Any(x => x.Email == model.Email))
+                {
+                    _contactList.Add(model);
+                    return Ok(model);
+                }
+                return Conflict();
+            }
         }
         catch (Exception ex) { Debug.WriteLine(ex); }
         return BadRequest();

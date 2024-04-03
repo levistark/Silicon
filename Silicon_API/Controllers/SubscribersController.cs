@@ -1,6 +1,5 @@
 ﻿using Infrastructure.Entities;
 using Infrastructure.Repositories;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Silicon_API.Filters;
 using System.Diagnostics;
@@ -9,7 +8,6 @@ namespace Silicon_API.Controllers;
 [Route("api/[controller]")]
 [ApiController]
 [UseApiKey]
-[Authorize]
 public class SubscribersController(SubscriberRepository subscriberRepository) : ControllerBase
 {
     private readonly SubscriberRepository _subscriberRepository = subscriberRepository;
@@ -17,7 +15,7 @@ public class SubscribersController(SubscriberRepository subscriberRepository) : 
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] SubscriberEntity entity)
     {
-        if (!string.IsNullOrEmpty(entity.Email))
+        if (ModelState.IsValid)
         {
             if (!await _subscriberRepository.Existing(x => x.Email == entity.Email))
             {

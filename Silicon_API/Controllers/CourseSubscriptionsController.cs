@@ -20,11 +20,14 @@ public class CourseSubscriptionsController(CourseSubscriptionManager courseSubsc
     {
         try
         {
-            var newSubscription = await _courseSubscriptionManager.CreateCourseSubscription(model);
-
-            if (newSubscription != null)
+            if (ModelState.IsValid)
             {
-                return Created();
+                var newSubscription = await _courseSubscriptionManager.CreateCourseSubscription(model);
+
+                if (newSubscription != null)
+                {
+                    return Created();
+                }
             }
         }
         catch (Exception ex) { Debug.WriteLine(ex.Message); }
