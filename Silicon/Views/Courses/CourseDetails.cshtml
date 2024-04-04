@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Course";
+}
+@model CourseEntity;
+
+@await Html.PartialAsync("~/Views/Shared/Components/_MobileNavPartial.cshtml")
+@await Html.PartialAsync("~/Views/Shared/Components/_HeaderPartial.cshtml")
+
+<main>
+    @await Html.PartialAsync("~/Views/Shared/Sections/Courses/Course/_CourseShowcasePartial.cshtml", Model)
+    @await Html.PartialAsync("~/Views/Shared/Sections/Courses/Course/_CourseDetailsPartial.cshtml", Model)
+    @await Html.PartialAsync("~/Views/Shared/Sections/Courses/Course/_CourseDetailsListPartial.cshtml", Model)
+    @await Html.PartialAsync("~/Views/Shared/Sections/Courses/Course/_CourseAuthorPartial.cshtml", Model)
+</main>
+
+@await Html.PartialAsync("~/Views/Shared/Components/_FooterPartial.cshtml")

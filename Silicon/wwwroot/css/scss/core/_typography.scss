@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+$font-manrope: 'Manrope', sans-serif;
+
+@mixin standard-text {
+    line-height: 160%;
+    font-weight: 400;
+    color: $gray-700;
+    font-family: $font-manrope;
+}
+
+@mixin darkmode-text {
+    line-height: 160%;
+    font-weight: 400;
+    color: $gray-200;
+    font-family: $font-manrope;
+}
+
+@mixin standard-heading {
+    @include standard-text();
+    font-weight: 800;
+    color: $gray-900;
+}
+
+@mixin darkmode-heading {
+    @include darkmode-text();
+    font-weight: 800;
+    color: $white;
+}
+
+@mixin text-nav { @include standard-text; font-size: 16px; color: var(--main-text-clr); font-weight: 600 ; }
+
+@mixin text-xs { @include standard-text; font-size: 12px ;}
+@mixin text-s { @include standard-text; font-size: 14px ; }
+@mixin text-m { @include standard-text; font-size: 16px ; }
+@mixin text-lg { @include standard-text; font-size: 18px ; }
+@mixin text-xl { @include standard-text; font-size: 20px ; }
+@mixin text-lead { @include standard-text; font-size: 24px ; }
+
+@mixin d1 { @include standard-heading; font-size: 80px ; }
+@mixin d2 { @include standard-heading; font-size: 72px ; }
+@mixin d3 { @include standard-heading; font-size: 64px ; }
+@mixin d4 { @include standard-heading; font-size: 56px ; }
+@mixin d5 { @include standard-heading; font-size: 48px ; }
+@mixin d6 { @include standard-heading; font-size: 42px ; }
+
+@mixin h1 { 
+    @include standard-heading; 
+    
+    font-size: 42px;
+    
+    @include xs {
+        font-size: 26px;
+    }
+    
+    @include sm {
+        font-size: 28px;
+    }
+    
+    @include md {
+        font-size: 32px;
+    }
+    
+    @include lg {
+        font-size: 36px;
+    }
+    
+    @include xl {
+        font-size: 40px;
+    }
+    
+    @include xxl {
+        font-size: 42px;
+    }
+}
+@mixin h2 { 
+    @include standard-heading; 
+    
+    font-size: 32px; 
+
+    @include xs {
+        font-size: 22px;
+    }
+    
+    @include sm {
+        font-size: 24px;
+    }
+    
+    @include md {
+        font-size: 26px;
+    }
+    
+    @include lg {
+        font-size: 28px;
+    }
+    
+    @include xl {
+        font-size: 32px;
+    }
+    
+    @include xxl {
+        font-size: 32px;
+    }
+}
+@mixin h3 { 
+    @include standard-heading; 
+    font-size: 28px; 
+
+    @include xs {
+        font-size: 20px;
+    }
+    
+    @include sm {
+        font-size: 22px;
+    }
+    
+    @include md {
+        font-size: 24px;
+    }
+    
+    @include lg {
+        font-size: 26px;
+    }
+    
+    @include xl {
+        font-size: 30px;
+    }
+    
+    @include xxl {
+        font-size: 30px;
+    }
+}
+@mixin h4 { @include standard-heading; font-size: 24px ; }
+@mixin h5 { @include standard-heading; font-size: 20px ; }
+@mixin h6 { @include standard-heading; font-size: 16px ; }
+
+
+@mixin h1-darkmode { 
+    @include darkmode-heading; 
+    
+    font-size: 42px;
+    
+    @include xs {
+        font-size: 26px;
+    }
+    
+    @include sm {
+        font-size: 28px;
+    }
+    
+    @include md {
+        font-size: 32px;
+    }
+    
+    @include lg {
+        font-size: 36px;
+    }
+    
+    @include xl {
+        font-size: 40px;
+    }
+    
+    @include xxl {
+        font-size: 42px;
+    }
+}
+@mixin h2-darkmode { 
+    @include darkmode-heading; 
+    
+    font-size: 32px; 
+
+    @include xs {
+        font-size: 22px;
+    }
+    
+    @include sm {
+        font-size: 24px;
+    }
+    
+    @include md {
+        font-size: 26px;
+    }
+    
+    @include lg {
+        font-size: 28px;
+    }
+    
+    @include xl {
+        font-size: 32px;
+    }
+    
+    @include xxl {
+        font-size: 32px;
+    }
+}
+@mixin h3-darkmode { 
+    @include darkmode-heading; 
+    font-size: 28px; 
+
+    @include xs {
+        font-size: 20px;
+    }
+    
+    @include sm {
+        font-size: 22px;
+    }
+    
+    @include md {
+        font-size: 24px;
+    }
+    
+    @include lg {
+        font-size: 26px;
+    }
+    
+    @include xl {
+        font-size: 30px;
+    }
+    
+    @include xxl {
+        font-size: 30px;
+    }
+}
+@mixin h4-darkmode { @include darkmode-heading; font-size: 24px ; }
+@mixin h5-darkmode { @include darkmode-heading; font-size: 20px ; }
+@mixin h6-darkmode { @include darkmode-heading; font-size: 16px ; }

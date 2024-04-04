@@ -1,0 +1,145 @@
+﻿@model CoursesViewModel;
+
+<section class="page-section" id="our-courses-section">
+    <div class="container">
+        <div class="heading-container">
+            <h2>Courses</h2>
+            <div class="action-buttons">
+                <div class="category-dropdown">
+                    <button class="dropbtn">
+                        All Categories
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">Category 1</a>
+                        <a href="#">Category 2</a>
+                        <a href="#">Category 3</a>
+                    </div>
+                </div>
+                <div class="search-field">
+                    <input type="text" placeholder="Search courses"></input>
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </div>
+        </div>
+        @if (TempData["Success"] != null)
+        {
+            <div class="updateSuccessBox" id="updateSuccessBox">@TempData["Success"]?.ToString()</div>
+        }
+        else if (TempData["Failed"] != null)
+        {
+            <div class="updateErrorBox" id="updateErrorBox">@TempData["Failed"]?.ToString()</div>
+        }
+        <div class="grid-container">
+            @foreach (CourseEntity course in Model.Courses)
+            {
+                <div class="grid-item-container">
+                    <div class="btn-save-container">
+
+                        @if (course.Subscribers != null && course.Subscribers.Count() > 0)
+                        {
+                            @foreach (var sub in course.Subscribers)
+                            {
+                                if (sub.UserId == Model.User.Id)
+                                {
+                                    <button type="button" class="course-save-button course-saved-button" onclick="location.href='@Url.Action("UnsaveCourse", "Courses", new {courseId = course.Id})'">
+                                        <i class="fa-regular fa-bookmark"></i>
+                                    </button>
+                                    <div class="popover">
+                                        <p>Unsave course</p>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <button type="button" class="course-save-button" onclick="location.href='@Url.Action("SaveCourse", "Courses", new {courseId = course.Id})'">
+                                        <i class="fa-regular fa-bookmark"></i>
+                                    </button>
+                                    <div class="popover">
+                                        <p>Save course</p>
+                                    </div>
+                                }
+                            }
+                        }
+                        else
+                        {
+                            <button type="button" class="course-save-button" onclick="location.href='@Url.Action("SaveCourse", "Courses", new {courseId = course.Id})'">
+                                <i class="fa-regular fa-bookmark"></i>
+                            </button>
+                            <div class="popover">
+                                <p>Save course</p>
+                            </div>
+                        }
+                    </div>
+                    
+                    <a class="grid-item" asp-controller="Courses" asp-action="CourseDetails" asp-route-id="@course.Id">
+                        <div class="item-image-container">
+                            @if (course.CourseBadges != null)
+                            {
+                                @foreach (CourseBadgeEntity courseBadge in course.CourseBadges)
+                                {
+                                    if (courseBadge.CourseId == course.Id)
+                                    {
+                                        <div class="badge @courseBadge.Badge.BackgroundColor">@courseBadge.Badge.Title</div>
+                                    }
+                                }
+                            }
+                            <img src="@course.BackgroundImageUrl"></img>
+                        </div>
+                        <div class="item-content">
+                            <h6>@course.Title</h6>
+                            <small>@course.Author.FirstName @course.Author.LastName</small>
+                            @if (course.DiscountPrice != null)
+                            {
+                                <div class="price-box">
+                                    <span class="course-price-current">@course.Price</span>
+                                    <span class="course-price-actual">@course.DiscountPrice</span>
+                                </div>
+
+                            }
+                            else
+                            {
+                                <div class="price-box">
+                                    <span>@course.Price</span>
+                                </div>
+                            }
+
+                            <div class="content-meta">
+                                <div class="meta-length">
+                                    <i class="fa-regular fa-clock"></i>
+                                    <small>@course.Length h</small>
+                                </div>
+                                <div class="meta-likes">
+                                    <i class="fa-regular fa-thumbs-up"></i>
+                                    <small>@course.LikesScore %</small>
+                                    <small>(@course.LikesCount)</small>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+            }
+            
+        </div>
+
+        <div class="page-navigation">
+            <div class="nav-controls">
+                <a class="previous-page custom-arrow" href="#">
+                    <i class="fa-solid fa-play"></i>
+                </a>
+
+
+                <div class="page-numbers">
+                    <a href="#" class="page-number">1</a>
+                    <a href="#" class="page-number">2</a>
+                    <a href="#" class="page-number">3</a>
+                    <a href="#" class="page-number">4</a>
+                </div>
+
+                <a class="next-page custom-arrow" href="#">
+                    <i class="fa-solid fa-play"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

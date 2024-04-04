@@ -1,0 +1,76 @@
+﻿@model HomeSignUpFormModel
+
+<section id="start-signup" class="page-section">
+    <a href="#" id="anchor-home-signup"></a>
+    <div class="container">
+        <div class="content">
+            <div class="heading-box">
+                <h2>Don't Want to Miss Anything?</h2>
+                <img src="~/images/signup_arrows.svg">
+            </div>
+            @if (!string.IsNullOrEmpty(TempData["Failed"]?.ToString()) || TempData["Failed"] != null)
+            {
+                <div class="subscribeErrorBox" id="subscribeErrorBox">@TempData["Failed"]!.ToString()</div>
+            }
+            else if (!string.IsNullOrEmpty(TempData["Success"]?.ToString()) || TempData["Success"] != null)
+            {
+                <div class="subscribeSuccessBox" id="subscribeSuccessBox">@TempData["Success"]!.ToString()</div>
+            }
+            <form class="start-signup-form" asp-action="HomeSignUp" asp-controller="Home" method="post" id="subscribeForm" novalidate>
+                <div class="grid-container">
+                    <h5 class="grid-item">Sign up for <br>Newsletters</h5>
+                    <div class="grid-item">
+                        <label class="checkbox-container">
+                            <input class="checkbox-input" asp-for="DailyNewsletter" type="checkbox" id="daily-newsletter">
+                            <span class="checkmark"></span>
+                            <label class="checkbox-label" for="daily-newsletter" asp-for="DailyNewsletter">Daily Newsletter</label>
+                        </label>
+                        <label class="checkbox-container">
+                            <input class="checkbox-input" asp-for="EventUpdates" type="checkbox" id="event-updates">
+                            <span class="checkmark"></span>
+                            <label class="checkbox-label" for="event-updates" asp-for="EventUpdates">Event Updates</label>
+                        </label>
+                    </div>
+                    <div class="grid-item">
+                        <label class="checkbox-container">
+                            <input class="checkbox-input" asp-for="AdvertisingUpdates" type="checkbox" id="advertising-updates">
+                            <span class="checkmark"></span>
+                            <label class="checkbox-label" for="advertising-updates" asp-for="AdvertisingUpdates">Advertising Updates</label>
+                            <span asp-validation-for="AdvertisingUpdates"></span>
+                        </label>
+                        <label class="checkbox-container">
+                            <input class="checkbox-input" asp-for="StartupsWeekly" type="checkbox" id="startups-weekly">
+                            <span class="checkmark"></span>
+                            <label class="checkbox-label" for="startups-weekly" asp-for="StartupsWeekly">Startups Weekly</label>
+                        </label>
+                    </div>
+                    <div class="grid-item">
+                        <label class="checkbox-container">
+                            <input class="checkbox-input" asp-for="WeekInReview" type="checkbox" id="week-in-review">
+                            <span class="checkmark"></span>
+                            <label class="checkbox-label" for="week-in-review" asp-for="WeekInReview">Week in Review</label>
+                        </label>
+                        <label class="checkbox-container">
+                            <input class="checkbox-input" asp-for="Podcasts" type="checkbox" id="podcasts">
+                            <span class="checkmark"></span>
+                            <label class="checkbox-label" for="podcasts" asp-for="Podcasts">Podcasts</label>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="input-email-container">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input asp-for="Email" id="homeSignUpEmail" type="email" class="input-email" placeholder="Your Email"></input>
+                    </div>
+                    <button id="homeSignUpFormBtn" disabled class="btn-disabled home-signup-submit">Subscribe*</button>
+                    <span class="email-validation" asp-validation-for="Email"></span>
+                </div>
+                <p>* Yes, I agree to the <a href="#">terms</a>, and <a href="#">privacy policy</a></p>
+
+            </form>
+            
+        </div>
+    </div>
+</section>
+@await Html.PartialAsync("_HomeSignUpValidationPartial")

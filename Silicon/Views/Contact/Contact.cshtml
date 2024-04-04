@@ -1,0 +1,23 @@
+﻿@model ContactViewModel
+@{
+    ViewData["Title"] = "Contact Us";
+}
+
+<div id="contact-us-page">
+    @await Html.PartialAsync("~/Views/Shared/Components/_MobileNavPartial.cshtml")
+    @await Html.PartialAsync("~/Views/Shared/Components/_HeaderPartial.cshtml")
+    @await Html.PartialAsync("~/Views/Shared/Components/_PageNavPartial.cshtml", new PageNavModel()
+    {
+        Pages =
+        [
+        new LinkModel() { Title = "Home", Url = "/" },
+        new LinkModel() { Title = "Contact", Url = "/contact", CurrentPage = true}
+        ]
+    })
+    <main>
+        @await Html.PartialAsync("~/Views/Shared/Sections/Contact/_ContactUsPartial.cshtml", Model)
+        @await Html.PartialAsync("~/Views/Shared/Sections/Contact/_ContactMapPartial.cshtml")
+    </main>
+
+    @await Html.PartialAsync("~/Views/Shared/Components/_FooterPartial.cshtml")
+</div>

@@ -1,0 +1,27 @@
+﻿@model CourseEntity
+<section class="author-info">
+    <div class="container">
+        <div class="author-bg-container">
+            <img src="/images/courses/author-bg-pattern.png"></img>
+        </div>
+        <div class="author-img-container">
+            <img src="/images/courses/author-img.png"></img>
+        </div>
+        <div class="author-info-box">
+            <div class="text-box">
+                <span>Learn from the best</span>
+                <h4>@Model.Author.FirstName @Model.Author.LastName</h4>
+                <p>@Model.Author.Bio</p>  
+                @if (Model.Author.SocialMedia != null)
+                {
+                    <div class="socials-box">
+                    
+                        <a href="@Model.Author.SocialMedia.YoutubeUrl" class="author-youtube"><i class="fa-brands fa-youtube"></i>240k subscribers</a>
+                        <a href="@Model.Author.SocialMedia.FacebookUrl" class="author-facebook"><i class="fa-brands fa-square-facebook"></i>180k followers</a>
+                    
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>

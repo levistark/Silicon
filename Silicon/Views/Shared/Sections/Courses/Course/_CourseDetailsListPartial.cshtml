@@ -1,0 +1,23 @@
+﻿@model CourseEntity
+<section class="course-details-details">
+    <div class="container">
+        <h2>Program Details</h2>
+
+        @if (Model.CourseSteps != null)
+        {
+            <div class="details-list">
+                <div class="gray-line"></div>
+                @foreach (var step in Model.CourseSteps)
+                {
+                    <div class="content-box">
+                        <div class="round-number">@step.StepNumber</div>
+                        <div class="text-box">
+                            <h5>@step.StepTitle</h5>
+                            <p>@step.StepDescription</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</section>

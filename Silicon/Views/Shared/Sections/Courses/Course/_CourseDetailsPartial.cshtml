@@ -1,0 +1,69 @@
+﻿@model CourseEntity
+<section class="course-details-overview page-section">
+    <div class="container">
+        <div class="flex-container">
+            <div class="course-overview">
+                <div class="flex-item heading-box">
+                    <h2>Course Description</h2>
+                    <p>@Model.Description</p>
+                </div>
+                <div class="grid-item secondary-heading-box">
+                    <h3>What you'll learn</h3>
+                    @if (Model.Specifications != null)
+                    {
+                        <div class="list-box">
+                        
+                            @foreach (var spec in Model.Specifications)
+                            {
+                                <div class="list-item">
+                                    <i class="fa-regular fa-square-check"></i>
+                                    <p>@spec.Specification</p>
+                                </div>
+                            }
+                        
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="grid-item course-price-box">
+                <h5>This course includes: </h5>
+                <div class="price-list-box">
+                    <div class="price-list-item">
+                        <i class="fa-solid fa-computer"></i>
+                        <p>@Model.Length hours on-demand video</p>
+                    </div>
+                    <div class="price-list-item">
+                        <i class="fa-regular fa-file"></i>
+                        <p>18 articles</p>
+                    </div>
+                    <div class="price-list-item">
+                        <i class="fa-solid fa-download"></i>
+                        <p>25 downloadable resources</p>
+                    </div>
+                    <div class="price-list-item">
+                        <i class="fa-solid fa-infinity"></i>
+                        <p>Full lifetime access</p>
+                    </div>
+                    <div class="price-list-item">
+                        <i class="fa-solid fa-award"></i>
+                        <p>Certificate of completion</p>
+                    </div>
+                </div>
+                @if (Model.DiscountPrice != null)
+                {
+                    <div class="price-box">
+                        <span class="course-price-current">@Model.Price</span>
+                        <span class="course-price-actual">@Model.DiscountPrice</span>
+                    </div>
+                }
+                else
+                {
+                    <div class="price-box">
+                        <span>@Model.Price</span>
+                    </div>
+                }
+                <a href="#" class="btn-theme">Join course</a>
+            </div>
+        </div>
+    </div>
+</section>

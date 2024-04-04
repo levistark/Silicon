@@ -1,0 +1,150 @@
+@keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-move-left {
+    0% {
+        opacity: 0;
+        transform: translateX(0);
+    }
+    30% {
+        opacity: 0.1;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-4.5rem);
+    }
+}
+
+@keyframes dropDownMoveDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-4rem);
+    }  
+   
+                            
+    100% {                  
+        opacity: 1;         
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes navFlyInSmall {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-18rem);
+    }
+}
+
+@keyframes navFlyOut {
+    0% {
+        right: 0;
+    }
+}
+
+
+@keyframes navFlyInLarge {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-30rem);
+    }
+}
+
+@keyframes hideNav {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes dropDown {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+        z-index: 0;
+    }
+
+    10% {
+        opacity: 0;
+        transform: translateY(135px);
+        z-index: 1;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(143px);
+        z-index: 2;
+
+    }
+}
+
+@keyframes dropUp {
+    0% {
+        opacity: 1;
+        transform: translateY(143);
+        z-index: 2;
+    }
+
+    10% {
+        opacity: 0;
+        transform: translateY(135px);
+        z-index: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(0);
+        z-index: 0;
+    }
+}
+
+@keyframes alertFadeout {
+    0% {
+        opacity: 1;
+        display: block;
+    }
+
+    90% {
+        opacity: 0;
+        display: block;
+    }
+
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+

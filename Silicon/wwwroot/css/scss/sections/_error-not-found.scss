@@ -1,0 +1,28 @@
+#error-not-found {
+    .container {
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            .img-container {
+                background-image: var(--notfound-img);
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                height: 10rem;
+                width: 100%;
+
+                @include lg {
+                    height: 20rem;
+                }
+            }
+
+            p {
+                margin: 2rem 0 3rem 0;
+            }
+        }
+    }
+}

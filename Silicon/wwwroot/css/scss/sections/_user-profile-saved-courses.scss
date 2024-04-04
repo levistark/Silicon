@@ -1,0 +1,344 @@
+#user-profile-saved-courses {
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        @include xl {
+            flex-direction: row;
+        }
+
+        .profile-sidebar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: solid var(--main-clr-thin-gray);
+            padding-bottom: 3rem;
+            margin-top: -2rem;
+
+
+            @include sm {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            @include xl {
+                border-bottom: none;
+                border-right: solid var(--main-clr-thin-gray);
+                flex-direction: column;
+                justify-content: start;
+                padding-bottom: 0;
+                padding: 0 2rem;
+            }
+
+            .user-info {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .image-container {
+                    position: relative;
+                    width: 7rem;
+                    border-radius: 50%;
+                    background-size: cover;
+
+                    img {
+                        height: auto;
+                        width: 100%;
+                    }
+
+                    .btn-update-img {
+                        outline: none;
+                        border: none;
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 7px;
+                        border-radius: 50%;
+                        z-index: 0;
+                        color: var(--main-title-clr);
+                        background-color: var(--main-bg-clr);
+                        box-shadow: 2px 2px 5px 1px var(--main-bg-clr-shadow);
+                        transition: 0.2s;
+
+                        &:hover {
+                            background-color: var(--main-title-clr);
+                            color: var(--main-bg-clr);
+                        }
+
+                        i {
+                            font-size: 10pt;
+                        }
+                    }
+                }
+
+                h6 {
+                    margin-top: 1rem;
+                    font-size: 15pt;
+                }
+            }
+
+            .btn-group {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 2rem;
+                gap: 5px;
+
+                @include sm {
+                    margin-top: 0;
+                    margin-left: 2rem;
+                }
+
+                @include xl {
+                    margin-top: 2rem;
+                    margin-left: 0;
+                }
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: start;
+                    width: 15rem;
+                }
+
+                .btn-gray {
+                    background-color: transparent;
+                    color: var(--main-title-clr);
+
+                    i {
+                        color: var(--main-text-clr);
+                    }
+
+                    &:hover {
+                        background-color: var(--main-bg-clr-secondary);
+                    }
+                }
+            }
+        }
+
+        .user-profile-saved-courses {
+            position: relative;
+            width: 100%;
+
+            @include xl {
+                padding-left: 6rem;
+            }
+
+            .heading-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 1rem;
+
+                button {
+                    border: solid $danger;
+                    color: $danger;
+                    background-color: transparent;
+
+                    &:hover {
+                        color: white;
+                        background-color: $danger;
+                    }
+                }
+            }
+
+            .updateErrorBox {
+                position: absolute;
+                top: -3.8rem;
+                width: 100%;
+                padding: 0.5rem 1.5rem;
+                background-color: #EEAAAA;
+                border-radius: 6px;
+                text-align: center;
+                color: black;
+                animation: alertFadeout 1s forwards;
+                animation-delay: 3s;
+            }
+
+            .updateSuccessBox {
+                position: absolute;
+                top: -3.8rem;
+                width: 100%;
+                padding: 0.5rem 1.5rem;
+                background-color: lightgreen;
+                border-radius: 6px;
+                text-align: center;
+                color: black;
+                animation: alertFadeout 1s forwards;
+                animation-delay: 3s;
+            }
+
+
+            .grid-container {
+                margin-top: 2rem;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+                gap: 1rem;
+
+                @include xl {
+                    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+                }
+
+                .grid-item-container {
+                    position: relative;
+                    overflow: hidden;
+                    border-radius: 10px;
+                    box-shadow: 0 1px 10px 0px var(--main-bg-clr-shadow);
+
+                    .btn-save-container {
+                        position: relative;
+
+                        .popover {
+                            display: none;
+                        }
+
+                        &:hover .popover {
+                            position: absolute;
+                            display: block;
+                            top: 1.3rem;
+                            right: 0;
+                            padding: .5rem 1rem;
+                            z-index: 1;
+                            background-color: var(--main-bg-clr);
+                            color: var(--main-text-clr);
+                            animation: fade-in-move-left 0.2s forwards;
+                            animation-delay: 0;
+                        }
+
+                        .course-save-button {
+                            position: absolute;
+                            top: 17px;
+                            right: 17px;
+                            padding: 9px 16px;
+                            border-radius: 50%;
+                            background: $gray-300;
+                            color: inherit;
+                            border: none;
+                            font: inherit;
+                            cursor: pointer;
+                            outline: inherit;
+                            transition: 0.2s;
+                            z-index: 2;
+                            border: 2px solid transparent;
+
+                            &:hover {
+                                background-color: black;
+                                border: 2px solid $theme;
+                            }
+
+                            &:hover i {
+                                color: white;
+                            }
+
+                            i {
+                                transition: 0.2s;
+                                font-size: 11pt;
+                            }
+                        }
+
+                        .course-saved-button {
+                            background-color: $theme;
+                            color: white;
+                        }
+                    }
+
+
+                    .grid-item {
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+
+                        &:hover {
+                            text-decoration: none;
+                        }
+
+                        &:hover .item-image-container img {
+                            transform: scale(1.05);
+                        }
+
+                        &:hover .item-content {
+                            background-color: var(--main-clr-hover);
+                        }
+
+
+                        .item-image-container {
+                            background-size: cover;
+
+                            .badge {
+                                position: absolute;
+                                top: 17px;
+                                left: 17px;
+                                padding: 0.4rem 0.8rem;
+                                border-radius: 8px;
+                                z-index: 1;
+                            }
+
+                            img {
+                                transition: 0.2s;
+                                height: auto;
+                                width: 100%;
+                            }
+                        }
+
+                        .item-content {
+                            padding: 1rem;
+                            display: flex;
+                            flex-direction: column;
+                            transition: 0.2s;
+                            background-color: var(--main-bg-clr-custom);
+                            justify-content: space-between;
+                            flex: 1;
+
+                            .price-box {
+                                margin-top: 1rem;
+
+                                span {
+                                    margin-top: 1rem;
+                                    font-weight: bold;
+                                }
+
+                                .course-price-current {
+                                    color: $theme;
+                                    margin-right: 0.5rem;
+                                }
+
+                                .course-price-actual {
+                                    color: var(--main-clr-thin-gray);
+                                    text-decoration: line-through;
+                                }
+                            }
+
+                            .content-meta {
+                                border-top: solid 1px var(--main-clr-thin-gray);
+                                padding-top: 1rem;
+                                display: flex;
+
+
+                                .meta-length {
+                                    margin-right: 1rem;
+                                }
+
+                                div {
+                                    i {
+                                        margin-right: 0.5rem;
+                                        color: var(--main-text-clr);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    div {
+                        a {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

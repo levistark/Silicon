@@ -1,0 +1,91 @@
+#sign-up-page {
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .content {
+            max-width: 600px;
+            position: relative;
+
+            .signUpErrorBox {
+                position: absolute;
+                top: -3.8rem;
+                width: 100%;
+                padding: 0.5rem 1.5rem;
+                background-color: #EEAAAA;
+                border-radius: 6px;
+                text-align: center;
+                color: black;
+            }
+
+            p {
+                font-size: 11pt;
+            }
+
+            form {
+                margin-bottom: 1rem;
+
+                .input-group-group {
+                    display: flex;
+                    flex-direction: column;
+
+                    @include md {
+                        gap: 2%;
+                        flex-direction: row;
+                    }
+
+                    .input-group {
+                        width: 100%;
+
+                        @include md {
+                            width: auto;
+                            width: 49%;
+                        }
+                    }
+                }
+
+                label {
+                    font-weight: bold;
+                    font-size: 11pt;
+                    margin-top: 1rem;
+                    margin-bottom: 0.5rem;
+                }
+
+                input {
+                    width: 100%;
+                    padding: 0.5rem 1rem;
+                    border-radius: 7px;
+                    background-color: transparent;
+                }
+
+                .checkbox-group {
+                    margin-top: 1rem;
+                    margin-bottom: 0.5rem;
+                    display: flex;
+                    gap: 0.5rem;
+                    align-items: center;
+                    position: relative;
+
+
+                    label {
+                        margin-top: 0;
+                        margin-bottom: 0;
+                        cursor: pointer;
+                    }
+                }
+
+                .checkbox-validation-message {
+                    &::after {
+                        display: none;
+                    }
+                }
+
+                button {
+                    margin-top: 1rem;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

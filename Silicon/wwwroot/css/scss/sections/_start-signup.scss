@@ -1,0 +1,200 @@
+#start-signup {
+    background-color: var(--main-bg-clr-secondary);
+    display: flex;
+    justify-content: center;
+
+    .container {
+        @include xl {
+            max-width: 900px;
+        }
+
+        .content {
+            position: relative;
+            z-index: 0;
+
+            .heading-box {
+                display: flex;
+
+                h2 {
+                    color: var(--main-title-clr);
+                }
+
+                img {
+                    margin-left: 3rem;
+                }
+            }
+
+            .subscribeErrorBox {
+                position: absolute;
+                width: 100%;
+                padding: 0.5rem 1.5rem;
+                background-color: #EEAAAA;
+                border-radius: 6px;
+                text-align: center;
+                color: black;
+            }
+
+            .subscribeSuccessBox {
+                position: absolute;
+                top: 42rem;
+                width: 100%;
+                padding: 0.5rem 1.5rem;
+                background-color: lightgreen;
+                border-radius: 6px;
+                text-align: center;
+                color: black;
+                animation: alertFadeout 1s forwards;
+                animation-delay: 3s;
+
+                @include sm {
+                    top: 28rem;
+                }
+
+                @include md {
+                    top: 27rem;
+                }
+
+                @include lg {
+                    top: 21.5rem;
+                }
+            }
+
+            .start-signup-form {
+
+                .grid-container {
+                    margin: 3rem 0;
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+                    gap: 1rem;
+
+                    h6 {
+                        color: var(--main-title-clr);
+                    }
+
+                    .grid-item {
+                        display: flex;
+                        flex-direction: column;
+
+                        .checkbox-container {
+                            display: block;
+
+                            label {
+                                margin-left: 1rem;
+                                color: var(--main-text-clr);
+                                font-size: 12pt;
+                            }
+
+                            span {
+                                margin-top: 1.2rem;
+                            }
+
+                            .field-validation-error {
+                                position: absolute;
+                                top: -40px;
+                                left: 0;
+
+                                &::after {
+                                    display: none;
+                                }
+                            }
+
+                            .checkbox-validation-message {
+                                &::after {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .input-container {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+
+                    @include md {
+                        flex-direction: row;
+                    }
+
+                    .input-email-container {
+                        background-color: transparent;
+                        width: 100%;
+                        height: 3rem;
+                        border-radius: 8px;
+                        display: flex;
+                        align-items: center;
+                        border: solid var(--main-clr-input-border);
+
+                        @include md {
+                            width: 80%;
+                        }
+
+                        i {
+                            margin-left: 1rem;
+                            font-size: 18pt;
+                            color: $gray-600;
+                        }
+
+                        .input-email {
+                            margin-left: 1rem;
+                            width: 80%;
+                            border: none;
+                            outline: none;
+                            -webkit-appearance: none;
+                            -moz-appearance: none;
+                            appearance: none;
+                            background-color: transparent;
+                            color: var(--main-text-clr);
+
+                            &:hover {
+                                border: none !important;
+                            }
+
+                            &:focus {
+                                border: none !important;
+                            }
+                        }
+
+                        .field-validation-error {
+                            position: absolute;
+                            top: 15px;
+
+                            &::after {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    .home-signup-submit {
+                        height: 3rem;
+                        margin-top: 1rem;
+
+                        @include md {
+                            margin-top: 0;
+                            margin-left: 5%;
+                            width: 15%;
+                        }
+                    }
+
+                    .field-validation-error {
+                        position: absolute;
+                        top: -27px;
+                        left: 0;
+
+                        &::after {
+                            display: none;
+                        }
+                    }
+                }
+
+                p {
+                    display: block;
+                    margin-top: 1rem;
+                    color: var(--main-text-clr);
+                    font-size: 10pt;
+                }
+            }
+        }
+    }
+}

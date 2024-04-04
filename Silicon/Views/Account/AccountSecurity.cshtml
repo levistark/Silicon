@@ -1,0 +1,14 @@
+﻿@model AccountViewModel
+
+@{
+    ViewData["Title"] = Model.User.FirstName + " " + Model.User.LastName;
+}
+
+@await Html.PartialAsync("~/Views/Shared/Components/_MobileNavPartial.cshtml")
+@await Html.PartialAsync("~/Views/Shared/Components/_HeaderPartial.cshtml")
+
+<main>
+    @await Html.PartialAsync("~/Views/Shared/Sections/Account/_AccountSecurityPartial.cshtml", Model)
+</main>
+
+@await Html.PartialAsync("~/Views/Shared/Components/_FooterPartial.cshtml")

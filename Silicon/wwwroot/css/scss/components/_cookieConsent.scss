@@ -1,0 +1,19 @@
+﻿#cookie-consent {
+    position: fixed;
+    bottom: -20px;
+    background-color: var(--main-bg-clr-secondary);
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 5rem;
+
+        span {
+            font-weight: bold;
+        }
+        button {
+            background-color: $theme;
+        }
+    }
+}

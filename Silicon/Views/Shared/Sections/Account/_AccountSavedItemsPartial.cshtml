@@ -1,0 +1,110 @@
+﻿@model AccountViewModel
+
+<section id="user-profile-saved-courses" class="page-section">
+    <div class="container">
+
+        @await Html.PartialAsync("~/Views/Shared/Sections/Account/_AccountMenuPartial.cshtml", Model, ViewData)
+
+
+        <div class="user-profile-saved-courses">
+            <div class="heading-container">
+                <h1>Saved Items</h1>
+                <button class="btn-theme" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-trash"></i>Delete all</button>
+            </div>
+
+            @if (TempData["Success"] != null)
+            {
+                <div class="updateSuccessBox" id="updateSuccessBox">@TempData["Success"]?.ToString()</div>
+            }
+            else if (TempData["Failed"] != null)
+            {
+                <div class="updateErrorBox" id="updateErrorBox">@TempData["Failed"]?.ToString()</div>
+            }
+
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Do you really want to delete all your saved items?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action("DeleteAllSavedCourses", "Account")'">
+                                Delete items
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-container">
+                @if (Model.SavedItems.SavedCourses != null && Model.SavedItems.SavedCourses.Count() > 0)
+                {
+                    foreach (CourseEntity course in Model.SavedItems.SavedCourses)
+                    {
+                        <div class="grid-item-container">
+                            <div class="btn-save-container">
+                                <button type="button" class="course-save-button course-saved-button" onclick="location.href='@Url.Action("UnsaveCourse", "Courses", new {courseId = course.Id})'">
+                                    <i class="fa-regular fa-bookmark"></i>
+                                </button>
+                                <div class="popover">
+                                    <p>Unsave course</p>
+                                </div>
+                            </div>
+
+                            <a class="grid-item" asp-controller="Courses" asp-action="CourseDetails" asp-route-id="@course.Id">
+                                <div class="item-image-container">
+                                    <img src="@course.BackgroundImageUrl"></img>
+                                </div>
+                                <div class="item-content">
+                                    <h6>@course.Title</h6>
+                                    <small>@course.Author.FirstName @course.Author.LastName</small>
+                                    @if (course.DiscountPrice != null)
+                                    {
+                                        <div class="price-box">
+                                            <span class="course-price-current">@course.Price</span>
+                                            <span class="course-price-actual">@course.DiscountPrice</span>
+                                        </div>
+
+                                    }
+                                    else
+                                    {
+                                        <div class="price-box">
+                                            <span>@course.Price</span>
+                                        </div>
+                                    }
+
+                                    <div class="content-meta">
+                                        <div class="meta-length">
+                                            <i class="fa-regular fa-clock"></i>
+                                            <small>@course.Length h</small>
+                                        </div>
+                                        <div class="meta-likes">
+                                            <i class="fa-regular fa-thumbs-up"></i>
+                                            <small>@course.LikesScore %</small>
+                                            <small>(@course.LikesCount)</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div>
+                        <h6>No saved courses</h6>
+                        <a asp-controller="Courses" asp-action="Courses">View courses</a>
+                    </div>
+                    
+                }
+
+            </div>
+        </div>
+    </div>
+</section>

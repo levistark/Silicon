@@ -1,0 +1,175 @@
+header {
+    padding: 15px 0;
+    position: relative;
+
+    .container {
+        display: grid;
+        align-items: center;
+        justify-content: space-between;
+        grid-template-columns: 1fr auto;
+        grid-template-areas: "logo mobile";
+        gap: 40px;
+
+        @include md {
+            grid-template-columns: 1fr auto auto;
+            grid-template-areas: "logo switch mobile";
+        }
+
+        @include lg {
+            grid-template-columns: auto 1fr auto auto;
+            grid-template-areas: "logo menu switch buttons";
+        }
+
+        #logo {
+            display: block;
+            grid-area: logo;
+            background-image: var(--main-logo);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-size: fill;
+            background-color: transparent;
+            min-width: 125px;
+            min-height: 60px;
+        }
+
+        #menu {
+            grid-area: menu;
+            display: none;
+
+            @include lg {
+                display: block;
+            }
+
+            nav {
+                display: flex;
+                gap: 15px;
+
+                a {
+                    color: var(--main-text-clr);
+                }
+            }
+        }
+
+        .btn-switch {
+            grid-area: switch;
+            display: none;
+
+            label {
+                margin: 0 3px;
+                color: var(--main-text-clr);
+            }
+
+            @include md {
+                display: block;
+            }
+        }
+
+        .btn-user-container {
+            position: relative;
+            transition: 0.4s;
+
+            .btn-user-profile {
+                display: none;
+                z-index: 5;
+                top: 0;
+                grid-area: mobile;
+                //border-radius: 50%;
+                background-size: cover;
+
+                @include lg {
+                    display: block;
+                    grid-area: buttons;
+                    z-index: 4;
+                }
+
+                img {
+                    height: auto;
+                    width: 100%;
+                }
+            }
+
+            .btn-user-dropdown {
+                position: absolute;
+                transform: scale(0);
+                z-index: 1;
+                padding-top: 1rem;
+                top: 2.5rem;
+                right: -4.3rem;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                border-radius: 10px;
+                overflow: hidden;
+                background-color: transparent;
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: start;
+                    width: 12rem;
+                    border-radius: 0;
+                }
+
+                .link-user-profile {
+                    border-start-start-radius: 8px;
+                    border-start-end-radius : 8px;
+                }
+
+                .btn-gray {
+                    background-color: var(--main-bg-clr);
+                    color: var(--main-title-clr);
+
+                    i {
+                        color: var(--main-text-clr);
+                    }
+
+                    &:hover {
+                        background-color: var(--main-bg-clr-secondary);
+                    }
+                }
+            }
+
+
+
+            &:hover .btn-user-dropdown {
+                animation: dropDownMoveDown 0.3s;
+                transform: scale(1);
+            }
+
+            &:hover .btn-user-profile {
+                border-radius: 0 !important;
+            }
+        }
+
+        .account-buttons {
+            grid-area: buttons;
+            display: none;
+            gap: 15px;
+
+            @include lg {
+                display: flex;
+            }
+        }
+
+
+
+        .btn-mobile {
+            grid-area: mobile;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+
+
+            @include lg {
+                display: none;
+            }
+
+            i {
+                font-size: 18pt;
+                color: var(--main-title-clr);
+            }
+        }
+    }
+}

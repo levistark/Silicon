@@ -1,0 +1,386 @@
+#our-courses-section {
+
+    .container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+
+        @include md {
+            display: block;
+        }
+
+        .heading-container {
+            display: flex;
+            flex-direction: column;
+
+
+            @include md {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .action-buttons {
+                position: relative;
+                margin-top: 1rem;
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+
+                @include md {
+                    flex-direction: row;
+                    margin-top: 0rem;
+                }
+
+                .category-dropdown {
+                    overflow: hidden;
+
+                    &:hover .dropbtn {
+                        background-color: var(--main-bg-clr);
+                    }
+
+                    &:hover .dropdown-content {
+                        display: block;
+                    }
+
+                    .dropbtn {
+                        width: 100%;
+                        color: var(--main-text-clr);
+                        padding: 14px 16px;
+                        background-color: inherit;
+                        border-radius: 8px;
+                        border: solid 1px var(--main-clr-input-border);
+
+                        &:hover {
+                            border: solid 1px var(--main-text-clr) !important;
+                        }
+
+                        &:focus {
+                            border: solid 1px var(--main-text-clr) !important;
+                        }
+
+                        @include md {
+                            width: auto;
+                        }
+
+                        i {
+                            margin-left: 5rem;
+                        }
+                    }
+
+                    .dropdown-content {
+                        display: none;
+                        position: absolute;
+                        background-color: var(--main-bg-clr-secondary);
+                        width: 100%;
+                        box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.311);
+                        z-index: 3;
+
+                        @include md {
+                            width: 14.5rem;
+                        }
+
+                        a {
+                            color: var(--main-text-clr);
+                            padding: 12px 16px;
+                            text-decoration: none;
+                            display: block;
+                            text-align: left;
+
+                            &:hover {
+                                background-color: var(--main-clr-hover);
+                            }
+                        }
+                    }
+                }
+
+                .search-field {
+                    text-align: center;
+                    width: 100%;
+                    border-radius: 8px;
+                    border: solid 1px var(--main-clr-input-border);
+                    padding: 14px 16px;
+
+                    @include md {
+                        width: auto;
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    &:hover {
+                        border: solid 1px $theme !important;
+                    }
+
+                    &:focus-within {
+                        border: solid 1px var(--main-text-clr) !important;
+                    }
+
+                    input {
+                        border: none;
+                        outline: none;
+                        background-color: transparent;
+
+                        &:hover {
+                            border: 0 !important;
+                        }
+
+                        &:focus {
+                            border: 0 !important;
+                        }
+                    }
+
+                    button {
+                        background: none;
+                        color: var(--main-text-clr);
+                        border: none;
+                        padding: 0;
+                        font: inherit;
+                        cursor: pointer;
+                        outline: inherit;
+                    }
+                }
+            }
+        }
+
+        .updateErrorBox {
+            position: absolute;
+            top: -3.8rem;
+            width: 100%;
+            padding: 0.5rem 1.5rem;
+            background-color: #EEAAAA;
+            border-radius: 6px;
+            text-align: center;
+            color: black;
+            animation: alertFadeout 1s forwards;
+            animation-delay: 3s;
+        }
+
+        .updateSuccessBox {
+            position: absolute;
+            top: -3.8rem;
+            width: 100%;
+            padding: 0.5rem 1.5rem;
+            background-color: lightgreen;
+            border-radius: 6px;
+            text-align: center;
+            color: black;
+            animation: alertFadeout 1s forwards;
+            animation-delay: 3s;
+        }
+
+        .grid-container {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+            gap: 1rem;
+
+            @include xl {
+                grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+            }
+
+            .grid-item-container {
+                position: relative;
+                overflow: hidden;
+                border-radius: 10px;
+                box-shadow: 0 1px 10px 0px var(--main-bg-clr-shadow);
+
+                .btn-save-container {
+                    position: relative;
+
+                    .popover {
+                        display: none;
+                    }
+
+                    &:hover .popover {
+                        position: absolute;
+                        display: block;
+                        top: 1.3rem;
+                        right: 0;
+                        padding: .5rem 1rem;
+                        z-index: 1;
+                        background-color: var(--main-bg-clr);
+                        color: var(--main-text-clr);
+                        animation: fade-in-move-left 0.2s forwards;
+                        animation-delay: 0;
+                    }
+
+                    .course-save-button {
+                        position: absolute;
+                        top: 17px;
+                        right: 17px;
+                        padding: 9px 16px;
+                        border-radius: 50%;
+                        background: $gray-300;
+                        color: inherit;
+                        border: none;
+                        font: inherit;
+                        cursor: pointer;
+                        outline: inherit;
+                        transition: 0.2s;
+                        z-index: 2;
+                        border: 2px solid transparent;
+
+                        &:hover {
+                            background-color: black;
+                            border: 2px solid $theme;
+                        }
+
+                        &:hover i {
+                            color: white;
+                        }
+
+                        i {
+                            transition: 0.2s;
+                            font-size: 11pt;
+                        }
+                    }
+
+                    .course-saved-button {
+                        background-color: $theme;
+                        color: white;
+                    }
+                }
+
+
+                .grid-item {
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+
+                    &:hover .item-image-container img {
+                        transform: scale(1.05);
+                    }
+
+                    &:hover .item-content {
+                        background-color: var(--main-clr-hover);
+                    }
+
+
+                    .item-image-container {
+                        background-size: cover;
+
+                        .badge {
+                            position: absolute;
+                            top: 17px;
+                            left: 17px;
+                            padding: 0.4rem 0.8rem;
+                            border-radius: 8px;
+                            z-index: 1;
+                        }
+
+                        img {
+                            transition: 0.2s;
+                            height: auto;
+                            width: 100%;
+                        }
+                    }
+
+                    .item-content {
+                        padding: 1rem;
+                        display: flex;
+                        flex-direction: column;
+                        transition: 0.2s;
+                        background-color: var(--main-bg-clr-custom);
+                        justify-content: space-between;
+                        flex: 1;
+
+                        .price-box {
+                            margin-top: 1rem;
+
+                            span {
+                                margin-top: 1rem;
+                                font-weight: bold;
+                            }
+
+                            .course-price-current {
+                                color: $theme;
+                                margin-right: 0.5rem;
+                            }
+
+                            .course-price-actual {
+                                color: var(--main-clr-thin-gray);
+                                text-decoration: line-through;
+                            }
+                        }
+
+                        .content-meta {
+                            border-top: solid 1px var(--main-clr-thin-gray);
+                            padding-top: 1rem;
+                            display: flex;
+
+
+                            .meta-length {
+                                margin-right: 1rem;
+                            }
+
+                            div {
+                                i {
+                                    margin-right: 0.5rem;
+                                    color: var(--main-text-clr);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .page-navigation {
+            margin-top: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--main-text-clr);
+
+            .nav-controls {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .custom-arrow {
+                    text-decoration: none;
+                    display: flex;
+
+                    i {
+                        color: var(--main-text-clr);
+                    }
+                }
+
+                .previous-page {
+                    margin-right: 1rem;
+                    transform: rotate(180deg);
+                }
+
+                .page-numbers {
+                    .page-number {
+                        background-color: transparent;
+                        padding: 0.5rem 1rem;
+                        margin: 0 5px;
+                        border-radius: 5px;
+                        color: var(--main-text-clr);
+                        text-decoration: none;
+
+                        &:hover {
+                            background-color: var(--main-bg-clr-secondary);
+                        }
+
+                        &:focus {
+                            background-color: $theme;
+                            color: white;
+                        }
+                    }
+                }
+
+                .next-page {
+                    margin-left: 1rem;
+                }
+            }
+        }
+    }
+}

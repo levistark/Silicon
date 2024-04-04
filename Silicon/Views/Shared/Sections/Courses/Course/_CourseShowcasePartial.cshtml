@@ -1,0 +1,64 @@
+﻿@model CourseEntity
+<section class="course-details-showcase">
+    <div class="showcase-bg-container">
+        <img src="@Model.BackgroundImageUrl" class="course-details-bg img-fluid"></img>
+    </div>
+
+    <div class="container">
+        @await Html.PartialAsync("~/Views/Shared/Components/_PageNavPartial.cshtml", new PageNavModel()
+        {
+            Pages =
+            [
+                new LinkModel() { Title = "Home", Url = "/" },
+                new LinkModel() { Title = "Courses", Url = "/courses"},
+                new LinkModel() { Title = Model.Title, Url = $"/courses/{Model.Id}", CurrentPage = true}
+            ]
+        })
+        <div class="showcase-content">
+            <div class="tag-container">
+                @if (Model.CourseBadges != null)
+                {
+                    @foreach (CourseBadgeEntity courseBadge in Model.CourseBadges)
+                    {
+                        if (courseBadge.CourseId == Model.Id)
+                        {
+                            <div class="badge @courseBadge.Badge.BackgroundColor">@courseBadge.Badge.Title</div>
+                        }
+                    }
+                }
+            </div>
+            <h1>@Model.Title</h1>
+            <p>@Model.Ingress</p>
+            <div class="showcase-spec">
+                <div class="course-rating">
+                    <div class="star-box">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    (@Model.ReviewCount) reviews
+                </div>
+                <div class="course-likes">
+                    <i class="fa-regular fa-thumbs-up"></i>
+                    @Model.LikesCount likes
+                </div>
+                <div class="course-length">
+                    <i class="fa-regular fa-clock"></i>
+                    @Model.Length hours
+                </div>
+            </div>
+
+            <div class="showcase-author">
+                <div class="img-container">
+                    <img src="/images/course-details/author-small.png" class="img-author-small img-scale"></img>
+                </div>
+                <div class="showcase-author-textbox">
+                    <h6>Created by</h6>
+                    <p>@Model.Author.FirstName @Model.Author.LastName</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
