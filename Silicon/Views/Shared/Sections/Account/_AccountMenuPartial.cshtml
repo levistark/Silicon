@@ -7,10 +7,24 @@
 
 <div class="profile-sidebar">
     <div class="user-info">
-        <div class="image-container">
-            <img src="/images/courses/user-profile-small.svg"></img>
-            <button class="btn-update-img"><i class="fa-solid fa-rotate"></i></button>
+        <div class="profile-img-container">
+            <div class="img-container">
+                @if (Model.User.ProfileImage != null)
+                {
+                    <img src="~/uploads/@Model.User.ProfileImage" alt="profile image"></img>
+                }
+                else
+                {
+                    <img src="~/images/avatar.jpg" alt="profile image"></img>
+                }
+
+            </div>
+            <form enctype="multipart/form-data" asp-action="UpdateProfileImage" asp-controller="Account" method="post">
+                <input id="fileUploader" type="file" name="file" hidden />
+                <label for="fileUploader" class="btn-update-img"><i class="fa-solid fa-rotate"></i></label>
+            </form>
         </div>
+        
         <h6>@Model.User.FirstName @Model.User.LastName</h6>
         <p>@Model.User.Email</p>
     </div>

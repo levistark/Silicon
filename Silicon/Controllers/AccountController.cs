@@ -15,13 +15,14 @@ using static Silicon.Helpers.StaticFields;
 namespace Silicon.Controllers;
 
 [Authorize]
-public class AccountController(SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> userManager, AddressManager addressManager, IMemoryCache cache, IConfiguration configuration) : Controller
+public class AccountController(SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> userManager, AddressManager addressManager, IMemoryCache cache, IConfiguration configuration, AccountManager accountManager) : Controller
 {
     private readonly SignInManager<ApplicationUser> _signInManager = signInManager;
     private readonly UserManager<ApplicationUser> _userManager = userManager;
     private readonly AddressManager _addressManager = addressManager;
     private readonly IMemoryCache _cache = cache;
     private readonly IConfiguration _configuration = configuration;
+    private readonly AccountManager _accountManager = accountManager;
 
     [HttpGet]
     [Route("/account/details")]
@@ -51,7 +52,6 @@ public class AccountController(SignInManager<ApplicationUser> signInManager, Use
         await _signInManager.SignOutAsync();
         return RedirectToAction("SignIn", "Auth");
     }
-
 
     [HttpPost]
     [Route("/account/details/update-info")]
@@ -110,7 +110,6 @@ public class AccountController(SignInManager<ApplicationUser> signInManager, Use
         await _signInManager.SignOutAsync();
         return RedirectToAction("SignIn", "Auth");
     }
-
 
     [HttpPost]
     [Route("/account/details/update-address")]
@@ -252,7 +251,6 @@ public class AccountController(SignInManager<ApplicationUser> signInManager, Use
         return RedirectToAction("SignIn", "Auth");
     }
 
-
     [HttpPost]
     [Route("/account/save-password")]
     public async Task<IActionResult> SaveNewPassword([Bind(Prefix = "Security.Form")] AccountSecurityFormModel securityForm)
@@ -311,7 +309,6 @@ public class AccountController(SignInManager<ApplicationUser> signInManager, Use
         }
     }
 
-
     [HttpPost]
     [Route("/account/security/delete-account")]
     public async Task<IActionResult> DeleteAccount([Bind(Prefix = "Security.DeleteAccount")] AccountSecurityDeleteAccountFormModel checkbox)
@@ -348,6 +345,15 @@ public class AccountController(SignInManager<ApplicationUser> signInManager, Use
             await _signInManager.SignOutAsync();
             return RedirectToAction("SignIn", "Auth");
         }
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> UpdateProfileImage(IFormFile file)
+    {
+        await _accountManager.UploadProfileImageAsync(file, User);
+
+        // Helst ska denna redirecta till den action som användaren kommer ifrån
+        return RedirectToAction("AccountDetails");
     }
 
     private async Task<AccountViewModel> PopulateAccountDetailsViewModel(ApplicationUser userEntity)

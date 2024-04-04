@@ -10,7 +10,6 @@ public class ApplicationUser : IdentityUser
     [Required]
     [Display(Name = "First name")]
     [ProtectedPersonalData]
-
     public string FirstName { get; set; } = null!;
 
     [Required]
@@ -23,7 +22,7 @@ public class ApplicationUser : IdentityUser
     public string? Bio { get; set; }
     public int? AddressId { get; set; }
     public bool IsExternalAccount { get; set; } = false;
-
+    public string? ProfileImage { get; set; }
     public AddressEntity? Address { get; set; }
 
     [InverseProperty("User")]

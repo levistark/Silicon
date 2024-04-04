@@ -20,8 +20,24 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo({ top: sessionStorage.getItem('lastScrollPosition'), behavior: "instant" })
         sessionStorage.removeItem('lastScrollPosition');
     } 
+
+    handleProfileImageUpload()
 })
 
+function handleProfileImageUpload() {
+    const fileUploader = document.getElementById("fileUploader")
+    console.log("loaded")
+    if (fileUploader != undefined) {
+        console.log("found")
+
+        fileUploader.addEventListener('change', function() {
+            console.log("change")
+
+            if (this.files.length > 0)
+                this.form.submit()
+        })
+    }
+}
 
 /*
 This function toggles between dark and light mode on click at the round switch button on the header.

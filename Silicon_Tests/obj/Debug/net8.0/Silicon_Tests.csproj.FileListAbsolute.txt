@@ -154,3 +154,5 @@ C:\VSProjects\ASP.NET\Silicon\Silicon_Tests\obj\Debug\net8.0\Silicon_Tests.pdb
 C:\VSProjects\ASP.NET\Silicon\Silicon_Tests\obj\Debug\net8.0\Silicon_Tests.genruntimeconfig.cache
 C:\VSProjects\ASP.NET\Silicon\Silicon_Tests\obj\Debug\net8.0\ref\Silicon_Tests.dll
 C:\VSProjects\ASP.NET\Silicon\Silicon_Tests\obj\Debug\net8.0\Silicon_Tests.sourcelink.json
+C:\VSProjects\ASP.NET\Silicon\Silicon_Tests\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Features.dll
+C:\VSProjects\ASP.NET\Silicon\Silicon_Tests\bin\Debug\net8.0\System.IO.Pipelines.dll

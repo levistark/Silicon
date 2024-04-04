@@ -1090,7 +1090,11 @@ header .container .btn-user-container .btn-user-profile {
   z-index: 5;
   top: 0;
   grid-area: mobile;
+  border-radius: 50%;
+  overflow: hidden;
   background-size: cover;
+  width: 50px;
+  height: 50px;
 }
 @media (min-width: 992px) {
   header .container .btn-user-container .btn-user-profile {
@@ -1141,9 +1145,6 @@ header .container .btn-user-container .btn-user-dropdown .btn-gray:hover {
 header .container .btn-user-container:hover .btn-user-dropdown {
   animation: dropDownMoveDown 0.3s;
   transform: scale(1);
-}
-header .container .btn-user-container:hover .btn-user-profile {
-  border-radius: 0 !important;
 }
 header .container .account-buttons {
   grid-area: buttons;
@@ -2718,17 +2719,21 @@ footer .container p {
   flex-direction: column;
   align-items: center;
 }
-#user-profile .container .profile-sidebar .user-info .image-container {
+#user-profile .container .profile-sidebar .user-info .profile-img-container {
+  position: relative;
+}
+#user-profile .container .profile-sidebar .user-info .profile-img-container .img-container {
   position: relative;
   width: 7rem;
   border-radius: 50%;
   background-size: cover;
+  overflow: hidden;
 }
-#user-profile .container .profile-sidebar .user-info .image-container img {
+#user-profile .container .profile-sidebar .user-info .profile-img-container .img-container img {
   height: auto;
   width: 100%;
 }
-#user-profile .container .profile-sidebar .user-info .image-container .btn-update-img {
+#user-profile .container .profile-sidebar .user-info .profile-img-container form .btn-update-img {
   outline: none;
   border: none;
   position: absolute;
@@ -2742,14 +2747,15 @@ footer .container p {
   z-index: 0;
   color: var(--main-title-clr);
   background-color: var(--main-bg-clr);
-  box-shadow: 2px 2px 5px 1px var(--main-bg-clr-shadow);
+  border: solid 2px grey;
+  box-shadow: 1px 1px 5px 1px var(--main-bg-clr-shadow);
   transition: 0.2s;
 }
-#user-profile .container .profile-sidebar .user-info .image-container .btn-update-img:hover {
+#user-profile .container .profile-sidebar .user-info .profile-img-container form .btn-update-img:hover {
   background-color: var(--main-title-clr);
   color: var(--main-bg-clr);
 }
-#user-profile .container .profile-sidebar .user-info .image-container .btn-update-img i {
+#user-profile .container .profile-sidebar .user-info .profile-img-container form .btn-update-img i {
   font-size: 10pt;
 }
 #user-profile .container .profile-sidebar .user-info h6 {

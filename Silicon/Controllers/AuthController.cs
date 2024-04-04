@@ -175,6 +175,4 @@ public class AuthController(SignInManager<ApplicationUser> signInManager, UserMa
         return RedirectToAction("AccountDetails", "Account");
     }
 
-
-
 }

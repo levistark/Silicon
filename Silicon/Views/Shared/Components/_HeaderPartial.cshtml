@@ -1,4 +1,6 @@
-﻿@inject SignInManager<ApplicationUser> _signInManager
+﻿@{
+    var user = await UserManager.GetUserAsync(User);
+}
 <header>
     <div class="container">
         <a id="logo" asp-controller="Home" asp-action="Index"></a>
@@ -7,7 +9,7 @@
             <nav>
                 <a class="menu-link" asp-controller="Home" asp-action="Index">Overview</a>
                 <a class="menu-link" asp-controller="Home" asp-action="Index">Features</a>
-                @if (_signInManager.IsSignedIn(User))
+                @if (SignInManager.IsSignedIn(User))
                 {
                     <a class="menu-link" asp-controller="Courses" asp-action="Courses">Courses</a>
                 }
@@ -24,11 +26,18 @@
             <label class="text-s">Dark</label>
         </div>
 
-        @if (_signInManager.IsSignedIn(User))
+        @if (SignInManager.IsSignedIn(User) && user != null)
         {
             <div class="btn-user-container">
                 <a asp-controller="Account" asp-action="AccountDetails" class="btn-user-profile">
-                    <img src="/images/courses/user-profile-small.svg">
+                    @if (user.ProfileImage != null)
+                    {
+                        <img src="~/uploads/@user.ProfileImage" alt="profile image"></img>
+                    }
+                    else
+                    {
+                        <img src="~/images/avatar.jpg" alt="profile image"></img>
+                    }
                 </a>
 
                 <div class="btn-user-dropdown">

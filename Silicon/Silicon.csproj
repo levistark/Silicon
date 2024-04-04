@@ -65,6 +65,7 @@
   <ItemGroup>
     <Folder Include="Models\User\" />
     <Folder Include="Views\Shared\Sections\User\" />
+    <Folder Include="wwwroot\uploads\" />
   </ItemGroup>
 
   <ItemGroup>
