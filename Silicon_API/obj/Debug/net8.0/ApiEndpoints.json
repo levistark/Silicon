@@ -78,6 +78,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Silicon_API.Controllers.CoursesController",
+    "Method": "GetAllCategories",
+    "RelativePath": "api/Courses/categories",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Silicon_API.Controllers.CourseSubscriptionsController",
     "Method": "CreateCourseSubscription",
     "RelativePath": "api/CourseSubscriptions",

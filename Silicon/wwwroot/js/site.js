@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } 
 
     handleProfileImageUpload()
+    select()
 })
 
 function handleProfileImageUpload() {
@@ -107,6 +108,37 @@ async function toggleNavBar() {
         await mobileNav.classList.add('hidenav')
         await sideBar.classList.add('flyOutAnimation')
         await sideBar.classList.remove('flyInAnimation')
+    }
+}
+
+function select() {
+    try {
+        let select = document.querySelector(".category-dropdown")
+        let selected = document.querySelector(".selected")
+        let selectOptions = document.querySelector(".select-options")
+
+        if (select != undefined) {
+            selected.addEventListener('click', () => {
+                selectOptions.style.display = (selectOptions.style.display === "block") ? "none" : "block"
+            })
+        }
+
+        let options = document.querySelectorAll(".option")
+
+        if (options != undefined) {
+            options.forEach(option => {
+                option.addEventListener("click", function() {
+                    selected.innerHTML = `${this.textContent} <i class="fa fa-caret-down"></i>`
+                    selectOptions.style.display = "none"
+
+                    let category = this.getAttribute('data-value')
+                })
+            })
+        }
+        
+    }
+    catch {
+
     }
 }
 

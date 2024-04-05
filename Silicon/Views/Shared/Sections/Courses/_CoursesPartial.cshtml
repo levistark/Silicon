@@ -4,16 +4,40 @@
     <div class="container">
         <div class="heading-container">
             <h2>Courses</h2>
+            @* <form class="filter">
+                <div class="select">
+                    <div class="selected">All Categories</div>
+                    <div class="select-options">
+                        <div class="option" data-value="all">All Categories</div>
+                        @if (Model.Categories.Count() > 0)
+                        {
+                            foreach (var category in Model.Categories)
+                            {
+                                <div class="option" data-value="@category.Category">@category.Category</div>
+                            }
+                        }
+                    </div>
+                </div>
+                <div class="search-field">
+                    <input type="text" placeholder="Search courses"></input>
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </form> *@
+
             <div class="action-buttons">
                 <div class="category-dropdown">
-                    <button class="dropbtn">
+                    <div class="selected">
                         All Categories
                         <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="dropdown-content">
-                        <a href="#">Category 1</a>
-                        <a href="#">Category 2</a>
-                        <a href="#">Category 3</a>
+                    </div>
+                    <div class="select-options">
+                        @if (Model.Categories.Count() > 0)
+                        {
+                            foreach (var category in Model.Categories)
+                            {
+                                <div class="option" data-value="@category.Category">@category.Category</div>
+                            }
+                        }
                     </div>
                 </div>
                 <div class="search-field">

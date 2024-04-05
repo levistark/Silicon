@@ -10,7 +10,7 @@ public class DataContext : IdentityDbContext<ApplicationUser>
     public DataContext(DbContextOptions<DataContext> options) : base(options)
     {
     }
-
+    public virtual DbSet<CourseCategoryEntity> Categories { get; set; }
     public virtual DbSet<AddressEntity> Addresses { get; set; }
     public virtual DbSet<CourseEntity> Courses { get; set; }
     public virtual DbSet<CourseStepEntity> CourseSteps { get; set; }

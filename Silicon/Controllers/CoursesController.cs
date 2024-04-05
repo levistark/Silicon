@@ -43,15 +43,29 @@ public class CoursesController(UserManager<ApplicationUser> userManager, SignInM
                 var userEntity = await _userManager.GetUserAsync(User);
                 var viewModel = new CoursesViewModel() { User = userEntity! };
 
+                if (data != null)
+                {
+                    viewModel.Courses = data;
+                }
+
+                var categoriesResponse = await httpClient.GetAsync($"https://localhost:7281/api/courses/categories?key={apiSecret}");
+
+                if (categoriesResponse.IsSuccessStatusCode)
+                {
+                    var categoriesJson = await categoriesResponse.Content.ReadAsStringAsync();
+                    var categoriesData = JsonConvert.DeserializeObject<IEnumerable<CourseCategoryEntity>>(categoriesJson);
+
+                    if (categoriesData != null)
+                    {
+                        viewModel.Categories = categoriesData;
+                    }
+                }
+
                 if (userEntity == null)
                 {
                     Response.Cookies.Delete("AccessToken");
                     await _signInManager.SignOutAsync();
                     return RedirectToAction("SignIn", "Auth");
-                }
-                if (data != null)
-                {
-                    viewModel.Courses = data;
                 }
 
                 return View(viewModel);

@@ -8,4 +8,5 @@ public class CoursesViewModel
     public string? Title { get; set; }
     public ApplicationUser User { get; set; } = new();
     public IEnumerable<CourseEntity> Courses { get; set; } = [];
+    public IEnumerable<CourseCategoryEntity> Categories { get; set; } = [];
 }

@@ -10,12 +10,13 @@ namespace Silicon_API.Controllers;
 [ApiController]
 [UseApiKey]
 [Authorize]
-public class CoursesController(CourseRepository courseRepository, CourseManager courseManager, IConfiguration configuration, HttpClient httpClient) : ControllerBase
+public class CoursesController(CourseRepository courseRepository, CourseManager courseManager, IConfiguration configuration, HttpClient httpClient, CourseCategoryRepository courseCategoryRepository) : ControllerBase
 {
     private readonly CourseRepository _courseRepository = courseRepository;
     private readonly CourseManager _courseManager = courseManager;
     private readonly IConfiguration _configuration = configuration;
     private readonly HttpClient _httpClient = httpClient;
+    private readonly CourseCategoryRepository _courseCategoryRepository = courseCategoryRepository;
 
     [HttpGet]
     public async Task<IActionResult> GetAll()
@@ -47,6 +48,25 @@ public class CoursesController(CourseRepository courseRepository, CourseManager 
                 return Ok(course);
             }
             return NotFound();
+        }
+        catch (Exception ex) { Debug.WriteLine(ex.Message); }
+        return NotFound();
+    }
+
+    [HttpGet]
+    [Route("categories")]
+    public async Task<IActionResult> GetAllCategories()
+    {
+        try
+        {
+            var categories = await _courseCategoryRepository.ReadAllAsync();
+
+            if (categories.Count() > 0)
+            {
+                return Ok(categories);
+            }
+            return NotFound();
+
         }
         catch (Exception ex) { Debug.WriteLine(ex.Message); }
         return NotFound();

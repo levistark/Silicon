@@ -23,6 +23,7 @@ public class CourseRepository : Repo<CourseEntity>
                 .Include(i => i.CourseSteps)
                 .Include(i => i.Specifications)
                 .Include(i => i.Subscribers)
+                .Include(i => i.Category)
                 .ToListAsync();
         }
         catch (Exception ex) { Debug.WriteLine(ex.Message); }
@@ -39,6 +40,7 @@ public class CourseRepository : Repo<CourseEntity>
                 .Include(i => i.CourseSteps)
                 .Include(i => i.Specifications)
                 .Include(i => i.Subscribers)
+                .Include(i => i.Category)
                 .FirstOrDefaultAsync(predicate)!;
 
             if (existingEntity != null)

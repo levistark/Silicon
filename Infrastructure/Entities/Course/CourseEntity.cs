@@ -18,6 +18,7 @@ public class CourseEntity
     public string? ReviewScore { get; set; }
     public string? ReviewCount { get; set; }
     public int AuthorId { get; set; }
+    public int? CategoryId { get; set; }
 
     [InverseProperty("Course")]
     public virtual ICollection<CourseBadgeEntity>? CourseBadges { get; set; }
@@ -35,4 +36,7 @@ public class CourseEntity
     [InverseProperty("CourseIdNavigation")]
     public virtual ICollection<CourseSpecificationEntity>? Specifications { get; set; } = [];
 
+    [ForeignKey("CategoryId")]
+    [InverseProperty("Courses")]
+    public virtual CourseCategoryEntity? Category { get; set; } = null!;
 }

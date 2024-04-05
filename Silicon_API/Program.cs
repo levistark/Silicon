@@ -25,6 +25,7 @@ builder.Services.AddScoped<SubscriberRepository>();
 builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<CourseManager>();
 builder.Services.AddScoped<CourseSubscriptionManager>();
+builder.Services.AddScoped<CourseCategoryRepository>();
 
 builder.Services.AddHttpClient();
 builder.Services.RegisterJwt(builder.Configuration);

@@ -121,6 +121,23 @@ namespace Infrastructure.Migrations
                     b.ToTable("CourseBadges");
                 });
 
+            modelBuilder.Entity("Infrastructure.Entities.Course.CourseCategoryEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categories");
+                });
+
             modelBuilder.Entity("Infrastructure.Entities.Course.CourseEntity", b =>
                 {
                     b.Property<int>("Id")
@@ -134,6 +151,9 @@ namespace Infrastructure.Migrations
 
                     b.Property<string>("BackgroundImageUrl")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("CategoryId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -170,6 +190,8 @@ namespace Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("AuthorId");
+
+                    b.HasIndex("CategoryId");
 
                     b.ToTable("Courses");
                 });
@@ -542,7 +564,13 @@ namespace Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Infrastructure.Entities.Course.CourseCategoryEntity", "Category")
+                        .WithMany("Courses")
+                        .HasForeignKey("CategoryId");
+
                     b.Navigation("Author");
+
+                    b.Navigation("Category");
                 });
 
             modelBuilder.Entity("Infrastructure.Entities.Course.CourseSpecificationEntity", b =>
@@ -672,6 +700,11 @@ namespace Infrastructure.Migrations
             modelBuilder.Entity("Infrastructure.Entities.Course.BadgeEntity", b =>
                 {
                     b.Navigation("CourseBadges");
+                });
+
+            modelBuilder.Entity("Infrastructure.Entities.Course.CourseCategoryEntity", b =>
+                {
+                    b.Navigation("Courses");
                 });
 
             modelBuilder.Entity("Infrastructure.Entities.Course.CourseEntity", b =>
