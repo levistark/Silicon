@@ -23,17 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     handleProfileImageUpload()
     select()
+    searchQuery()
 })
 
 function handleProfileImageUpload() {
     const fileUploader = document.getElementById("fileUploader")
-    console.log("loaded")
     if (fileUploader != undefined) {
-        console.log("found")
 
         fileUploader.addEventListener('change', function() {
-            console.log("change")
-
             if (this.files.length > 0)
                 this.form.submit()
         })
@@ -132,7 +129,7 @@ function select() {
                     selectOptions.style.display = "none"
                     let category = this.getAttribute('data-value')
                     selected.setAttribute('data-value', category)
-                    updateCourseByFilter()
+                    updateCoursesByFilter()
                 })
             })
         }
@@ -143,12 +140,11 @@ function select() {
     }
 }
  
-function updateCourseByFilter() {
+function updateCoursesByFilter() {
     const category = document.querySelector('.category-dropdown .selected').getAttribute('data-value') || 'all'
-    console.log(category)
+    const searchQuery = document.querySelector('#searchQuery').value
 
-    const url = `/courses?category=${encodeURIComponent(category)}&key=NWZjZGNjMzktNTg5YS00NzEzLWI3MzQtM2E4MTE0ZTU4Y2Q4`
-    
+    const url = `/courses?category=${encodeURIComponent(category)}&searchQuery=${encodeURIComponent(searchQuery)}&key=NWZjZGNjMzktNTg5YS00NzEzLWI3MzQtM2E4MTE0ZTU4Y2Q4`
     fetch(url)
         .then(res => res.text())
         .then(data => {
@@ -156,8 +152,17 @@ function updateCourseByFilter() {
             const dom = parser.parseFromString(data, 'text/html')
             document.querySelector('.grid-container').innerHTML = dom.querySelector('.grid-container').innerHTML
         })
+}
 
-        
+function searchQuery() {
+    try {
+        document.querySelector('#searchQuery').addEventListener('keyup', function () {
+            updateCoursesByFilter()
+        })
+    }
+    catch {
+
+    }
 }
 
 

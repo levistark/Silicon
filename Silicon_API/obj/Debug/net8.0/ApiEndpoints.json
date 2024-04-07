@@ -63,6 +63,11 @@
         "Name": "category",
         "Type": "System.String",
         "IsRequired": false
+      },
+      {
+        "Name": "searchQeury",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

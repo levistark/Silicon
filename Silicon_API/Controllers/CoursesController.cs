@@ -20,7 +20,7 @@ public class CoursesController(CourseRepository courseRepository, CourseManager 
     private readonly CourseCategoryRepository _courseCategoryRepository = courseCategoryRepository;
 
     [HttpGet]
-    public async Task<IActionResult> GetAll(string category = "")
+    public async Task<IActionResult> GetAll(string category = "", string searchQuery = "")
     {
         try
         {
@@ -31,6 +31,11 @@ public class CoursesController(CourseRepository courseRepository, CourseManager 
                 if (!string.IsNullOrEmpty(category) && category != "all")
                 {
                     query = query.Where(x => x.Category!.Category == category);
+                }
+
+                if (!string.IsNullOrEmpty(searchQuery))
+                {
+                    query = query.Where(x => x.Title.Contains(searchQuery) || x.Author.FirstName.Contains(searchQuery) || x.Author.LastName.Contains(searchQuery));
                 }
 
                 var courses = await query.ToListAsync();
