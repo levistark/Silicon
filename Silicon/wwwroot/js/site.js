@@ -130,8 +130,9 @@ function select() {
                 option.addEventListener("click", function() {
                     selected.innerHTML = `${this.textContent} <i class="fa fa-caret-down"></i>`
                     selectOptions.style.display = "none"
-
                     let category = this.getAttribute('data-value')
+                    selected.setAttribute('data-value', category)
+                    updateCourseByFilter()
                 })
             })
         }
@@ -141,6 +142,22 @@ function select() {
 
     }
 }
+ 
+function updateCourseByFilter() {
+    const category = document.querySelector('.category-dropdown .selected').getAttribute('data-value') || 'all'
+    console.log(category)
 
+    const url = `/courses?category=${encodeURIComponent(category)}&key=NWZjZGNjMzktNTg5YS00NzEzLWI3MzQtM2E4MTE0ZTU4Y2Q4`
+    
+    fetch(url)
+        .then(res => res.text())
+        .then(data => {
+            const parser = new DOMParser()
+            const dom = parser.parseFromString(data, 'text/html')
+            document.querySelector('.grid-container').innerHTML = dom.querySelector('.grid-container').innerHTML
+        })
+
+        
+}
 
 

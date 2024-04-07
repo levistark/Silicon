@@ -20,7 +20,7 @@ public class CoursesController(UserManager<ApplicationUser> userManager, SignInM
 
     [HttpGet]
     [Route("/courses")]
-    public async Task<IActionResult> Courses()
+    public async Task<IActionResult> Courses(string category = "")
     {
         var referer = _cache.Get<string>("Referer");
 
@@ -33,7 +33,7 @@ public class CoursesController(UserManager<ApplicationUser> userManager, SignInM
         {
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             var apiSecret = _configuration["ApiKey"];
-            var response = await httpClient.GetAsync($"https://localhost:7281/api/courses?key={apiSecret}");
+            var response = await httpClient.GetAsync($"https://localhost:7281/api/courses?category={category}&key={apiSecret}");
 
             if (response.IsSuccessStatusCode)
             {

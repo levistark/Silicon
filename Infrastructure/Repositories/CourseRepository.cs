@@ -30,6 +30,23 @@ public class CourseRepository : Repo<CourseEntity>
         return null!;
     }
 
+    public IQueryable<CourseEntity> ReadAllAsQueryable()
+    {
+        try
+        {
+            return _dataContext.Courses
+                .Include(i => i.Author).ThenInclude(x => x.SocialMedia)
+                .Include(i => i.CourseBadges)!.ThenInclude(i => i.Badge)
+                .Include(i => i.CourseSteps)
+                .Include(i => i.Specifications)
+                .Include(i => i.Subscribers)
+                .Include(i => i.Category)
+                .AsQueryable();
+        }
+        catch (Exception ex) { Debug.WriteLine(ex.Message); }
+        return null!;
+    }
+
     public override async Task<CourseEntity> ReadOneAsync(Expression<Func<CourseEntity, bool>> predicate)
     {
         try

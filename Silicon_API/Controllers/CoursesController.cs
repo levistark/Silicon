@@ -2,6 +2,7 @@
 using Infrastructure.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Silicon_API.Filters;
 using System.Diagnostics;
 
@@ -19,14 +20,20 @@ public class CoursesController(CourseRepository courseRepository, CourseManager 
     private readonly CourseCategoryRepository _courseCategoryRepository = courseCategoryRepository;
 
     [HttpGet]
-    public async Task<IActionResult> GetAll()
+    public async Task<IActionResult> GetAll(string category = "")
     {
         try
         {
-            var courses = await _courseRepository.ReadAllAsync();
+            var query = _courseRepository.ReadAllAsQueryable();
 
-            if (courses.Count() > 0)
+            if (query != null)
             {
+                if (!string.IsNullOrEmpty(category) && category != "all")
+                {
+                    query = query.Where(x => x.Category!.Category == category);
+                }
+
+                var courses = await query.ToListAsync();
                 return Ok(courses);
             }
             return NotFound();
