@@ -1,5 +1,6 @@
 ﻿using Infrastructure.DTOs;
 using Infrastructure.Entities.Course;
+using Infrastructure.Models.Courses;
 using Infrastructure.Models.Identification;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -20,7 +21,7 @@ public class CoursesController(UserManager<ApplicationUser> userManager, SignInM
 
     [HttpGet]
     [Route("/courses")]
-    public async Task<IActionResult> Courses(string category = "", string searchQuery = "")
+    public async Task<IActionResult> Courses(string category = "", string searchQuery = "", int pageNumber = 0)
     {
         var referer = _cache.Get<string>("Referer");
 
@@ -33,12 +34,12 @@ public class CoursesController(UserManager<ApplicationUser> userManager, SignInM
         {
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             var apiSecret = _configuration["ApiKey"];
-            var response = await httpClient.GetAsync($"https://localhost:7281/api/courses?category={Uri.UnescapeDataString(category)}&searchQuery={Uri.UnescapeDataString(searchQuery)}&key={apiSecret}");
+            var response = await httpClient.GetAsync($"https://localhost:7281/api/courses?category={Uri.UnescapeDataString(category)}&searchQuery={Uri.UnescapeDataString(searchQuery)}&key={apiSecret}&pageNumber={pageNumber}");
 
             if (response.IsSuccessStatusCode)
             {
                 var json = await response.Content.ReadAsStringAsync();
-                var data = JsonConvert.DeserializeObject<IEnumerable<CourseEntity>>(json);
+                var data = JsonConvert.DeserializeObject<PaginatedList<CourseEntity>>(json);
 
                 var userEntity = await _userManager.GetUserAsync(User);
                 var viewModel = new CoursesViewModel() { User = userEntity! };

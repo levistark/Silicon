@@ -87,6 +87,7 @@ body.dark img {
   --main-text-clr: #565973;
   --main-bg-clr-transparent: rgba(255, 255, 255, 0.770);
   --main-bg-clr-secondary: #F3F6FF;
+  --main-bg-clr-secondary-hover: #F3F6FF;
   --main-bg-clr-secondary-transparent: #f3f6ffc7;
   --main-bg-clr-custom: transparent;
   --main-bg-clr-shadow: #0b0f1942;
@@ -106,6 +107,7 @@ body.dark img {
   --main-logo: url("/images/logo/Silicon-Logotype-DarkMode.svg");
   --main-bg-clr-transparent: #0b0f19b5;
   --main-bg-clr-secondary: #171722;
+  --main-bg-clr-secondary-hover: #565973;
   --main-bg-clr-secondary-transparent: #171722a4;
   --main-bg-clr-custom: #171722;
   --main-bg-clr-shadow: #f3f6ff51;
@@ -1068,6 +1070,9 @@ header .container #menu nav {
 header .container #menu nav a {
   color: var(--main-text-clr);
 }
+header .container #menu nav a:hover {
+  text-decoration: underline;
+}
 header .container .btn-switch {
   grid-area: switch;
   display: none;
@@ -1140,7 +1145,7 @@ header .container .btn-user-container .btn-user-dropdown .btn-gray i {
   color: var(--main-text-clr);
 }
 header .container .btn-user-container .btn-user-dropdown .btn-gray:hover {
-  background-color: var(--main-bg-clr-secondary);
+  background-color: var(--main-bg-clr-secondary-hover);
 }
 header .container .btn-user-container:hover .btn-user-dropdown {
   animation: dropDownMoveDown 0.3s;
@@ -2099,18 +2104,6 @@ footer .container p {
 #our-courses-section .container .heading-container {
   display: flex;
   flex-direction: column;
-  /*.filter {
-      position: relative;
-      margin-top: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-
-      @include md {
-          flex-direction: row;
-          margin-top: 0rem;
-      }
-  }*/
 }
 @media (min-width: 768px) {
   #our-courses-section .container .heading-container {
@@ -2147,16 +2140,16 @@ footer .container p {
   padding: 14px 16px;
   background-color: inherit;
   border-radius: 8px;
-  border: solid 1px var(--main-clr-input-border);
+  border: solid 2px var(--main-clr-input-border);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 #our-courses-section .container .heading-container .action-buttons .category-dropdown .selected:hover {
-  border: solid 1px var(--main-text-clr) !important;
+  border: solid 2px var(--main-text-clr) !important;
 }
 #our-courses-section .container .heading-container .action-buttons .category-dropdown .selected:focus {
-  border: solid 1px var(--main-text-clr) !important;
+  border: solid 2px var(--main-text-clr) !important;
 }
 @media (min-width: 768px) {
   #our-courses-section .container .heading-container .action-buttons .category-dropdown .selected {
@@ -2191,7 +2184,7 @@ footer .container p {
   text-align: center;
   width: 100%;
   border-radius: 8px;
-  border: solid 1px var(--main-clr-input-border);
+  border: solid 2px var(--main-clr-input-border);
   padding: 14px 16px;
 }
 @media (min-width: 768px) {
@@ -2202,10 +2195,10 @@ footer .container p {
   }
 }
 #our-courses-section .container .heading-container .action-buttons .search-field:hover {
-  border: solid 1px #6366F1 !important;
+  border: solid 2px #6366F1 !important;
 }
 #our-courses-section .container .heading-container .action-buttons .search-field:focus-within {
-  border: solid 1px var(--main-text-clr) !important;
+  border: solid 2px var(--main-text-clr) !important;
 }
 #our-courses-section .container .heading-container .action-buttons .search-field input {
   border: none;
@@ -2406,6 +2399,9 @@ footer .container p {
   margin-right: 1rem;
   transform: rotate(180deg);
 }
+#our-courses-section .page-navigation .nav-controls .previous-page:hover i {
+  color: #6366F1;
+}
 #our-courses-section .page-navigation .nav-controls .page-numbers .page-number {
   background-color: transparent;
   padding: 0.5rem 1rem;
@@ -2415,14 +2411,25 @@ footer .container p {
   text-decoration: none;
 }
 #our-courses-section .page-navigation .nav-controls .page-numbers .page-number:hover {
-  background-color: var(--main-bg-clr-secondary);
+  background-color: var(--main-bg-clr-secondary-hover);
 }
 #our-courses-section .page-navigation .nav-controls .page-numbers .page-number:focus {
   background-color: #6366F1;
   color: white;
 }
+#our-courses-section .page-navigation .nav-controls .page-numbers .active-page-number {
+  background-color: #6366F1;
+  color: white;
+}
+#our-courses-section .page-navigation .nav-controls .page-numbers .active-page-number:hover {
+  color: var(--main-text-clr);
+  background-color: var(--main-bg-clr-secondary-hover);
+}
 #our-courses-section .page-navigation .nav-controls .next-page {
   margin-left: 1rem;
+}
+#our-courses-section .page-navigation .nav-controls .next-page:hover i {
+  color: #6366F1;
 }
 
 #courses-cta .content h2 {
@@ -2736,10 +2743,9 @@ footer .container p {
   position: relative;
 }
 #user-profile .container .profile-sidebar .user-info .profile-img-container .img-container {
-  position: relative;
   width: 7rem;
+  height: 7rem;
   border-radius: 50%;
-  background-size: cover;
   overflow: hidden;
 }
 #user-profile .container .profile-sidebar .user-info .profile-img-container .img-container img {
@@ -2808,7 +2814,7 @@ footer .container p {
   color: var(--main-text-clr);
 }
 #user-profile .container .profile-sidebar .btn-group .btn-gray:hover {
-  background-color: var(--main-bg-clr-secondary);
+  background-color: var(--main-bg-clr-secondary-hover);
 }
 #user-profile .container .account-details-container {
   position: relative;
@@ -2915,6 +2921,7 @@ footer .container p {
 }
 #user-profile .container .account-details-container .form-basic-info .btn-group .btn-gray:hover {
   border: solid var(--main-clr-input-border) 1px;
+  background: var(--main-bg-clr-secondary-hover);
 }
 #user-profile .container .account-details-container .address-heading {
   margin-top: 3rem;
@@ -2977,6 +2984,7 @@ footer .container p {
 }
 #user-profile .container .account-details-container .form-address-info .btn-group .btn-gray:hover {
   border: solid var(--main-clr-input-border) 1px;
+  background: var(--main-bg-clr-secondary-hover);
 }
 
 #user-profile-security .container {
@@ -3713,6 +3721,14 @@ footer .container p {
 #contact-us-page main #contact-us-section .container .form-container form .service-group .dropbtn:hover {
   border: solid 2px #6366F1;
 }
+#contact-us-page main #contact-us-section .container .form-container form .service-group .dropbtn option {
+  background-color: var(--main-bg-clr-secondary);
+  color: var(--main-text-clr);
+}
+#contact-us-page main #contact-us-section .container .form-container form .service-group .dropbtn option:hover {
+  background-color: var(--main-bg-secondary-hover);
+  color: var(--main-text-clr);
+}
 #contact-us-page main #contact-us-section .container .form-container form .service-group i {
   position: absolute;
   top: 45px;
@@ -4215,21 +4231,29 @@ footer .container p {
   z-index: 1;
   animation: fade-in 1.5s, spin 1.5s;
   cursor: pointer;
-  font-size: 15pt;
+  font-size: 13pt;
   color: var(--main-title-clr);
 }
-.mobile-nav-wrapper .mobile-nav .mobile-nav-profile-img {
-  margin-top: 1.5rem;
-  position: relative;
-  width: 7rem;
-  border-radius: 50%;
-  background-size: cover;
+.mobile-nav-wrapper .mobile-nav .user-info {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.mobile-nav-wrapper .mobile-nav .mobile-nav-profile-img img {
+.mobile-nav-wrapper .mobile-nav .user-info .profile-img-container {
+  position: relative;
+}
+.mobile-nav-wrapper .mobile-nav .user-info .profile-img-container .img-container {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.mobile-nav-wrapper .mobile-nav .user-info .profile-img-container .img-container img {
   height: auto;
   width: 100%;
 }
-.mobile-nav-wrapper .mobile-nav .mobile-nav-profile-img .btn-update-img {
+.mobile-nav-wrapper .mobile-nav .user-info .profile-img-container form .btn-update-img {
   outline: none;
   border: none;
   position: absolute;
@@ -4240,21 +4264,68 @@ footer .container p {
   align-items: center;
   padding: 7px;
   border-radius: 50%;
-  z-index: 1;
+  z-index: 0;
   color: var(--main-title-clr);
   background-color: var(--main-bg-clr);
-  box-shadow: 2px 2px 5px 1px var(--main-bg-clr-shadow);
+  border: solid 2px grey;
+  box-shadow: 1px 1px 5px 1px var(--main-bg-clr-shadow);
   transition: 0.2s;
 }
-.mobile-nav-wrapper .mobile-nav .mobile-nav-profile-img .btn-update-img:hover {
+.mobile-nav-wrapper .mobile-nav .user-info .profile-img-container form .btn-update-img:hover {
   background-color: var(--main-title-clr);
   color: var(--main-bg-clr);
 }
-.mobile-nav-wrapper .mobile-nav .mobile-nav-profile-img .btn-update-img i {
+.mobile-nav-wrapper .mobile-nav .user-info .profile-img-container form .btn-update-img i {
   font-size: 10pt;
 }
+.mobile-nav-wrapper .mobile-nav .user-info h6 {
+  margin-top: 1rem;
+  font-size: 14pt;
+}
+.mobile-nav-wrapper .mobile-nav .user-menu-options {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+  gap: 5px;
+  border-bottom: 2px solid var(--main-clr-thin-gray);
+  padding-bottom: 1rem;
+}
+@media (min-width: 576px) {
+  .mobile-nav-wrapper .mobile-nav .user-menu-options {
+    margin-top: 0;
+    margin-left: 2rem;
+  }
+}
+@media (min-width: 1200px) {
+  .mobile-nav-wrapper .mobile-nav .user-menu-options {
+    margin-top: 2rem;
+    margin-left: 0;
+  }
+}
+.mobile-nav-wrapper .mobile-nav .user-menu-options a {
+  display: flex;
+  width: 14rem;
+  justify-content: start;
+}
+.mobile-nav-wrapper .mobile-nav .user-menu-options a .menu-item-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 1.3rem;
+  color: var(--main-title-clr);
+}
+.mobile-nav-wrapper .mobile-nav .user-menu-options .btn-gray {
+  background-color: transparent;
+  color: var(--main-title-clr);
+}
+.mobile-nav-wrapper .mobile-nav .user-menu-options .btn-gray i {
+  color: var(--main-title-clr);
+}
+.mobile-nav-wrapper .mobile-nav .user-menu-options .btn-gray:hover {
+  background-color: var(--main-bg-clr-secondary-hover);
+}
 .mobile-nav-wrapper .mobile-nav .mobile-menu {
-  margin-top: 2rem;
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -4271,6 +4342,8 @@ footer .container p {
   padding: 0.6rem 0;
   transition: 0.3s;
   border-radius: 5px;
+  font-size: 11pt;
+  color: var(--main-title-clr);
 }
 .mobile-nav-wrapper .mobile-nav .mobile-menu a:hover {
   background-color: var(--main-clr-hover);

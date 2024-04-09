@@ -20,6 +20,7 @@ body.dark img {
     --main-text-clr: #{$gray-700};
     --main-bg-clr-transparent: rgba(255, 255, 255, 0.770);
     --main-bg-clr-secondary: #{$gray-100};
+    --main-bg-clr-secondary-hover: #{$gray-100};
     --main-bg-clr-secondary-transparent: #f3f6ffc7;
     --main-bg-clr-custom: transparent;
     --main-bg-clr-shadow: #0b0f1942;
@@ -39,6 +40,7 @@ body.dark img {
     --main-logo: url("/images/logo/Silicon-Logotype-DarkMode.svg");
     --main-bg-clr-transparent: #0b0f19b5;
     --main-bg-clr-secondary: #{$gray-850};
+    --main-bg-clr-secondary-hover: #{$gray-700};
     --main-bg-clr-secondary-transparent: #171722a4;
     --main-bg-clr-custom: #{$gray-850};
     --main-bg-clr-shadow: #f3f6ff51;

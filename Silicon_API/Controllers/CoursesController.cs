@@ -1,8 +1,9 @@
-﻿using Infrastructure.Repositories;
+﻿using Infrastructure.Entities.Course;
+using Infrastructure.Models.Courses;
+using Infrastructure.Repositories;
 using Infrastructure.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Silicon_API.Filters;
 using System.Diagnostics;
 
@@ -20,7 +21,7 @@ public class CoursesController(CourseRepository courseRepository, CourseManager 
     private readonly CourseCategoryRepository _courseCategoryRepository = courseCategoryRepository;
 
     [HttpGet]
-    public async Task<IActionResult> GetAll(string category = "", string searchQuery = "")
+    public async Task<IActionResult> GetAll(string category = "", string searchQuery = "", int pageNumber = 0)
     {
         try
         {
@@ -29,17 +30,17 @@ public class CoursesController(CourseRepository courseRepository, CourseManager 
             if (query != null)
             {
                 if (!string.IsNullOrEmpty(category) && category != "all")
-                {
                     query = query.Where(x => x.Category!.Category == category);
-                }
 
                 if (!string.IsNullOrEmpty(searchQuery))
-                {
                     query = query.Where(x => x.Title.Contains(searchQuery) || x.Author.FirstName.Contains(searchQuery) || x.Author.LastName.Contains(searchQuery));
-                }
 
-                var courses = await query.ToListAsync();
-                return Ok(courses);
+                if (pageNumber < 1)
+                    pageNumber = 1;
+
+                int pageSize = 9;
+
+                return Ok(await PaginatedList<CourseEntity>.CreateAsync(query, pageNumber, pageSize));
             }
             return NotFound();
 

@@ -4,26 +4,6 @@
     <div class="container">
         <div class="heading-container">
             <h2>Courses</h2>
-            @* <form class="filter">
-                <div class="select">
-                    <div class="selected">All Categories</div>
-                    <div class="select-options">
-                        <div class="option" data-value="all">All Categories</div>
-                        @if (Model.Categories.Count() > 0)
-                        {
-                            foreach (var category in Model.Categories)
-                            {
-                                <div class="option" data-value="@category.Category">@category.Category</div>
-                            }
-                        }
-                    </div>
-                </div>
-                <div class="search-field">
-                    <input type="text" placeholder="Search courses"></input>
-                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                </div>
-            </form> *@
-
             <div class="action-buttons">
                 <div class="category-dropdown">
                     <div class="selected">
@@ -56,7 +36,7 @@
             <div class="updateErrorBox" id="updateErrorBox">@TempData["Failed"]?.ToString()</div>
         }
         <div class="grid-container">
-            @foreach (CourseEntity course in Model.Courses)
+            @foreach (CourseEntity course in Model.Courses.Items)
             {
                 <div class="grid-item-container">
                     <div class="btn-save-container">
@@ -136,7 +116,7 @@
                                 <div class="meta-likes">
                                     <i class="fa-regular fa-thumbs-up"></i>
                                     <small>@course.LikesScore %</small>
-                                    <small>(@course.LikesCount)</small>
+                                    <small>@course.LikesCount</small>
                                 </div>
                             </div>
                         </div>
@@ -149,19 +129,18 @@
 
         <div class="page-navigation">
             <div class="nav-controls">
-                <a class="previous-page custom-arrow" href="#">
+                <a class="previous-page custom-arrow @(Model.Courses.HasPreviousPage ? "" : "disabled")" id="previousPage" asp-route-pageNumber="@(Model.Courses.PageIndex - 1)">
                     <i class="fa-solid fa-play"></i>
                 </a>
 
-
                 <div class="page-numbers">
-                    <a href="#" class="page-number">1</a>
-                    <a href="#" class="page-number">2</a>
-                    <a href="#" class="page-number">3</a>
-                    <a href="#" class="page-number">4</a>
+                    @for (int i = 1; i <= Model.Courses.TotalPages; i++)
+                    {
+                        <a asp-route-pageNumber="@i" class="page-number @(Model.Courses.PageIndex == i ? "active-page-number" : "")">@i</a>
+                    }
                 </div>
 
-                <a class="next-page custom-arrow" href="#">
+                <a class="next-page custom-arrow @(Model.Courses.HasNextPage ? "" : "disabled")" id="nextPage" asp-route-pageNumber="@(Model.Courses.PageIndex + 1)">
                     <i class="fa-solid fa-play"></i>
                 </a>
             </div>

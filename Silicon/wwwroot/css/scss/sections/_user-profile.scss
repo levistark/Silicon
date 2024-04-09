@@ -39,10 +39,9 @@
                     position: relative;
 
                     .img-container {
-                        position: relative;
                         width: 7rem;
+                        height: 7rem;
                         border-radius: 50%;
-                        background-size: cover;
                         overflow: hidden;
 
                         img {
@@ -121,7 +120,7 @@
                     }
 
                     &:hover {
-                        background-color: var(--main-bg-clr-secondary);
+                        background-color: var(--main-bg-clr-secondary-hover);
                     }
                 }
             }
@@ -247,6 +246,7 @@
 
                         &:hover {
                             border: solid var(--main-clr-input-border) 1px;
+                            background: var(--main-bg-clr-secondary-hover);
                         }
                     }
                 }
@@ -321,6 +321,7 @@
 
                         &:hover {
                             border: solid var(--main-clr-input-border) 1px;
+                            background: var(--main-bg-clr-secondary-hover);
                         }
                     }
                 }

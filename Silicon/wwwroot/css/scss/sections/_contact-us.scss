@@ -199,6 +199,16 @@
                                 &:hover {
                                     border: solid 2px $theme;
                                 }
+
+                                option {
+                                    background-color: var(--main-bg-clr-secondary);
+                                    color: var(--main-text-clr);
+
+                                    &:hover {
+                                        background-color: var(--main-bg-secondary-hover);
+                                        color: var(--main-text-clr);
+                                    }
+                                }
                             }
 
                             i {

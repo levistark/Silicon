@@ -1,5 +1,8 @@
 ﻿@inject UserManager<ApplicationUser> _userManager
 @inject SignInManager<ApplicationUser> _signInManager
+@{
+    var user = await _userManager.GetUserAsync(User);
+}
 
 <div class="mobile-nav-wrapper d-none">
     <div class="mobile-nav-backdrop" onclick="toggleNavBar()"></div>
@@ -8,11 +11,58 @@
             <a id="logo-mobile-nav" asp-controller="Home" asp-action="Index"></a>
             <i class="fa-solid fa-x menuside-toggle" onclick="toggleNavBar()"></i>
         </div>
-        @if (_signInManager.IsSignedIn(User))
+        @if (_signInManager.IsSignedIn(User) && user != null)
         {
-            <div class="mobile-nav-profile-img">
-                <img src="/images/courses/user-profile-small.svg" alt="Your profile image" />
-                <button class="btn-update-img"><i class="fa-solid fa-rotate"></i></button>
+            <div class="user-info">
+                <div class="profile-img-container">
+                    <div class="img-container">
+                        @if (user.ProfileImage != null)
+                        {
+                            <img src="~/uploads/@user.ProfileImage" alt="profile image"></img>
+                        }
+                        else
+                        {
+                            <img src="~/images/avatar.jpg" alt="profile image"></img>
+                        }
+
+                    </div>
+                    <form enctype="multipart/form-data" asp-action="UpdateProfileImage" asp-controller="Account" method="post">
+                        <input id="fileUploader" type="file" name="file" hidden />
+                        <label for="fileUploader" class="btn-update-img"><i class="fa-solid fa-rotate"></i></label>
+                    </form>
+                </div>
+
+                <h6>@user.FirstName @user.LastName</h6>
+                <p>@user.Email</p>
+            </div>
+
+            <div class="user-menu-options">
+                <a asp-action="AccountDetails" asp-controller="Account" class="@(Context.Request.Path == "/account/details" ? "btn-theme-s" : "btn-gray") user-dropdown-link link-user-profile">
+                    <div class="menu-item-container">
+                        <i class="fa-solid fa-gear"></i>
+                        Account Details
+                    </div>
+                    
+                </a>
+                <a asp-action="AccountSecurity" asp-controller="Account" class="@(Context.Request.Path == "/account/security" ? "btn-theme-s" : "btn-gray") user-dropdown-link">
+                    <div class="menu-item-container">
+                        <i class="fa-solid fa-lock"></i>
+                        Security
+                    </div>
+                    
+                </a>
+                <a asp-action="AccountSavedItems" asp-controller="Account" class="@(Context.Request.Path == "/account/saved" ? "btn-theme-s" : "btn-gray") user-dropdown-link">
+                    <div class="menu-item-container">
+                        <i class="fa-regular fa-bookmark"></i>
+                        Saved Courses
+                    </div>
+                </a>
+                <a asp-controller="Auth" asp-action="SignOut" class="btn-gray">
+                    <div class="menu-item-container">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Sign out
+                    </div>
+                </a>
             </div>
         }
         <nav class="mobile-menu">

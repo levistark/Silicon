@@ -46,6 +46,10 @@ header {
 
                 a {
                     color: var(--main-text-clr);
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
                 }
             }
         }
@@ -127,7 +131,7 @@ header {
                     }
 
                     &:hover {
-                        background-color: var(--main-bg-clr-secondary);
+                        background-color: var(--main-bg-clr-secondary-hover);
                     }
                 }
             }
