@@ -3,8 +3,7 @@
 subscribeForm.addEventListener('submit', (e) => {
     sessionStorage.setItem('lastScrollPosition', window.scrollY)
 })
-
-document.getElementById("homeSignUpEmail").addEventListener('keyup', (e) => {
+document.getElementById("homeSignUpEmail").addEventListener('keyup', function(e) {
     formValidator(e);
 })
 

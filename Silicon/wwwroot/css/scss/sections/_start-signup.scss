@@ -127,7 +127,7 @@
                         border: solid var(--main-clr-input-border);
 
                         @include md {
-                            width: 80%;
+                            width: 90%;
                         }
 
                         i {
@@ -138,7 +138,7 @@
 
                         .input-email {
                             margin-left: 1rem;
-                            width: 80%;
+                            width: 90%;
                             border: none;
                             outline: none;
                             -webkit-appearance: none;
@@ -146,10 +146,6 @@
                             appearance: none;
                             background-color: transparent;
                             color: var(--main-text-clr);
-
-                            &:hover {
-                                border: none !important;
-                            }
 
                             &:focus {
                                 border: none !important;

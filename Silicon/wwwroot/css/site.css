@@ -1905,7 +1905,7 @@ footer .container p {
 }
 @media (min-width: 768px) {
   #start-signup .container .content .start-signup-form .input-container .input-email-container {
-    width: 80%;
+    width: 90%;
   }
 }
 #start-signup .container .content .start-signup-form .input-container .input-email-container i {
@@ -1915,7 +1915,7 @@ footer .container p {
 }
 #start-signup .container .content .start-signup-form .input-container .input-email-container .input-email {
   margin-left: 1rem;
-  width: 80%;
+  width: 90%;
   border: none;
   outline: none;
   -webkit-appearance: none;
@@ -1923,9 +1923,6 @@ footer .container p {
   appearance: none;
   background-color: transparent;
   color: var(--main-text-clr);
-}
-#start-signup .container .content .start-signup-form .input-container .input-email-container .input-email:hover {
-  border: none !important;
 }
 #start-signup .container .content .start-signup-form .input-container .input-email-container .input-email:focus {
   border: none !important;

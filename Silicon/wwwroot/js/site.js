@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
     handleProfileImageUpload()
     select()
     searchQuery()
-    //coursePageButtonsHandler()
 })
 
 function handleProfileImageUpload() {
@@ -164,38 +163,6 @@ function updateCoursesByFilter() {
             document.querySelector('.grid-container').innerHTML = dom.querySelector('.grid-container').innerHTML
         })
 }
-
-//function coursePageButtonsHandler() {
-//    const allPageButtons = document.querySelectorAll('.course-page-btn')
-//    allPageButtons.forEach(btn, function () {
-//        btn.addEventListener('click', function () {
-//            coursesPaginationHandler(btn.getAttribute('data-value'))
-//        })
-//    })
-//}
-
-//function coursesPaginationHandler(pageNumber) {
-//    const courses = document.querySelectorAll('.grid-item-container')
-//    const courseCount = courses.Count()
-//    const maxCountPerPage = 2;
-//    const coursesPerPage = courseCount / maxCountPerPage
-//    const category = document.querySelector('.category-dropdown .selected').getAttribute('data-value') || 'all'
-//    const searchQuery = document.querySelector('#searchQuery').value
-
-//    const url = `/courses?category=${encodeURIComponent(category)}&searchQuery=${encodeURIComponent(searchQuery)}&key=NWZjZGNjMzktNTg5YS00NzEzLWI3MzQtM2E4MTE0ZTU4Y2Q4`
-//    fetch(url)
-//        .then(res => res.text(), console.log(res))
-//        .then(data => {
-//            const parser = new DOMParser()
-//            const dom = parser.parseFromString(data, 'text/html')
-//            document.querySelector('.grid-container').innerHTML = dom.querySelector('.grid-container').innerHTML
-//        })
-
-//}
-
-//function updateCoursePagination() {
-
-//}
 
 
 

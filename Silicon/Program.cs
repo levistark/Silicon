@@ -7,7 +7,7 @@ using Silicon.Helpers.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//builder.WebHost.ConfigureKestrel(options => options.ListenAnyIP(5139));
+builder.WebHost.ConfigureKestrel(options => options.ListenAnyIP(5139));
 
 builder.Services.AddMemoryCache();
 builder.Services.AddControllersWithViews();
