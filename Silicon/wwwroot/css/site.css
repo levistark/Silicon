@@ -1005,6 +1005,7 @@ a:hover {
   position: fixed;
   bottom: -20px;
   background-color: var(--main-bg-clr-secondary);
+  border: 2px solid var(--main-clr-thin-gray);
 }
 #cookie-consent .container {
   display: flex;
@@ -1588,14 +1589,11 @@ footer .container p {
 #manage-your-work .container .content h2 {
   color: var(--main-title-clr);
 }
-@media (min-width: 576px) {
+@media (min-width: 1200px) {
   #manage-your-work .container .content {
-    margin-top: 0;
+    margin-top: 7rem;
     padding-left: 3rem;
   }
-}
-#manage-your-work .container .content #checkbox-list {
-  margin: 3rem 0;
 }
 #manage-your-work .container .content #checkbox-list .checkbox-list-item {
   display: flex;
@@ -1612,9 +1610,15 @@ footer .container p {
 }
 #manage-your-work .container .content .btn-theme {
   max-width: 15rem;
+  margin-top: 2rem;
 }
 #manage-your-work .container .content .btn-theme i {
   margin-left: 1rem;
+}
+@media (min-width: 1200px) {
+  #manage-your-work .container .content .btn-theme {
+    align-self: start;
+  }
 }
 
 #download-our-app {
@@ -3023,17 +3027,20 @@ footer .container p {
   flex-direction: column;
   align-items: center;
 }
-#user-profile-security .container .profile-sidebar .user-info .image-container {
+#user-profile-security .container .profile-sidebar .user-info .profile-img-container {
   position: relative;
-  width: 7rem;
-  border-radius: 50%;
-  background-size: cover;
 }
-#user-profile-security .container .profile-sidebar .user-info .image-container img {
+#user-profile-security .container .profile-sidebar .user-info .profile-img-container .img-container {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+#user-profile-security .container .profile-sidebar .user-info .profile-img-container .img-container img {
   height: auto;
   width: 100%;
 }
-#user-profile-security .container .profile-sidebar .user-info .image-container .btn-update-img {
+#user-profile-security .container .profile-sidebar .user-info .profile-img-container form .btn-update-img {
   outline: none;
   border: none;
   position: absolute;
@@ -3044,17 +3051,18 @@ footer .container p {
   align-items: center;
   padding: 7px;
   border-radius: 50%;
-  z-index: 1;
+  z-index: 0;
   color: var(--main-title-clr);
   background-color: var(--main-bg-clr);
-  box-shadow: 2px 2px 5px 1px var(--main-bg-clr-shadow);
+  border: solid 2px grey;
+  box-shadow: 1px 1px 5px 1px var(--main-bg-clr-shadow);
   transition: 0.2s;
 }
-#user-profile-security .container .profile-sidebar .user-info .image-container .btn-update-img:hover {
+#user-profile-security .container .profile-sidebar .user-info .profile-img-container form .btn-update-img:hover {
   background-color: var(--main-title-clr);
   color: var(--main-bg-clr);
 }
-#user-profile-security .container .profile-sidebar .user-info .image-container .btn-update-img i {
+#user-profile-security .container .profile-sidebar .user-info .profile-img-container form .btn-update-img i {
   font-size: 10pt;
 }
 #user-profile-security .container .profile-sidebar .user-info h6 {
@@ -3094,7 +3102,7 @@ footer .container p {
   color: var(--main-text-clr);
 }
 #user-profile-security .container .profile-sidebar .btn-group .btn-gray:hover {
-  background-color: var(--main-bg-clr-secondary);
+  background-color: var(--main-bg-clr-secondary-hover);
 }
 #user-profile-security .container .user-profile-security {
   position: relative;
@@ -3253,17 +3261,20 @@ footer .container p {
   flex-direction: column;
   align-items: center;
 }
-#user-profile-saved-courses .container .profile-sidebar .user-info .image-container {
+#user-profile-saved-courses .container .profile-sidebar .user-info .profile-img-container {
   position: relative;
-  width: 7rem;
-  border-radius: 50%;
-  background-size: cover;
 }
-#user-profile-saved-courses .container .profile-sidebar .user-info .image-container img {
+#user-profile-saved-courses .container .profile-sidebar .user-info .profile-img-container .img-container {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+#user-profile-saved-courses .container .profile-sidebar .user-info .profile-img-container .img-container img {
   height: auto;
   width: 100%;
 }
-#user-profile-saved-courses .container .profile-sidebar .user-info .image-container .btn-update-img {
+#user-profile-saved-courses .container .profile-sidebar .user-info .profile-img-container form .btn-update-img {
   outline: none;
   border: none;
   position: absolute;
@@ -3277,14 +3288,15 @@ footer .container p {
   z-index: 0;
   color: var(--main-title-clr);
   background-color: var(--main-bg-clr);
-  box-shadow: 2px 2px 5px 1px var(--main-bg-clr-shadow);
+  border: solid 2px grey;
+  box-shadow: 1px 1px 5px 1px var(--main-bg-clr-shadow);
   transition: 0.2s;
 }
-#user-profile-saved-courses .container .profile-sidebar .user-info .image-container .btn-update-img:hover {
+#user-profile-saved-courses .container .profile-sidebar .user-info .profile-img-container form .btn-update-img:hover {
   background-color: var(--main-title-clr);
   color: var(--main-bg-clr);
 }
-#user-profile-saved-courses .container .profile-sidebar .user-info .image-container .btn-update-img i {
+#user-profile-saved-courses .container .profile-sidebar .user-info .profile-img-container form .btn-update-img i {
   font-size: 10pt;
 }
 #user-profile-saved-courses .container .profile-sidebar .user-info h6 {
@@ -3324,7 +3336,7 @@ footer .container p {
   color: var(--main-text-clr);
 }
 #user-profile-saved-courses .container .profile-sidebar .btn-group .btn-gray:hover {
-  background-color: var(--main-bg-clr-secondary);
+  background-color: var(--main-bg-clr-secondary-hover);
 }
 #user-profile-saved-courses .container .user-profile-saved-courses {
   position: relative;

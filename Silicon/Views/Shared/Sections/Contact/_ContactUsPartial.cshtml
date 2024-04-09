@@ -51,14 +51,15 @@
                     <input asp-for="ContactForm.Email">
                     <span asp-validation-for="ContactForm.Email"></span>
                 </div>
-
                 <div class="input-group service-group">
                     <label asp-for="ContactForm.ContactService"></label>
                     <select asp-for="ContactForm.ContactService" class="dropbtn">
                         <option disabled="" selected="">Desired service</option>
-                        <option value="Service 1">Service 1</option>
-                        <option value="Service 2">Service 2</option>
-                        <option value="Service 3">Service 3</option>
+                        @foreach (ContactServiceModel service in Model.Services)
+                        {
+                            <option value="@service.Title">@service.Title</option>
+                        }
+                        
                     </select>
                     <label asp-for="ContactForm.ContactService">
                         <i class="fa-solid fa-caret-down"></i>

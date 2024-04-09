@@ -40,12 +40,8 @@ public class ContactController : ControllerBase
         {
             if (ModelState.IsValid)
             {
-                if (_contactList.Any(x => x.Email == model.Email))
-                {
-                    _contactList.Add(model);
-                    return Ok(model);
-                }
-                return Conflict();
+                _contactList.Add(model);
+                return Ok(model);
             }
         }
         catch (Exception ex) { Debug.WriteLine(ex); }

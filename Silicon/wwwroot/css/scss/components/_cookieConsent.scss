@@ -2,6 +2,7 @@
     position: fixed;
     bottom: -20px;
     background-color: var(--main-bg-clr-secondary);
+    border: 2px solid var(--main-clr-thin-gray);
 
     .container {
         display: flex;

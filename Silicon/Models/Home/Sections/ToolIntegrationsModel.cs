@@ -10,7 +10,7 @@ public class ToolIntegrationsModel
         new() {Text = "Lorem magnis pretium sed crabutir nunc facilsi nunc cursus sagittis blandit jussto", Logo = new () { Source = "/images/integrations/integrations_slack.svg", Alt = "Slack logo"}},
         new() {Text = "Lorem magnis pretium sed crabutir nunc facilsi nunc cursus sagittis blandit jussto", Logo = new () { Source = "/images/integrations/integrations_gmail.svg", Alt = "Gmail logo"}},
         new() {Text = "Lorem magnis pretium sed crabutir nunc facilsi nunc cursus sagittis blandit jussto", Logo = new () { Source = "/images/integrations/integrations_trello.svg", Alt = "Trello logo"}},
-        new() {Text = "Lorem magnis pretium sed crabutir nunc facilsi nunc cursus sagittis blandit jussto", Logo = new () { Source = "/images/integrations/integrtions_mailchimp.svg", Alt = "Mailchimp logo"}},
+        new() {Text = "Lorem magnis pretium sed crabutir nunc facilsi nunc cursus sagittis blandit jussto", Logo = new () { Source = "/images/integrations/integrations_mailchimp.svg", Alt = "Mailchimp logo"}},
         new() {Text = "Lorem magnis pretium sed crabutir nunc facilsi nunc cursus sagittis blandit jussto", Logo = new () { Source = "/images/integrations/integrations_dropbox.svg", Alt = "Dropbox logo"}},
         new() {Text = "Lorem magnis pretium sed crabutir nunc facilsi nunc cursus sagittis blandit jussto", Logo = new () { Source = "/images/integrations/integrations_evernote.svg", Alt = "Evernote logo"}}
     ];

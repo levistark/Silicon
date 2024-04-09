@@ -61,7 +61,7 @@
                 <div class="input-container">
                     <div class="input-email-container">
                         <i class="fa-regular fa-envelope"></i>
-                        <input asp-for="Email" id="homeSignUpEmail" type="email" class="input-email" placeholder="Your Email" maxLength="70" autocomplete="on"></input>
+                        <input asp-for="Email" id="homeSignUpEmail" type="email" class="input-email" placeholder="Your Email" maxLength="70"></input>
                     </div>
                     <button id="homeSignUpFormBtn" disabled class="btn-disabled home-signup-submit">Subscribe*</button>
                     <span class="email-validation" asp-validation-for="Email"></span>
@@ -73,6 +73,4 @@
         </div>
     </div>
 </section>
-@* @await Html.PartialAsync("_HomeSignUpValidationPartial")  *@
-@* <partial name="_HomeSignUpValidationPartial" /> *@
-<script defer src="~/js/homeSignUpValidation.js"></script>
+@await Html.PartialAsync("_HomeSignUpValidationPartial") 

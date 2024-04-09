@@ -181,8 +181,7 @@ public class AccountController(SignInManager<ApplicationUser> signInManager, Use
                 var viewModel = new AccountViewModel() { User = userEntity };
 
                 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-                using var http = new HttpClient();
-                var responseBody = await http.GetAsync($"https://localhost:7281/api/coursesubscriptions/{userEntity.Id}?key={_configuration["ApiKey"]}");
+                var responseBody = await httpClient.GetAsync($"https://localhost:7281/api/coursesubscriptions/{userEntity.Id}?key={_configuration["ApiKey"]}");
 
                 if (responseBody.IsSuccessStatusCode)
                 {

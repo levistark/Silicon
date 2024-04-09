@@ -1,5 +1,4 @@
-﻿@model ContactViewModel
-@{
+﻿@{
     ViewData["Title"] = "Contact Us";
 }
 
@@ -15,7 +14,7 @@
         ]
     })
     <main>
-        @await Html.PartialAsync("~/Views/Shared/Sections/Contact/_ContactUsPartial.cshtml", Model)
+        @await Html.PartialAsync("~/Views/Shared/Sections/Contact/_ContactUsPartial.cshtml", new ContactViewModel())
         @await Html.PartialAsync("~/Views/Shared/Sections/Contact/_ContactMapPartial.cshtml")
     </main>
 
