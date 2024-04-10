@@ -187,14 +187,7 @@ public class AccountController(SignInManager<ApplicationUser> signInManager, Use
                 {
                     var json = await responseBody.Content.ReadAsStringAsync();
                     var userCourses = JsonConvert.DeserializeObject<List<CourseEntity>>(json);
-
-                    if (userCourses != null && userCourses.Count() > 0)
-                    {
-                        viewModel.SavedItems.SavedCourses = userCourses;
-
-                        return View(viewModel);
-
-                    }
+                    return View(viewModel);
                 }
             }
         }
@@ -211,18 +204,20 @@ public class AccountController(SignInManager<ApplicationUser> signInManager, Use
 
         if (userEntity != null)
         {
-            using var http = new HttpClient();
-            var responseBody = await http.DeleteAsync($"https://localhost:7281/api/coursesubscriptions/{userEntity.Id}?key=NWZjZGNjMzktNTg5YS00NzEzLWI3MzQtM2E4MTE0ZTU4Y2Q4");
+            if (HttpContext.Request.Cookies.TryGetValue("AccessToken", out var token))
+            {
+                using var http = new HttpClient();
+                http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-            if (responseBody.IsSuccessStatusCode)
-            {
-                TempData["Success"] = "All saved items was deleted";
+                var responseBody = await http.DeleteAsync($"https://localhost:7281/api/coursesubscriptions/{userEntity.Id}?key={_configuration["ApiKey"]}");
+
+                if (responseBody.IsSuccessStatusCode)
+                    TempData["Success"] = "All saved items was deleted";
+                else
+                    TempData["Failed"] = "Could not delete saved items";
+
+                return RedirectToAction("AccountSavedItems", "Account");
             }
-            else
-            {
-                TempData["Failed"] = "Could not delete saved items";
-            }
-            return RedirectToAction("AccountSavedItems", "Account");
         }
 
         await _signInManager.SignOutAsync();

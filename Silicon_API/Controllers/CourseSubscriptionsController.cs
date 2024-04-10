@@ -40,11 +40,7 @@ public class CourseSubscriptionsController(CourseSubscriptionManager courseSubsc
         try
         {
             var userCourses = await _courseSubscriptionManager.GetUserSavedCourses(userId);
-
-            if (userCourses != null && userCourses.Count() > 0)
-            {
-                return Ok(userCourses);
-            }
+            return Ok(userCourses);
         }
         catch (Exception ex) { Debug.WriteLine(ex.Message); }
         return NotFound();
