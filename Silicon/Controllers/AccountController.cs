@@ -11,9 +11,17 @@ using Silicon.Models.Account;
 using System.Net.Http.Headers;
 using static Silicon.Helpers.StaticFields;
 
-
 namespace Silicon.Controllers;
 
+/// <summary>
+/// This Controller handles actions related to the Account/User profile. It is using Authorize, meaning that it will only be available to signed in users
+/// </summary>
+/// <param name="signInManager">The built in signInManager in MVC</param>
+/// <param name="userManager">The built in userManager in MVC</param>
+/// <param name="addressManager">A service for handling the user address</param>
+/// <param name="cache">A built in cache for storing temporary data</param>
+/// <param name="configuration">The configuration file appsettings.json</param>
+/// <param name="accountManager">A service for handling the user account</param>
 [Authorize]
 public class AccountController(SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> userManager, AddressManager addressManager, IMemoryCache cache, IConfiguration configuration, AccountManager accountManager) : Controller
 {
