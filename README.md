@@ -1,5 +1,5 @@
 # Silicon
-This is a web app built with ASP.NET Core MVC along with an ASP.NET Core Api
+This is a web app built with ASP.NET Core MVC along with an ASP.NET Core Api, built for a school assignment.
 
 ## Technologies used
 * ASP.NET Core MVC
